@@ -26,8 +26,10 @@
       },
       "name": "trailing",
       "label": "Trailing text value",
-      "placeholder": "...",
-      "info": "By default, '...' is used as trailing text. By including a value here, you can choose your own trailing text."
+      "info": "By default, '...' is used as trailing text. By including a value here, you can choose your own trailing text.",
+      "configuration": {
+        "placeholder": "..."
+      }
     },
     {
       "name": "result",
