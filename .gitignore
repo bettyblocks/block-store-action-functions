@@ -1,0 +1,17 @@
+.tmp/
+**/node_modules/**
+**/coverage/**
+
+config.json
+config.*.json
+
+.DS_Store
+.vscode/
+.nvmrc
+.tool-versions
+.idea
+.secrets
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
