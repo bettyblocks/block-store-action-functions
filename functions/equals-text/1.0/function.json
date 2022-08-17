@@ -53,6 +53,16 @@
       "label": "Force lowercase",
       "info": "Normalizes the values to lowercase before comparing",
       "advanced": false
+    },
+    {
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      }
     }
   ],
   "yields": "NONE"
