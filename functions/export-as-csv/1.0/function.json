@@ -1,6 +1,6 @@
 {
-  "description": "Outputs a CSV File",
-  "label": "Export collection as CSV",
+  "description": "Create a CSV from a collection of Records",
+  "label": "Export to CSV",
   "category": "Utilities",
   "icon": "CreateIcon",
   "options": [
