@@ -1,0 +1,44 @@
+{
+  "description": "Description",
+  "label": "Compare Number",
+  "category": "Misc",
+  "icon": "CreateIcon",
+  "options": [
+    {
+      "meta": {
+        "type": "Number"
+      },
+      "name": "leftValue",
+      "label": "Left value",
+      "info": "The value that is used to compare with",
+      "advanced": false
+    },
+    {
+      "meta": {
+        "type": "Select",
+        "values": [
+          { "name": "eq", "label": "Equals" },
+          { "name": "neq", "label": "Not Equals" },
+          { "name": "lower", "label": "Lower than" },
+          { "name": "lowerEq", "label": "Lower than or equal to"},
+          { "name": "higher", "label": "Higher then" },
+          { "name": "higherEq", "label": "Higher then or equal to" }
+        ]
+      },
+      "name": "comparator",
+      "label": "Comparator",
+      "info": "Which type of comparisson is applied to the given values",
+      "advanced": false     
+    },
+    {
+      "meta": {
+        "type": "Number"
+      },
+      "name": "rightValue",
+      "label": "Right value",
+      "info": "The value that is used to compare against",
+      "advanced": false
+    }
+  ],
+  "yields": "NONE"
+}
