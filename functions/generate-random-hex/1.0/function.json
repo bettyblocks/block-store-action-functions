@@ -6,7 +6,10 @@
   "options": [
     {
       "meta": {
-        "type": "Number"
+        "type": "Number",
+        "validations": {
+          "required": true
+        }
       },
       "name": "size",
       "label": "Size",
@@ -18,6 +21,9 @@
         "type": "Output",
         "output": {
           "type": "Text"
+        },
+        "validations": {
+          "required": true
         }
       },
       "name": "result",
