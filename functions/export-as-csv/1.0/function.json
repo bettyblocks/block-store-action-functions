@@ -9,6 +9,9 @@
       "info": "Set a delimiter for the CSV file",
       "name": "delimiter",
       "meta": {
+        "validations": {
+          "required": true
+        },
         "type": "Select",
         "values": [
           {
