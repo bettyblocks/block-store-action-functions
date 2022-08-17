@@ -1,0 +1,43 @@
+{
+  "description": "Outputs a CSV File",
+  "label": "Export collection as CSV",
+  "category": "Utilities",
+  "icon": "CreateIcon",
+  "options": [
+    {
+      "label": "Collection of records to create CSV from",
+      "name": "collectionInput",
+      "meta": {
+        "type": "Collection",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "mapping",
+      "meta": {
+        "type": "Map",
+        "validations": {
+          "required": true
+        }
+      },
+      "label": "Column Header Mapping"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      },
+      "name": "csvtextoutput",
+      "configuration": {
+        "placeholder": "csvtextoutput"
+      },
+      "label": "Output",
+      "info": "Has to be csvtextoutput."
+    }
+  ],
+  "yields": "NONE"
+}

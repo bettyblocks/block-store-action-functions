@@ -1,0 +1,33 @@
+{
+  "description": "Description",
+  "label": "Redirect Url Composer",
+  "category": "Misc",
+  "icon": "CreateIcon",
+  "options": [
+    {
+      "label": "URL",
+      "meta": {
+        "type": "Text"
+      },
+      "name": "url"
+    },
+    {
+      "name": "placeholderMapping",
+      "label": "Placeholder mapping",
+      "meta": {
+        "type": "Map"
+      }
+    },
+    {
+      "name": "output",
+      "label": "As",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}

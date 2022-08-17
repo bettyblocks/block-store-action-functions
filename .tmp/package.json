@@ -1,0 +1,14 @@
+{
+  "name": "app",
+  "dependencies": {
+    "app": "file:./app"
+  },
+  "devDependencies": {
+    "webpack": "^5.10.0",
+    "webpack-cli": "^4.2.0"
+  },
+  "scripts": {
+    "all": "yarn --force && yarn build",
+    "build": "npx webpack --config webpack.config.js"
+  }
+}
