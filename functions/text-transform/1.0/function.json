@@ -1,0 +1,55 @@
+{
+  "description": "Description",
+  "label": "Transform Text",
+  "category": "Misc",
+  "icon": "LightningIcon",
+  "options": [
+    {
+      "meta": {
+        "type": "Text"
+      },
+      "name": "value",
+      "label": "Text value",
+      "info": "The value that's going to be transformed"
+    },
+    {
+      "name": "downcase",
+      "label": "Downcase",
+      "meta": {
+        "type": "Boolean"
+      }
+    },
+    {
+      "name": "capitalize",
+      "label": "Capitalize",
+      "meta": {
+        "type": "Boolean"
+      }
+    },
+    {
+      "name": "upcase",
+      "label": "Upcase",
+      "meta": {
+        "type": "Boolean"
+      }
+    },
+    {
+      "name": "parameterize",
+      "label": "Parameterize",
+      "meta": {
+        "type": "Boolean"
+      }
+    },
+    {
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}
