@@ -7,9 +7,7 @@ const exportAsCSV = async ({
 }) => {
   const replacer = (value) => (value === null || value === 'null' ? '' : value);
 
-  const allowedHeaders = headerMap.map((header) =>
-    header.key.toLocaleLowerCase()
-  );
+  const allowedHeaders = headerMap.map((header) => header.key.toLowerCase());
 
   let csvTextArray = [headerMap.map((header) => header.value).join(delimiter)];
 
@@ -17,7 +15,7 @@ const exportAsCSV = async ({
     let row = '';
     let index = 0;
     for (const [key, value] of Object.entries(dataObject)) {
-      if (allowedHeaders.includes(key.toLocaleLowerCase())) {
+      if (allowedHeaders.includes(key.toLowerCase())) {
         row += replacer(value);
         if (index < allowedHeaders.length - 1) row += delimiter;
         index++;
