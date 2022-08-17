@@ -11,29 +11,27 @@ const exportAsCSV = async ({
     header.key.toLocaleLowerCase()
   );
 
-  let csvTextArray = [
-    headerMap.map((header) => header.value).join(delimiter) + '\r\n',
-  ];
+  let csvTextArray = [headerMap.map((header) => header.value).join(delimiter)];
 
-  const data = collectionInput.data
-    .map((dataObject) => {
-      let row = '';
-      let i = o;
-      for (const [key, value] of Object.entries(dataObject)) {
-        if (allowedHeaders.includes(key.toLocaleLowerCase()))
-          row += replacer(value);
-        if (i < Object.entries(dataObject).length - 1) row += delimiter;
+  collectionInput.data.map((dataObject) => {
+    let row = '';
+    let index = 0;
+    for (const [key, value] of Object.entries(dataObject)) {
+      if (allowedHeaders.includes(key.toLocaleLowerCase())) {
+        row += replacer(value);
+        if (index < allowedHeaders.length - 1) row += delimiter;
+        index++;
       }
-      csvTextArray.push(row);
-    })
-    .join('\r\n');
+    }
+    csvTextArray.push(row);
+  });
 
   return {
-    fileReference: await storeFile(modelName, propertyName, {
+    reference: await storeFile(modelName, propertyName, {
       contentType: 'text/csv',
-      extension: '.csv',
+      extension: 'csv',
       fileName: 'export',
-      fileBuffer: stringToBuffer(data),
+      fileBuffer: stringToBuffer(csvTextArray.join('\r\n')),
     }),
   };
 };
