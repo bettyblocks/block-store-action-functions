@@ -1,0 +1,26 @@
+{
+  "description": "Description",
+  "label": "Sha 512",
+  "category": "Misc",
+  "icon": "CreateIcon",
+  "options": [
+    {
+      "label": "Input",
+      "name": "input",
+      "meta": {
+        "type": "Text"
+      }
+    },
+    {
+      "name": "output",
+      "label": "As",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}
