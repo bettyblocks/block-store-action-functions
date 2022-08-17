@@ -1,0 +1,43 @@
+{
+  "description": "Shortens a string, closed by trailing text, based on the maximum number of characters. Maximum number includes the trailing text. By default, '...' is used as trailing text. By including a third parameter, you can choose your own trailing text.",
+  "label": "Truncate",
+  "category": "Misc",
+  "icon": "LightningIcon",
+  "options": [
+    {
+      "meta": {
+        "type": "Text"
+      },
+      "name": "value",
+      "label": "Text value",
+      "info": "The value that's going to be shortened"
+    },
+    {
+      "meta": {
+        "type": "Number"
+      },
+      "name": "size",
+      "label": "Size",
+      "info": "The maximum length of the result string"
+    },
+    {
+      "meta": {
+        "type": "Text"
+      },
+      "name": "trailing",
+      "label": "Trailing text value",
+      "info": "The value that's going to ..."
+    },
+    {
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}
