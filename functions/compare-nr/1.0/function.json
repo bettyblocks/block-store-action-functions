@@ -38,6 +38,16 @@
       "label": "Right value",
       "info": "The value that is used to compare against",
       "advanced": false
+    },
+    {
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      }
     }
   ],
   "yields": "NONE"
