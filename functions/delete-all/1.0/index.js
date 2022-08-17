@@ -8,9 +8,11 @@ const deleteAll = async ({ model }) => {
 
     // Loop through batches
     for (let index = 0; index < maxRequests; index += 1) {
-      await deleteBatch(modelName, take);
+      await deleteBatch(modelName);
     }
-    return { result: `All records from ${modelName} have been deleted` };
+    return {
+      result: `All records from ${modelName} have been deleted (${totalCount})`,
+    };
   } catch (error) {
     if (error instanceof TypeError) {
       throw new Error(
