@@ -1,5 +1,5 @@
 {
-  "description": "Description",
+  "description": "Transforms all the letters of a string to lowercase or uppercase, changes the first letter of a string to a capital, or transforms a string to a parameter making it a URL-friendly value.",
   "label": "Transform Text",
   "category": "Misc",
   "icon": "LightningIcon",
