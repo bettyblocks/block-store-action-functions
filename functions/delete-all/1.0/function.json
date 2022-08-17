@@ -1,0 +1,30 @@
+{
+  "description": "Delete all records from a data model",
+  "label": "Delete All Records",
+  "category": "CRUD",
+  "icon": "DeleteIcon",
+  "options": [
+    {
+      "name": "model",
+      "label": "Model",
+      "info": "The model for which you want to delete all records",
+      "meta": {
+        "type": "Model",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}
