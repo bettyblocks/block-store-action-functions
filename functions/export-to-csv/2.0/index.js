@@ -1,5 +1,5 @@
 import { ExportToCsv } from 'export-to-csv';
-const exportAsCSV = async ({
+const exportToCSV = async ({
   collectionInput,
   delimiter,
   model: { name: modelName },
@@ -27,4 +27,4 @@ const exportAsCSV = async ({
   };
 };
 
-export default exportAsCSV;
+export default exportToCSV;

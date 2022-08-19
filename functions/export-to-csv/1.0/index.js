@@ -1,4 +1,4 @@
-const exportAsCSV = async ({
+const exportToCSV = async ({
   collectionInput,
   headerMap,
   delimiter,
@@ -34,4 +34,4 @@ const exportAsCSV = async ({
   };
 };
 
-export default exportAsCSV;
+export default exportToCSV;

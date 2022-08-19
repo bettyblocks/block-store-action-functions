@@ -1,5 +1,5 @@
-test('Test Export as CSV', async () => {
-  const output = await $app['exportAsCsv 1.0']({
+test('Test Export to CSV', async () => {
+  const output = await $app['exportToCsv 1.0']({
     collectionInput: {
       data: [
         { foo: 'corge', bar: 'qux', baz: 'quuz' },
