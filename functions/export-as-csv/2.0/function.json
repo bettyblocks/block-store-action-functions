@@ -1,0 +1,96 @@
+{
+  "description": "Create a CSV from a collection of Records",
+  "label": "Export to CSV",
+  "category": "Utilities",
+  "icon": "CreateIcon",
+  "options": [
+    {
+      "label": "Delimiter",
+      "info": "Set a delimiter for the CSV file",
+      "name": "delimiter",
+      "meta": {
+        "validations": {
+          "required": true
+        },
+        "type": "Select",
+        "values": [
+          {
+            "label": ";",
+            "value": ";"
+          },
+          {
+            "label": ",",
+            "value": ","
+          },
+          {
+            "label": "|",
+            "value": "|"
+          },
+          {
+            "label": "tab",
+            "value": "\t"
+          },
+          {
+            "label": "space",
+            "value": " "
+          }
+        ]
+      }
+    },
+    {
+      "label": "Collection of records to create CSV from",
+      "name": "collectionInput",
+      "meta": {
+        "type": "Collection",
+        "additional": {
+          "model": ["name"]
+        },
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "meta": {
+        "type": "Model",
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "model",
+      "label": "Model to save CSV into"
+    },
+    {
+      "meta": {
+        "allowedKinds": ["FILE"],
+        "type": "Property",
+        "model": "model",
+        "validations": {
+          "required": true
+        }
+      },
+      "configuration": {
+        "dependsOn": [
+          {
+            "option": "model",
+            "action": "CLEAR"
+          }
+        ]
+      },
+      "name": "property",
+      "label": "Property"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      },
+      "name": "reference",
+      "label": "As",
+      "info": "The file reference"
+    }
+  ],
+  "yields": "NONE"
+}
