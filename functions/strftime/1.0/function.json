@@ -1,0 +1,38 @@
+{
+	"description": "Concatenates two strings with an optional separator to combine two values into one string (eg, fullname is firstname + space + lastname)",
+	"label": "Format date",
+	"category": "Misc",
+	"icon": "CreateIcon",
+	"options": [
+		{
+			"meta": {
+				"type": "Text"
+			},
+			"name": "date",
+			"label": "Date",
+			"info": "The original date",
+			"advanced": false
+		},
+		{
+			"meta": {
+				"type": "Text"
+			},
+			"name": "format",
+			"label": "Format",
+			"info": "The new format",
+			"advanced": false
+		},
+		{
+			"meta": {
+				"type": "Output",
+				"output": {
+					"type": "Text"
+				}
+			},
+			"name": "result",
+			"label": "Result",
+			"info": "The result as a replaced date string"
+		}
+	],
+	"yields": "NONE"
+}
