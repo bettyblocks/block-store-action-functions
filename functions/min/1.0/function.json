@@ -1,0 +1,29 @@
+{
+	"description": "Returns the lowest number of an array of numbers.",
+	"label": "Min",
+	"category": "Misc",
+	"icon": "CreateIcon",
+	"options": [
+		{
+			"meta": {
+				"type": "Text"
+			},
+			"name": "array",
+			"label": "Input array",
+			"info": "Input array",
+			"advanced": false
+		},
+		{
+			"meta": {
+				"type": "Output",
+				"output": {
+					"type": "Text"
+				}
+			},
+			"name": "result",
+			"label": "Result",
+			"info": "The result"
+		}
+	],
+	"yields": "NONE"
+}
