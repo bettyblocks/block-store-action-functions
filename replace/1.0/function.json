@@ -1,0 +1,47 @@
+{
+	"description": "Replace a certain value with a different value.",
+	"label": "Replace",
+	"category": "Misc",
+	"icon": "CreateIcon",
+	"options": [
+		{
+			"meta": {
+				"type": "Text"
+			},
+			"name": "original",
+			"label": "Original string",
+			"info": "The original string",
+			"advanced": false
+		},
+		{
+			"meta": {
+				"type": "Text"
+			},
+			"name": "whatToReplace",
+			"label": "What to replace",
+			"info": "The part of the string that will be replaced",
+			"advanced": false
+		},
+		{
+			"meta": {
+				"type": "Text"
+			},
+			"name": "replaceWithWhat",
+			"label": "Replace with wath",
+			"info": "The text that will be inserted",
+			"advanced": false
+		},
+		{
+			"meta": {
+				"type": "Output",
+				"output": {
+					"type": "Text"
+				}
+			},
+			"name": "result",
+			"label": "Result",
+			"info": "The result as the replaced string"
+		}
+	],
+	"yields": "NONE"
+}
