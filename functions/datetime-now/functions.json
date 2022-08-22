@@ -1,0 +1,18 @@
+{
+  "description": "Returns the current datetime in the format YYYY-MM-dd HH:MM:SS",
+  "label": "Datetime Now",
+  "category": "Misc",
+  "icon": "CreateIcon",
+  "options": [{
+    "meta": {
+      "type": "Output",
+      "output": {
+        "type": "Text"
+      }
+    },
+    "name": "result",
+    "label": "Result",
+    "info": "The result as the DateTime now"
+  }],
+  "yields": "NONE"
+}

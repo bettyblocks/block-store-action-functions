@@ -1,0 +1,37 @@
+{
+  "description": "Description",
+  "label": "Check Record Present",
+  "category": "Flow",
+  "icon": "CreateIcon",
+  "options": [{
+    "meta": {
+      "type": "Record",
+      "additional": {
+        "model": [
+          "name"
+        ]
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    "name": "record",
+    "label": "Record",
+    "info": "The record you want to know if its present or not."
+  },
+  {
+    "meta": {
+      "type": "Output",
+      "output": {
+        "type": "Boolean"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    "name": "as",
+    "label": "As",
+    "info": "The name of the variable you want as the checkbox value, can be used in conditions."
+  }],
+  "yields": "NONE"
+}
