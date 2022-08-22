@@ -1,0 +1,60 @@
+{
+  "description": "This function allows you to import the contents of a CSV file into a specific model.",
+  "label": "Import CSV file",
+  "category": "Misc",
+  "icon": "CreateIcon",
+  "options": [
+    {
+      "name": "url",
+      "label": "Url to the CSV file",
+      "meta": {
+        "type": "Text"
+      }
+    },
+    {
+      "meta": {
+        "type": "Model",
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "model",
+      "label": "Import Model",
+      "info": "The model you want to import your CSV into."
+    },
+
+    {
+      "name": "propertyMappings",
+      "label": "CSV Mapping",
+      "info": "KEY column = CSV column name , VALUE column = is the database name of the property (in snake_case)",
+      "meta": {
+        "type": "Map"
+      }
+    },
+    {
+      "name": "deduplicate",
+      "label": "Deduplicate records (update records if matched)",
+      "info": "When on, the import will try to update records (if they can be matched based ont he unique column name). Otherwise new records will be created.",
+      "meta": {
+        "type": "Boolean"
+      }
+    },
+    {
+      "name": "uniqueRecordColumnName",
+      "info": "CSV column name of the unique identifier for your records (this name has to be part of the mappings above).",
+      "label": "Unique record identifier (CSV column name)",
+      "meta": {
+        "type": "Text"
+      }
+    },
+    {
+      "name": "logging",
+      "label": "Turn on logging for this action",
+      "info": "When on, the system logs will show information (i.e. the number of processed records and the time taken by this step).",
+      "meta": {
+        "type": "Boolean"
+      }
+    }
+  ],
+  "yields": "NONE"
+}
