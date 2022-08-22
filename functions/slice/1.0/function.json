@@ -1,0 +1,47 @@
+{
+	"description": "Slices an array/collection from the given start value, for the given length.",
+	"label": "Slice",
+	"category": "Misc",
+	"icon": "CreateIcon",
+	"options": [
+		{
+			"meta": {
+				"type": "Text"
+			},
+			"name": "array",
+			"label": "Input array",
+			"info": "The original input array",
+			"advanced": false
+		},
+		{
+			"meta": {
+				"type": "Text"
+			},
+			"name": "start",
+			"label": "Start",
+			"info": "Start position (starts with 0)",
+			"advanced": false
+		},
+		{
+			"meta": {
+				"type": "Text"
+			},
+			"name": "length",
+			"label": "Length",
+			"info": "Number of items from array (from starting point)",
+			"advanced": false
+		},
+		{
+			"meta": {
+				"type": "Output",
+				"output": {
+					"type": "Text"
+				}
+			},
+			"name": "result",
+			"label": "Result",
+			"info": "The result as an array"
+		}
+	],
+	"yields": "NONE"
+}
