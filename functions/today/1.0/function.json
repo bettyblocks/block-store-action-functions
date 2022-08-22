@@ -1,0 +1,20 @@
+{
+	"description": "Returns the current date as a date expression. If used as a date time expression, the time will be set to 00:00:00.",
+	"label": "Today",
+	"category": "Misc",
+	"icon": "CreateIcon",
+	"options": [
+		{
+			"meta": {
+				"type": "Output",
+				"output": {
+					"type": "Text"
+				}
+			},
+			"name": "result",
+			"label": "Result",
+			"info": "The result as an array"
+		}
+	],
+	"yields": "NONE"
+}
