@@ -1,0 +1,38 @@
+{
+	"description": "Returns the value for a given hash and key, with an optional default in case the key does not exist for the hash.",
+	"label": "Fetch",
+	"category": "Misc",
+	"icon": "CreateIcon",
+	"options": [
+		{
+			"meta": {
+				"type": "Text"
+			},
+			"name": "response",
+			"label": "Input response",
+			"info": "Request response",
+			"advanced": false
+		},
+		{
+			"meta": {
+				"type": "Text"
+			},
+			"name": "key",
+			"label": "Key",
+			"info": "Fetch this key from object",
+			"advanced": false
+		},
+		{
+			"meta": {
+				"type": "Output",
+				"output": {
+					"type": "Text"
+				}
+			},
+			"name": "result",
+			"label": "Result",
+			"info": "The result"
+		}
+	],
+	"yields": "NONE"
+}
