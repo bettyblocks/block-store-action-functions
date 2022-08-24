@@ -1,0 +1,66 @@
+{
+  "description": "Description",
+  "label": "Create Saml Request",
+  "category": "Misc",
+  "icon": "CreateIcon",
+  "options": [{
+    "meta": {
+      "type": "Text"
+    },
+    "name": "idpSsoTargetUrl",
+    "label": "IDP SSO Target URL",
+    "info": "The target URL of the SAML Identity Provider",
+    "advanced": false,
+    "configuration": {
+      "placeholder": ""
+    }
+  },
+  {
+    "meta": {
+      "type": "Text"
+    },
+    "name": "issuer",
+    "label": "Issuer",
+    "info": "The issuer name as agreed with the IdP",
+    "advanced": false,
+    "configuration": {
+      "placeholder": ""
+    }
+  },
+  {
+    "meta": {
+      "type": "Text"
+    },
+    "name": "nameIdentifierFormat",
+    "label": "Name Identifier Format",
+    "info": "The name identifier format as expected from us",
+    "advanced": false,
+    "configuration": {
+      "placeholder": ""
+    }
+  },
+  {
+    "meta": {
+      "type": "Text"
+    },
+    "name": "callbackUrl",
+    "label": "Callback url",
+    "info": "The callback url to where the SAMLResponse should be sent",
+    "advanced": false,
+    "configuration": {
+      "placeholder": ""
+    }
+  },
+  {
+    "meta": {
+      "type": "Output",
+      "output": {
+        "type": "Text"
+      }
+    },
+    "name": "result",
+    "label": "As",
+    "info": "The resulting greet to the world."
+  }],
+  "yields": "NONE"
+}

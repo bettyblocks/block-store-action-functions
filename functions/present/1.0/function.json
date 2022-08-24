@@ -1,0 +1,43 @@
+{
+  "description": "This function will check either a record, number or text input and returns true (checked) if the input contains a value, otherwise it will return false (unchecked).",
+  "label": "Present",
+  "category": "Expression",
+  "icon": "LightningIcon",
+  "options": [
+    {
+      "name": "recordToCheck",
+      "label": "Record",
+      "meta": {
+        "type": "Record",
+        "additional": {
+          "model": ["name"]
+        }
+      }
+    },
+    {
+      "name": "numberToCheck",
+      "label": "Number",
+      "meta": {
+        "type": "Number"
+      }
+    },
+    {
+      "name": "textToCheck",
+      "label": "Text",
+      "meta": {
+        "type": "Text"
+      }
+    },
+    {
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Boolean"
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}

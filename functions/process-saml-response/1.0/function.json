@@ -1,0 +1,60 @@
+{
+  "description": "Description",
+  "label": "Process Saml Response",
+  "category": "Misc",
+  "icon": "CreateIcon",
+  "options": [{
+    "meta": {
+      "type": "Text"
+    },
+    "name": "request",
+    "label": "The request in text format",
+    "info": "The callback request as input",
+    "advanced": false    
+  },
+  {
+    "meta": {
+      "type": "Output",
+      "output": {
+        "type": "Text"
+      }
+    },
+    "name": "response",
+    "label": "Response",
+    "info": "Response"
+  },
+  {
+    "meta": {
+      "type": "Output",
+      "output": {
+        "type": "Text"
+      }
+    },
+    "name": "nameID",
+    "label": "Name ID",
+    "info": "The variable as the NameID from the SAML Response"
+  },
+  {
+    "meta": {
+      "type": "Output",
+      "output": {
+        "type": "Text"
+      }
+    },
+    "name": "givenName",
+    "label": "Given Name",
+    "info": "The variable as the Given Name from the SAML Response"
+  },
+  {
+    "meta": {
+      "type": "Output",
+      "output": {
+        "type": "Text"
+      }
+    },
+    "name": "surName",
+    "label": "Surname",
+    "info": "The variable as the Surname from the SAML Response"
+  }],
+  "yields": "NONE"
+}
