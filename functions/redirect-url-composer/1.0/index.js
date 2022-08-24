@@ -1,10 +1,12 @@
 const redirectUrlComposer = async ({ url, placeholderMapping }) => {
-  placeholderMapping.map((placeholder) => {
-    url = url.replace(':' + placeholder.key, placeholder.value);
+  let output = url;
+
+  placeholderMapping.forEach(({ key, value }) => {
+    output = output.replace(`:${key}`, value);
   });
 
   return {
-    output: url,
+    output,
   };
 };
 
