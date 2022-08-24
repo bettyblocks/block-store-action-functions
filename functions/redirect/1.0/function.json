@@ -1,0 +1,26 @@
+{
+  "description": "Description",
+  "label": "Redirect",
+  "category": "Flow",
+  "icon": "CreateIcon",
+  "options": [{
+    "meta": {
+      "type": "Text"
+    },
+    "name": "redirectURL",
+    "label": "Redirect URL",
+    "info": "The url to redirect to",
+    "advanced": false    
+  },{
+    "meta": {
+      "type": "Output",
+      "output": {
+        "type": "Text"
+      }
+    },
+    "name": "response",
+    "label": "Response",
+    "info": "Response"
+  }],
+  "yields": "NONE"
+}

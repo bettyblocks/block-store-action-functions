@@ -1,0 +1,37 @@
+{
+  "description": "Description",
+  "label": "Base 64 Text",
+  "category": "Expression",
+  "icon": "LightningIcon",
+  "options": [
+    {
+      "name": "input",
+      "label": "Input",
+      "meta": {
+        "type": "Text"
+      }
+    },
+    {
+      "name": "action",
+      "label": "Action",
+      "meta": {
+        "type": "Select",
+        "values": [
+          { "label": "Encode", "value": "ENCODE" },
+          { "label": "Decode", "value": "DECODE" }
+        ]
+      }
+    },
+    {
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}

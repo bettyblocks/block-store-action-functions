@@ -1,0 +1,45 @@
+{
+  "description": "Description",
+  "label": "Concat String",
+  "category": "Misc",
+  "icon": "CreateIcon",
+  "options": [{
+    "meta": {
+      "type": "Text"
+    },
+    "name": "left",
+    "label": "Left",
+    "info": "The left part of the string",
+    "advanced": false    
+  },
+  {
+    "meta": {
+      "type": "Text"
+    },
+    "name": "separator",
+    "label": "Separator",
+    "info": "Optional separator between left and right part",
+    "advanced": false    
+  },
+  {
+    "meta": {
+      "type": "Text"
+    },
+    "name": "right",
+    "label": "Right",
+    "info": "The right part of the string",
+    "advanced": false    
+  },
+  {
+    "meta": {
+      "type": "Output",
+      "output": {
+        "type": "Text"
+      }
+    },
+    "name": "result",
+    "label": "Result",
+    "info": "The result as the concatenated string"
+  }],
+  "yields": "NONE"
+}
