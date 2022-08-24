@@ -2,6 +2,7 @@ import { ExportToCsv } from 'export-to-csv';
 const exportToCSV = async ({
   collectionInput,
   delimiter,
+  useBom,
   model: { name: modelName },
   property: [{ name: propertyName }],
 }) => {
@@ -17,9 +18,8 @@ const exportToCSV = async ({
           decimalSeparator: '.',
           showLabels: true,
           showTitle: false,
-          title: 'Diverted Documents Search Export ',
           useTextFile: false,
-          useBom: true,
+          useBom: useBom,
           useKeysAsHeaders: true,
         }).generateCsv(collectionInput.data, true)
       ),

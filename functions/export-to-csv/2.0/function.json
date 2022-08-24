@@ -90,6 +90,18 @@
       "name": "reference",
       "label": "As",
       "info": "The file reference"
+    },
+    {
+      "label": "Use BOM",
+      "name": "useBom",
+      "info": "If true, adds a BOM character at the start of the CSV to improve file compatibility",
+      "meta": {
+        "type": "Boolean"
+      },
+      "configuration": {
+        "placeholder": "true"
+      },
+      "advanced": true
     }
   ],
   "yields": "NONE"
