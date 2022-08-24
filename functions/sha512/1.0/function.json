@@ -25,6 +25,9 @@
         "type": "Output",
         "output": {
           "type": "Text"
+        },
+        "validations": {
+          "required": true
         }
       }
     }
