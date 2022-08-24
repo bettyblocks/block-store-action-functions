@@ -1,0 +1,20 @@
+{
+  "description": "Description",
+  "label": "Delete All Records For Model",
+  "category": "Misc",
+  "icon": "DeleteIcon",
+  "options": [
+    {
+      "meta": {
+        "type": "Model",
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "model",
+      "label": "Model",
+      "info": "The model for which you want to delete ALL the records."
+    }
+  ],
+  "yields": "NONE"
+}

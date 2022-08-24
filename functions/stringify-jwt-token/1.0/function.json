@@ -1,0 +1,27 @@
+{
+  "description": "Description",
+  "label": "Stringify Jwt Token",
+  "category": "Authentication",
+  "icon": "CreateIcon",
+  "options": [{
+    "meta": {
+      "type": "Text"
+    },
+    "name": "jwtToken",
+    "label": "JWT Token",
+    "info": "The jwt token",
+    "advanced": false    
+  },
+  {
+    "meta": {
+      "type": "Output",
+      "output": {
+        "type": "Text"
+      }
+    },
+    "name": "jwt",
+    "label": "JWT Token as result",
+    "info": "The result as the concatenated string"
+  }],
+  "yields": "NONE"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "app-functions",
+  "version": "1.0.0",
+  "dependencies": {
+    "@betty-blocks/cli": "^25.27.3",
+    "js-base64": "^3.7.2",
+  },
+  "private": "true"
+}

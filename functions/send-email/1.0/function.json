@@ -1,0 +1,129 @@
+{
+  "description": "Send an e-mail using SMTP credentials",
+  "label": "Send Email",
+  "category": "External",
+  "icon": "EmailIcon",
+  "options": [
+    {
+      "meta": {
+        "type": "Text"
+      },
+      "name": "host",
+      "label": "Hostname",
+      "info": "The hostname of the SMTP server you want to use",
+      "advanced": false,
+      "configuration": {
+        "placeholder": "smtp.flowmailer.net"
+      }
+    },
+    {
+      "meta": {
+        "type": "Number"
+      },
+      "name": "port",
+      "label": "Port",
+      "info": "The port number of the SMTP server you want to use",
+      "advanced": false,
+      "configuration": {
+        "placeholder": "587"
+      }
+    },
+    {
+      "meta": {
+        "type": "Text"
+      },
+      "name": "username",
+      "label": "Username",
+      "info": "The username of the SMTP server you want to use",
+      "advanced": false,
+      "configuration": {
+        "placeholder": ""
+      }
+    },
+    {
+      "meta": {
+        "type": "Text"
+      },
+      "name": "password",
+      "label": "Password",
+      "info": "The password of the SMTP server you want to use",
+      "advanced": false,
+      "configuration": {
+        "placeholder": "******"
+      }
+    },
+    {
+      "meta": {
+        "type": "Boolean"
+      },
+      "name": "secure",
+      "label": "Secure?",
+      "info": "if true the connection will use TLS when connecting to server. If false (the default) then TLS is used if server supports the STARTTLS extension. In most cases set this value to true if you are connecting to port 465. For port 587 or 25 keep it false",
+      "advanced": false
+    },
+    {
+      "meta": {
+        "type": "Text"
+      },
+      "name": "senderEmail",
+      "label": "Sender E-mail",
+      "info": "The email address of the sender",
+      "advanced": false
+    },
+    {
+      "meta": {
+        "type": "Text"
+      },
+      "name": "senderName",
+      "label": "Sender Name",
+      "info": "The display name of the sender",
+      "advanced": false
+    },
+    {
+      "meta": {
+        "type": "Text"
+      },
+      "name": "toEmail",
+      "label": "Recipient",
+      "info": "The email address of the recipient",
+      "advanced": false
+    },
+    {
+      "meta": {
+        "type": "Text"
+      },
+      "name": "subject",
+      "label": "Subject",
+      "info": "The subject of the email",
+      "advanced": false
+    },
+    {
+      "meta": {
+        "type": "MultilineText"
+      },
+      "name": "body",
+      "label": "Body Template",
+      "info": "The HTML body of the email",
+      "advanced": false
+    },
+    {
+      "info": "Select all the variables you want to have available in the template with a key",
+      "label": "Template Variables",
+      "meta": {
+        "type": "Map"
+      },
+      "name": "variables"
+    },
+    {
+    "meta": {
+      "type": "Output",
+      "output": {
+        "type": "JSON"
+      }
+    },
+    "name": "result",
+    "label": "As",
+    "info": "The resulting greet to the world."
+  }],
+  "yields": "NONE"
+}
