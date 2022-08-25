@@ -1,0 +1,35 @@
+{
+  "description": "Generates a random hexadecimal string. The number argument defines the number of characters used for the string.",
+  "label": "Generate Random Hex",
+  "category": "Misc",
+  "icon": "LightningIcon",
+  "options": [
+    {
+      "meta": {
+        "type": "Number",
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "size",
+      "label": "Size",
+      "info": "The length of the result string",
+      "advanced": false
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        },
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "result",
+      "label": "Result",
+      "info": "The result as the concatenated string"
+    }
+  ],
+  "yields": "NONE"
+}
