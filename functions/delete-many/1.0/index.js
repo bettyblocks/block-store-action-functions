@@ -1,20 +1,23 @@
-const deleteMany = async ({ collection }) => {
+const deleteMany = async ({
+  collection: {
+    data,
+    model: { name: modelName },
+  },
+}) => {
   try {
-    const {
-      data,
-      model: { name: modelName },
-    } = collection;
     const ids = data.map((item) => item.id);
     const count = ids.length;
+    const mutationName = `deleteMany${modelName}`;
     const mutation = `
         mutation {
-          deleteMany${modelName}(input: $input) {
+          ${mutationName}(input: $input) {
             id
           }
         }
       `;
 
     const { errors } = await gql(mutation, { input: { ids } });
+
     if (errors) {
       throw errors;
     }
@@ -23,11 +26,7 @@ const deleteMany = async ({ collection }) => {
       result: `${count} ${modelName} records have been deleted`,
     };
   } catch (error) {
-    if (error instanceof TypeError) {
-      throw new Error('One record could not be found');
-    } else {
-      throw error;
-    }
+    throw error;
   }
 };
 
