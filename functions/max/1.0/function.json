@@ -1,6 +1,6 @@
 {
-	"description": "Returns the lowest number of an array of numbers.",
-	"label": "Min",
+	"description": "Returns the highest number of an array of numbers.",
+	"label": "Max",
 	"category": "Misc",
 	"icon": "CreateIcon",
 	"options": [
