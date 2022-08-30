@@ -1,0 +1,33 @@
+{
+  "description": "Delete many records based on a collection variable",
+  "label": "Delete Many Records",
+  "category": "CRUD",
+  "icon": "DeleteIcon",
+  "options": [
+    {
+      "meta": {
+        "type": "Collection",
+        "validations": {
+          "required": true
+        },
+        "additional": {
+          "model": ["name"]
+        }
+      },
+      "name": "collection",
+      "label": "Collection",
+      "info": "The collection of records you want to delete. Note that this collection contains a maximum of 200 records."
+    },
+    {
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}
