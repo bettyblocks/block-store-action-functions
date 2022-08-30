@@ -1,15 +1,16 @@
 import { parseAssignedProperties } from '../../utils/index';
 
-const updateMany = async ({ selectedCollection, mapping }) => {
+const updateMany = async ({
+  selectedCollection: {
+    data,
+    model: { name: modelName },
+  },
+  mapping,
+}) => {
   try {
-    const {
-      data,
-      model: { name: modelName },
-    } = selectedCollection;
     const queryName = `updateMany${modelName}`;
     const assignProperties = parseAssignedProperties(mapping);
     const ids = data.map((item) => item.id);
-
     const mutation = `
       mutation {
         ${queryName}(input: $input, where: $where) {
@@ -31,14 +32,14 @@ const updateMany = async ({ selectedCollection, mapping }) => {
     }
 
     return {
-      result: `${updatedData.length} ${modelName} records have been updated.`,
+      result: `${
+        updatedData.length
+      } ${modelName} records have been updated. Here's a list of all updated record ids: ${updatedData
+        .map((obj) => obj.id)
+        .join(', ')}`,
     };
   } catch (error) {
-    if (error instanceof TypeError) {
-      throw new Error('One record could not be found');
-    } else {
-      throw error;
-    }
+    throw error;
   }
 };
 
