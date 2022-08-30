@@ -1,0 +1,60 @@
+{
+  "description": "Sum two numbers with an operator to sym two values into one number (eg, total is 'firstNumber' '+' 'secondNumber')",
+  "label": "Sum",
+  "category": "Misc",
+  "icon": "CreateIcon",
+  "options": [{
+    "meta": {
+      "type": "Number",
+      "validations": {
+        "required": true
+      }
+    },
+    "name": "left",
+    "label": "Left",
+    "info": "The left part of the sum",
+    "advanced": false    
+  },
+  {
+    "meta": {
+      "type": "Select",
+      "values": [
+        {"label": "+", "value": "+"},
+        {"label": "-", "value": "-"},
+        {"label": "/", "value": "/"},
+        {"label": "*", "value": "*"}
+      ],
+      "validations": {
+        "required": true
+      }
+    },
+    "name": "operator",
+    "label": "Operator",
+    "info": "Operator between left and right part",
+    "advanced": false    
+  },
+  {
+    "meta": {
+      "type": "Number",
+      "validations": {
+        "required": true
+      }
+    },
+    "name": "right",
+    "label": "Right",
+    "info": "The right part of the sum",
+    "advanced": false    
+  },
+  {
+    "meta": {
+      "type": "Output",
+      "output": {
+        "type": "Number"
+      }
+    },
+    "name": "result",
+    "label": "Result",
+    "info": "The result as the sumed number"
+  }],
+  "yields": "NONE"
+}
