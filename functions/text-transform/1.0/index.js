@@ -1,28 +1,31 @@
-const textTransform = async ({
-  value,
-  downcase,
-  upcase,
-  capitalize,
-  parameterize,
-}) => {
-  const transformedValue = parameterize
-    ? parameterized(value)
-    : downcase
-    ? value.toLowerCase()
-    : upcase
-    ? value.toUpperCase()
-    : capitalize
-    ? capitalized(value)
-    : value;
+const textTransform = async ({ value, transformation }) => {
+  let result;
 
-  return { result: transformedValue };
+  switch (transformation) {
+    case 'downcase':
+      result = value.toLowerCase();
+      break;
+    case 'upcase':
+      result = value.toUpperCase();
+      break;
+    case 'capitalize':
+      result = capitalized(value);
+      break;
+    case 'parameterize':
+      result = parameterized(value);
+      break;
+    default:
+      result = value;
+  }
+
+  return { result };
 };
 
-const capitalized = (str) =>
-  str.charAt(0).toUpperCase() + str.toLowerCase().slice(1);
+const capitalized = (value) =>
+  value.charAt(0).toUpperCase() + value.toLowerCase().slice(1);
 
-const parameterized = (str) =>
-  str
+const parameterized = (value) =>
+  value
     .trim()
     .toLowerCase()
     .replace(/\s/g, '-')
