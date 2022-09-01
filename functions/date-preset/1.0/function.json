@@ -1,0 +1,39 @@
+{
+  "description": "Description",
+  "label": "Date Preset",
+  "category": "Misc",
+  "icon": "CreateIcon",
+  "options": [
+    {
+      "meta": {
+        "type": "Select",
+        "values": [
+          {
+            "value": "today",
+            "label": "Today"
+          },
+          {
+            "value": "nextWeek",
+            "label": "Next week"
+          }
+        ]
+      },
+      "name": "preset",
+      "label": "Preset",
+      "info": "The preset date you want to use",
+      "advanced": false    
+    },
+    {
+    "meta": {
+      "type": "Output",
+      "output": {
+        "type": "Text"
+      }
+    },
+    "name": "result",
+    "label": "Result",
+    "info": "The result as a date"
+  }
+  ],
+  "yields": "NONE"
+}
