@@ -3,3 +3,9 @@ const gql = async (query) => {
     { id: 1, name: 'Bruce Wayne' },
   ];
 };
+
+const storeFile = function (modelName, property, {}) {
+  return "Thomas' Awesome File Reference";
+};
+
+const stringToBuffer = () => 'ZWFzdGVyIGVnZyBmb3VuZCE=';
