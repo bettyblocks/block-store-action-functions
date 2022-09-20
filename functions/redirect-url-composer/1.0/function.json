@@ -1,0 +1,40 @@
+{
+  "description": "Description",
+  "label": "Redirect Url Composer",
+  "category": "Misc",
+  "icon": "CreateIcon",
+  "expression": true,
+  "options": [
+    {
+      "label": "URL",
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "url"
+    },
+    {
+      "name": "placeholderMapping",
+      "label": "Placeholder mapping",
+      "meta": {
+        "type": "Map",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "output",
+      "label": "As",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}

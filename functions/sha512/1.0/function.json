@@ -1,0 +1,36 @@
+{
+  "description": "Hashes the text input into a sha512 hash.",
+  "expression": true,
+  "label": "Create SHA512 hash",
+  "category": "Misc",
+  "icon": "CreateIcon",
+  "options": [
+    {
+      "label": "Input",
+      "name": "input",
+      "configuration": {
+        "placeholder": "Text to be hashed"
+      },
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "output",
+      "label": "As",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        },
+        "validations": {
+          "required": true
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}
