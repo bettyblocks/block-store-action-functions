@@ -1,0 +1,69 @@
+{
+  "description": "An action step that compares two text values and returns a true or false",
+  "label": "Equals - text",
+  "category": "Misc",
+  "icon": "ConditionIcon",
+  "options": [
+    {
+      "meta": {
+        "type": "Text"
+      },
+      "name": "leftValue",
+      "label": "Left value",
+      "info": "The value that is going to be compared against",
+      "advanced": false,
+      "configuration": {
+        "placeholder": "Lorum ipsum"
+      }
+    },
+    {
+      "meta": {
+        "type": "Select",
+        "values": [
+          { "label": "Equals", "value": "eq" },
+          { "label": "Not equals", "value": "neq" },
+          { "label": "Contains", "value": "cont" },
+          { "label": "Starts with", "value": "startsWith" },
+          { "label": "Ends with", "value": "endsWith" },
+          { "label": "Regex match", "value": "regMatch" }
+        ]
+      },
+      "name": "comparator",
+      "label": "Comparator",
+      "info": "Which type of comparisson is applied to the given values",
+      "advanced": false
+    },
+    {
+      "meta": {
+        "type": "Text"
+      },
+      "name": "rightValue",
+      "label": "Right value",
+      "info": "The value that is going to be used to compare with",
+      "advanced": false,
+      "configuration": {
+        "placeholder": "Lorum ipsum"
+      }
+    },
+    {
+      "meta": {
+        "type": "Boolean"
+      },
+      "name": "toLower",
+      "label": "Force lowercase",
+      "info": "Normalizes the values to lowercase before comparing",
+      "advanced": false
+    },
+    {
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}
