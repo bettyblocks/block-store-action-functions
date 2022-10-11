@@ -1,5 +1,5 @@
 const compareNumber = async ({ leftValue, rightValue, comparator }) => {
-    let res = {};
+    let res = false;
 
     switch (comparator) {
         case 'eq':
@@ -22,7 +22,7 @@ const compareNumber = async ({ leftValue, rightValue, comparator }) => {
         break;
     }
     
-    return res
+    return {result: res};
 }
 
 export default compareNumber;
