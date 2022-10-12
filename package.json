@@ -2,8 +2,12 @@
   "name": "app-functions",
   "version": "1.0.0",
   "dependencies": {
+    "Base64": "^1.1.0",
+    "js-base64": "^3.7.2",
     "jssha": "^3.2.0",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "papaparse": "^5.3.2",
+    "xml-js": "^1.6.11"
   },
   "private": "true"
 }
