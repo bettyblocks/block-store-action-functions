@@ -5,6 +5,8 @@
 config.json
 config.*.json
 
+yarn.lock
+
 .DS_Store
 .vscode/
 .nvmrc
