@@ -1,0 +1,105 @@
+{
+  "description": "Sends a HTTP(S) request",
+  "label": "HTTP(S) 2.0",
+  "category": "External",
+  "icon": "LightningIcon",
+  "options": [
+    {
+      "info": "Enter what protocol the receiving end needs to use. You can choose between HTTP and HTTPS, which one you should use depends on your host.",
+      "label": "Protocol",
+      "meta": {
+        "type": "Select",
+        "values": [
+          {
+            "label": "HTTP",
+            "value": "http"
+          },
+          {
+            "label": "HTTPS",
+            "value": "https"
+          }
+        ]
+      },
+      "name": "protocol"
+    },
+    {
+      "info": "Enter the URL of the API that you want to use.",
+      "label": "Url",
+      "meta": {
+        "type": "Text"
+      },
+      "name": "url"
+    },
+    {
+      "info": "HTTP defines a set of request methods to indicate the desired action to be performed for the given resource.",
+      "label": "Method",
+      "meta": {
+        "type": "Select",
+        "values": [
+          {
+            "label": "GET",
+            "value": "get"
+          },
+          {
+            "label": "POST",
+            "value": "post"
+          },
+          {
+            "label": "DELETE",
+            "value": "delete"
+          },
+          {
+            "label": "PUT",
+            "value": "put"
+          }
+        ]
+      },
+      "name": "method"
+    },
+    {
+      "info": "Sometimes you may need to pass some additional information in your request, this is possible by adding variables in your header.",
+      "label": "Headers",
+      "meta": {
+        "type": "Map"
+      },
+      "name": "headers"
+    },
+    {
+      "info": "Query parameters can be defined as the optional key-value pairs that appear after the question mark in the URL.",
+      "label": "Query Parameters",
+      "meta": {
+        "type": "Map"
+      },
+      "name": "queryParameters"
+    },
+    {
+      "info": "Select all the variables you want to have available in the template with a key. Use them in the body with {{ key }}",
+      "label": "Body Variables",
+      "meta": {
+        "type": "Map"
+      },
+      "name": "variables"
+    },
+    {
+      "info": "An optional body containing data associated with the request.",
+      "label": "Body",
+      "meta": {
+        "type": "MultilineText"
+      },
+      "name": "body",
+      "advanced": false
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      },
+      "name": "as",
+      "label": "As",
+      "info": "The name of the variable you want for the result of your request."
+    }
+  ],
+  "yields": "NONE"
+}
