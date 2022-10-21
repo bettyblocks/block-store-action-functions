@@ -3,7 +3,6 @@
   "label": "Fetch JSON Variable",
   "category": "JSON",
   "icon": "LightningIcon",
-  "expression": true,
   "options": [
     {
       "name": "jsonInput",
