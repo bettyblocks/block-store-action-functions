@@ -25,7 +25,7 @@
           "required": false
         }
       },
-      "info": "The path defines the node within the JSON/Text that you want to loop over. Leave blank to loop over the root node."
+      "info": "The path defines the node within the JSON/Text that you want to loop over. Define a path by entering the node name, use a dot (.) to traverse deeper into subnodes. Leave blank to loop over the root node."
     },
     {
       "meta": {
