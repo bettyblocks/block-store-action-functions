@@ -6,8 +6,17 @@ const jsonLoop = async ({ input, path }, steps) => {
       path.split('.').forEach((key) => {
         input = input[key];
       });
-    } else if (typeof path !== 'undefined' && path) {
-      input = input[path];
+    } else if (path) {
+      switch (path) {
+        case path.includes('.'):
+          path.split('.').forEach((key) => {
+            input = input[key];
+          });
+          break;
+
+        default:
+          input = input[path];
+      }
     }
 
     for (let index = 0; index < input.length; index += 1) {
