@@ -1,0 +1,43 @@
+{
+  "description": "Fetches the value of the given key from a JSON objective.",
+  "label": "Fetch JSON Variable",
+  "category": "JSON",
+  "icon": "LightningIcon",
+  "options": [
+    {
+      "name": "jsonInput",
+      "label": "JSON Input",
+      "meta": {
+        "type": "Value",
+        "allowedKinds": ["STRING", "JSON"],
+        "validations": {
+          "required": true
+        }
+      },
+      "info": "The JSON/Text you want to fetch the variable from."
+    },
+    {
+      "name": "keyName",
+      "label": "Key Name",
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": false
+        }
+      },
+      "info": "The key of the JSON/Text that you want to fetch. Also supports nested values such as user.fullname"
+    },
+    {
+      "name": "output",
+      "label": "as",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      },
+      "info": "The name of the variable you want for the fetched veriable."
+    }
+  ],
+  "yields": "NONE"
+}
