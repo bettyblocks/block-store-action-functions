@@ -2,7 +2,7 @@
   "description": "Description",
   "label": "Compare Number",
   "category": "Misc",
-  "icon": "CreateIcon",
+  "icon": "ConditionIcon",
   "options": [
     {
       "meta": {
