@@ -3,26 +3,28 @@ const compareNumber = async ({ leftValue, rightValue, comparator }) => {
 
     switch (comparator) {
         case 'eq':
-            res = leftValue === rightValue 
-        break;
+            res = leftValue === rightValue
+            break;
         case 'neq':
             res = leftValue !== rightValue
-        break;
+            break;
         case 'lower':
             res = leftValue < rightValue
-        break;
+            break;
         case 'lowerEq':
             res = leftValue <= rightValue
-        break;
+            break;
         case 'higher':
             res = leftValue > rightValue
-        break;
+            break;
         case 'higherEq':
             res = leftValue >= rightValue
-        break;
+            break;
     }
-    
-    return {result: res};
+
+    return {
+        result: res
+    };
 }
 
 export default compareNumber;
