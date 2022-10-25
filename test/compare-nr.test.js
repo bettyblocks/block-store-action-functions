@@ -1,6 +1,5 @@
 test('Using "eq" returns true if the values are equal', async () => {
   const result = await $app['compareNumber 1.0']({ leftValue: 100, rightValue: 100, comparator: 'eq' });
-
   assert(result, {result: true});
 })
 
@@ -48,6 +47,7 @@ test('Using "lowerEq" returns true if the first value is equal to the second val
 
 test('Using "lowerEq" returns false if the first value is not lower then or equal to the second value', async () => {
   const result = await $app['compareNumber 1.0']({ leftValue: 150, rightValue: 100, comparator: 'lowerEq' });
+  
   assert(result, {result: false});
 })
 
