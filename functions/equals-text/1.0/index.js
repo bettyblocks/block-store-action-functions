@@ -1,4 +1,6 @@
 const equalsText = async ({ leftValue, rightValue, comparator, toLower }) => {
+
+    let res = false;
     if (toLower) {
         leftValue = leftValue.toLowerCase();
         rightValue = rightValue.toLowerCase();
@@ -6,22 +8,27 @@ const equalsText = async ({ leftValue, rightValue, comparator, toLower }) => {
 
     switch (comparator) {
         case 'eq':
-            return { result: leftValue === rightValue };
+            res = leftValue === rightValue;
         case 'neq':
-            return { result: leftValue !== rightValue };
+            res = leftValue !== rightValue;
         case 'cont':
-            return { result: leftValue.includes(rightValue) };
+            res = leftValue.includes(rightValue);
         case 'ncont':
-            return { result: !leftValue.includes(rightValue) };
+            res = !leftValue.includes(rightValue);
         case 'startsWith':
-            return { result: leftValue.startsWith(rightValue) };
+            res = leftValue.startsWith(rightValue);
         case 'endsWith':
-            return { result: leftValue.endsWith(rightValue) };
+            res = leftValue.endsWith(rightValue);
         case 'regMatch':
             const regex = new RegExp(rightValue);
-            return { result: regex.test(leftValue) };
+            res = regex.test(leftValue);
         default: 
-            return { result: false }
+            res = false;
         }
-    }
-    export default equalsText;
+
+        return {
+            result: res
+        }
+
+}
+export default equalsText;
