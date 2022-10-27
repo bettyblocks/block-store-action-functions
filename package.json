@@ -4,5 +4,9 @@
   "dependencies": {
     "lodash": "^4.17.15"
   },
-  "private": "true"
+  "private": "true",
+  "devDependencies": {
+    "@babel/preset-env": "^7.19.4",
+    "jest": "^29.2.2"
+  }
 }
