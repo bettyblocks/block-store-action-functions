@@ -1,5 +1,5 @@
 {
-  "description": "Sends a HTTP(S) request",
+  "description": "An actionstep that allows for sending a HTTP(S) request with a dynamic body.",
   "label": "HTTP(S) 2.0",
   "category": "External",
   "icon": {
@@ -84,7 +84,7 @@
       "name": "variables"
     },
     {
-      "info": "An optional body containing data associated with the request.",
+      "info": "An optional body containing data associated with the request.\nThe keys from the 'Body Variables' can be used here as {{ key }} and will be replaced with the provided value.",
       "label": "Body",
       "meta": {
         "type": "MultilineText"
