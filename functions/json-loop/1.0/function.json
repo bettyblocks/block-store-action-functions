@@ -2,7 +2,10 @@
   "description": "This action step lets you loop over a collection held within a JSON object",
   "label": "Json Loop",
   "category": "JSON",
-  "icon": "LoopIcon",
+  "icon": {
+    "color": "Blue",
+    "name": "LoopIcon"
+  },
   "options": [
     {
       "name": "input",
