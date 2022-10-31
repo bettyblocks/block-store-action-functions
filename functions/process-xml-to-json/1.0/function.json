@@ -1,0 +1,32 @@
+{
+  "description": "Description",
+  "label": "Process XML to JSON",
+  "category": "Misc",
+  "icon": {
+    "color": "Green",
+    "name": "PlusIcon"
+  },
+  "options": [
+    {
+      "meta": {
+        "type": "Text"
+      },
+      "name": "request",
+      "label": "The XML in text format",
+      "info": "The XML as input",
+      "advanced": false
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      },
+      "name": "response",
+      "label": "Response",
+      "info": "Response in JSON"
+    }
+  ],
+  "yields": "NONE"
+}
