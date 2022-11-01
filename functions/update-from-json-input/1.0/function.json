@@ -1,6 +1,6 @@
 {
-  "description": "Update a record for a given model",
-  "label": "Update Record From JSON",
+  "description": "Update a record for a given model by fetching a JSON value from the JSON input",
+  "label": "Update Record From JSON Input",
   "category": "CRUD",
   "icon": {
     "name": "ArrowClockwiseIcon",
