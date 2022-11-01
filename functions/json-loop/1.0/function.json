@@ -1,0 +1,62 @@
+{
+  "description": "This action step lets you loop over a collection held within a JSON object",
+  "label": "Json Loop",
+  "category": "JSON",
+  "icon": {
+    "color": "Blue",
+    "name": "LoopIcon"
+  },
+  "options": [
+    {
+      "name": "input",
+      "label": "Input",
+      "meta": {
+        "type": "Value",
+        "allowedKinds": ["STRING", "JSON"],
+        "validations": {
+          "required": true
+        }
+      },
+      "info": "The JSON or Text you want to use to loop over."
+    },
+    {
+      "name": "path",
+      "label": "Path",
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": false
+        }
+      },
+      "info": "The path defines the node within the JSON/Text that you want to loop over. Define a path by entering the node name, use a dot (.) to traverse deeper into subnodes. Leave blank to loop over the root node."
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text",
+          "scoped": true
+        },
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "iterator",
+      "label": "Iterator name",
+      "info": "The name for the iterator under which the object of each iteration will be available."
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Number",
+          "scoped": true
+        }
+      },
+      "name": "index",
+      "label": "Index",
+      "info": "The name for the variable under which the current iteration will be available. Starts at 0. For example, in the 1st iteration this variable holds the value 0 and in 10th iteration, this variable holds the value 9."
+    }
+  ],
+  "yields": "ALL"
+}
