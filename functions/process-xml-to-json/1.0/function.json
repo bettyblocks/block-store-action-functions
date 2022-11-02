@@ -1,17 +1,17 @@
 {
-  "description": "Description",
+  "description": "Process a XML input to a JSON output",
   "label": "Process XML to JSON",
   "category": "Misc",
   "icon": {
     "color": "Green",
-    "name": "PlusIcon"
+    "name": "ArrowClockwiseIcon"
   },
   "options": [
     {
       "meta": {
         "type": "Text"
       },
-      "name": "request",
+      "name": "input",
       "label": "The XML in text format",
       "info": "The XML as input",
       "advanced": false
@@ -23,9 +23,9 @@
           "type": "Text"
         }
       },
-      "name": "response",
-      "label": "Response",
-      "info": "Response in JSON"
+      "name": "output",
+      "label": "Output",
+      "info": "Output in JSON"
     }
   ],
   "yields": "NONE"
