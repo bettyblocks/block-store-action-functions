@@ -1,14 +1,14 @@
 import convert from 'xml-js';
 
-const processXmlToJson = async ({ request }) => {
+const processXmlToJson = async ({ input }) => {
     const converted = JSON.parse(
-    convert.xml2json(request, {
+    convert.xml2json(input, {
       compact: true,
     }),
   );
 
   return {
-    response: converted
+    output: converted
   };
 };
 
