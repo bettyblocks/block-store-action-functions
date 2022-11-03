@@ -17,6 +17,27 @@
       "advanced": false
     },
     {
+      "info": "The JSON output can be compact or non-compact. The non-compact output will produce more information and always guarantees the order of the elements as they appeared in the XML file.",
+      "label": "Output type",
+      "meta": {
+        "type": "Select",
+        "values": [
+          {
+            "label": "Compact",
+            "value": "compact"
+          },
+          {
+            "label": "Non-compact",
+            "value": "non-compact"
+          }
+        ],
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "outputType"
+    },
+    {
       "meta": {
         "type": "Output",
         "output": {
