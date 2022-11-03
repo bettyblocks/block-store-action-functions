@@ -8,6 +8,9 @@
     "prettier:write": "yarn prettier:base --write \"{functions,__tests__}/**/*.js\"",
     "test": "jest --coverage --config ./jest.config.js"
   },
+  "dependencies": {
+    "xml-js": "^1.6.11"
+  },
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
