@@ -1,4 +1,4 @@
-import processXmlToJson from '../../../functions/process-xml-to-json/1.0';
+import processXmlToJson from '../../../functions/xml-to-json/1.0';
 
 describe('JSON to XML', () => {
   test('It parsed the XML input to JSON', async () => {
