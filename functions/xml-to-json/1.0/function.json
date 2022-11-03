@@ -1,5 +1,5 @@
 {
-  "description": "Process a XML input to a JSON output",
+  "description": "Process an XML input to a JSON output",
   "label": "XML to JSON",
   "category": "Misc",
   "icon": {
