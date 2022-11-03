@@ -2,9 +2,7 @@
   "name": "app-functions",
   "version": "1.0.0",
   "dependencies": {
-    "graphql": "^16.6.0",
-    "jssha": "^3.2.0",
-    "lodash": "^4.17.15"
+    "graphql": "^16.6.0"
   },
   "private": "true",
   "scripts": {
