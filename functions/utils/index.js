@@ -114,7 +114,7 @@ export const parseAssignedProperties = (properties, jsonInput) =>
   properties.reduce((output, property) => {
     const {
       key: [{ name, kind }],
-      value: propertyValue, 
+      value: propertyValue,
     } = property;
 
     let value;
