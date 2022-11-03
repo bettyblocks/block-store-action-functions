@@ -2,9 +2,6 @@
 **/node_modules/**
 **/coverage/**
 
-config.json
-config.*.json
-
 .DS_Store
 .vscode/
 .nvmrc
