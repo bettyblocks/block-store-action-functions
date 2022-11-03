@@ -6,8 +6,7 @@ describe('JSON to XML', () => {
       input: "<result><name><firstName>John</firstName><lastName>Doe</lastName></name></result>",
       outputType: "compact"
     });
-
-    console.log(output);
+    
     expect(output).toMatchObject({
       result: {
         name: {
