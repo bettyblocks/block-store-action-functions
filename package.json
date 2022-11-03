@@ -1,15 +1,38 @@
 {
-  "name": "app-functions",
-  "version": "1.0.0",
+  "name": "blockstore-action-functions",
+  "scripts": {
+    "prepare": "husky install",
+    "lint": "eslint --ext js ./functions ./__tests__",
+    "prettier:base": "prettier --single-quote",
+    "prettier:check": "yarn prettier:base --list-different \"{functions,__tests__}/**/*.js\"",
+    "prettier:write": "yarn prettier:base --write \"{functions,__tests__}/**/*.js\"",
+    "test": "jest --coverage --config ./jest.config.js"
+  },
   "dependencies": {
     "xml-js": "^1.6.11"
   },
-  "private": "true",
-  "scripts": {
-    "test": "jest --coverage --config ./jest.config.js"
-  },
   "devDependencies": {
-    "@babel/preset-env": "^7.19.4",
-    "jest": "^29.2.2"
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-angular": "^13.1.0",
+    "@commitlint/prompt-cli": "^16.2.3",
+    "@types/jest": "^27.4.0",
+    "babel-jest": "^27.0.6",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jest": "^24.4.0",
+    "eslint-plugin-prettier": "^3.4.1",
+    "graphql": "^15.5.1",
+    "husky": "^7.0.2",
+    "jest": "^27.0.6",
+    "number-is-nan": "^3.0.0",
+    "prettier": "^2.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bettyblocks/blockstore-action-functions.git"
   }
 }
