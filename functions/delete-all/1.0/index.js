@@ -1,8 +1,9 @@
 const take = 200;
 
 const deleteAll = async ({ model }) => {
+  const { name: modelName } = model;
+
   try {
-    const { name: modelName } = model;
     const { totalCount } = await getAll(modelName, 'totalCount');
     const maxRequests = Math.ceil(totalCount / take);
 
