@@ -1,7 +1,5 @@
 {
-  "name": "native-functions",
-  "version": "1.0.0",
-  "private": "true",
+  "name": "blockstore-action-functions",
   "scripts": {
     "prepare": "husky install",
     "lint": "eslint --ext js ./functions ./__tests__",
@@ -9,6 +7,9 @@
     "prettier:check": "yarn prettier:base --list-different \"{functions,__tests__}/**/*.js\"",
     "prettier:write": "yarn prettier:base --write \"{functions,__tests__}/**/*.js\"",
     "test": "jest --coverage --config ./jest.config.js"
+  },
+  "dependencies": {
+    "xml-js": "^1.6.11"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
@@ -32,6 +33,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bettyblocks/native-functions.git"
+    "url": "https://github.com/bettyblocks/blockstore-action-functions.git"
   }
 }
