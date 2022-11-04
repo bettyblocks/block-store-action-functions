@@ -1,4 +1,4 @@
-import textTransform from '../functions/text-transform/1.0';
+import textTransform from '../../../functions/text-transform/1.0';
 
 describe('Native text transform', () => {
   test('It downcases a string value', async () => {
