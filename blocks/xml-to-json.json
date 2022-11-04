@@ -1,0 +1,5 @@
+{
+  "dependencies": ["xml-js"],
+  "functions": ["xmlToJson 1.0"],
+  "includes": []
+}

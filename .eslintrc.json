@@ -1,0 +1,36 @@
+{
+  "extends": [
+    "airbnb/base",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier",
+    "jest"
+  ],
+  "env": {
+    "node": true,
+    "jest": true
+  },
+  "rules": {
+    "no-restricted-globals": 0,
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "trailingComma": "all"
+      }
+    ]
+  },
+  "globals": {
+    "gql": "readonly",
+    "fetch": "readonly",
+    "smtp": "readonly",
+    "storeFile": "readonly"
+  }
+}
