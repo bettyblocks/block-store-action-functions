@@ -89,24 +89,24 @@ const getAssignedValue = (kind, value) => {
 };
 
 const fetchJsonVariable = (jsonInput, keyName) => {
+  let jsonValue;
   try {
-    jsonInput = JSON.parse(jsonInput);
+    jsonValue = JSON.parse(jsonInput);
   } finally {
+    jsonValue = jsonInput;
     if (keyName.includes('.')) {
       keyName.split('.').forEach((value, key, array) => {
         if (key + 1 === array.length) {
           keyName = array[array.length - 1];
           return;
         }
-        jsonInput = jsonInput[value];
+        console.log("json = " + jsonValue)
+        jsonValue = jsonValue[value];
       });
     }
 
-    if (keyName in jsonInput) {
-      return jsonInput[keyName];
-    } else {
-      return keyName;
-    }
+    const value = (keyName in jsonValue) ? jsonValue[keyName] : keyName;
+    return value
   }
 };
 
