@@ -28,7 +28,7 @@ describe('Update from JSON input', () => {
         data: { id: 1 },
         model: { name: 'User' },
       },
-      jsonInput: { name: { firstName: "John", lastName: "Doe" } },
+      jsonInput: { name: { firstName: 'John', lastName: 'Doe' } },
       mapping,
     });
     expect(result).toMatchObject({

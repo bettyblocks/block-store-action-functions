@@ -104,8 +104,10 @@ const fetchJsonVariable = (jsonInput, keyName) => {
         jsonValue = jsonValue[value];
       });
     }
-    const value = arrayKey in jsonValue ? jsonValue[arrayKey] : arrayKey;
-    return value;
+    if (arrayKey in jsonValue) {
+      return jsonValue[arrayKey];
+    }
+    return arrayKey;
   }
 };
 
