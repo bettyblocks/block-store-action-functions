@@ -1,7 +1,7 @@
 {
   "description": "Make a text value downcased, upcased, capitalized or parameterized.",
   "label": "Transform Text",
-  "category": "Misc",
+  "category": "Text",
   "icon": {
     "color": "Orange",
     "name": "CapitalizeIcon"
