@@ -2,7 +2,10 @@
   "label": "Say Hello",
   "description": "Say Hello to the world",
   "category": "Misc",
-  "icon": "CreateIcon",
+  "icon": {
+    "color": "Green",
+    "name": "PlusIcon"
+  },
   "options": [
     {
       "meta": {

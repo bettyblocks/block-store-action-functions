@@ -1,6 +1,6 @@
-const concatString = async ({ left, right, separator }) => {
+const concatString = async ({ left, separator, right }) => {
   return {
-    result: `${left}${separator}${right}`,
+    result: left.concat(separator, right),
   };
 };
 

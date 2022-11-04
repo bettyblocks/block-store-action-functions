@@ -4,8 +4,8 @@
 
 ```
 {
-  "host": "https://speer-nl4.bettyblocks.com",
-  "applicationId": "66d402f9e38a4877ac89c977ddb37cf3",
-  "zone": "nl4"
+  "host": "https://actions-js.bettyblocks.com/",
+  "applicationId": "d5928153304149f7bded5ce4f1afaf30",
+  "zone": "nl3"
 }
 ```
