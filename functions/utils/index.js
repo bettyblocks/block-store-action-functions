@@ -90,21 +90,22 @@ const getAssignedValue = (kind, value) => {
 
 const fetchJsonVariable = (jsonInput, keyName) => {
   let jsonValue;
+  let arrayKey = keyName;
   try {
     jsonValue = JSON.parse(jsonInput);
   } finally {
     jsonValue = jsonInput;
     if (keyName.includes('.')) {
-      keyName.split('.').forEach((value, key, array) => {
+      arrayKey.split('.').forEach((value, key, array) => {
         if (key + 1 === array.length) {
-          keyName = array[array.length - 1];
+          arrayKey = array[array.length - 1];
           return;
         }
         jsonValue = jsonValue[value];
       });
     }
-    const value = (keyName in jsonValue) ? jsonValue[keyName] : keyName;
-    return value
+    const value = arrayKey in jsonValue ? jsonValue[arrayKey] : arrayKey;
+    return value;
   }
 };
 
