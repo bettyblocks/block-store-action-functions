@@ -2,15 +2,6 @@ import { graphql, buildSchema } from 'graphql';
 import Task from '../task';
 import User from '../user';
 
-class AuthenticationError extends Error {
-  constructor(message) {
-    super(message);
-    this.extensions = {
-      statusCode: 401,
-    };
-  }
-}
-
 const userDatabase = {
   1: new User(1, {
     id: 1,
@@ -32,10 +23,16 @@ const taskDatabase = {
   }),
 };
 
-const loginUser = (username, password) =>
-  !!Object.values(userDatabase).find(
-    (user) => user.username === username && user.password === password,
-  );
+// Populate taskDatabase
+Array(201)
+  .fill()
+  .forEach((_, index) => {
+    taskDatabase[index + 1] = new Task(index + 1, {
+      id: index + 1,
+      name: `Task ${index + 1}`,
+      user: userDatabase[1],
+    });
+  });
 
 const schema = buildSchema(`
   type User {
@@ -60,52 +57,30 @@ const schema = buildSchema(`
     user: User
   }
 
-  type Token {
-    accessExpiresAt: String
-    accessExpiresIn: Int
-    isValid: Boolean
-    jwtToken: String
-    refreshExpiresAt: String
-    refreshExpiresIn: Int
-    refreshToken: String
-  }
-
-  input UserTasksInput {
-    id: [Int] 
-  }
-
-  input UserInput {
-    firstName: String
-    lastName: String
-    age: Int
-    createdAt: String
-    updatedAt: String
-    city: Int
-    tasks: UserTasksInput
+  type ManyTask {
+    results: [Task]
+    totalCount: Int!
   }
 
   input IdEquals {
     eq: Int!
   }
 
-  input UserFilterInput {
-    id: IdEquals!
-  }
-
   input TaskFilterInput {
     id: IdEquals!
   }
 
+  input TaskInput {
+    ids: [Int]
+  }
+
   type Query {
-    oneUser(where: UserFilterInput): User
     oneTask(where: TaskFilterInput): Task
+    allTask(where: TaskFilterInput, take: Int!): ManyTask
   }
 
   type Mutation {
-    createUser(input: UserInput): User
-    updateUser(id: Int!, input: UserInput): User
-    deleteUser(id: Int!): User
-    generateJwt(authProfileUuid: String!, userId: Int, username: String, password: String): Token
+    deleteManyTask(input: TaskInput): Task
   }
 `);
 
@@ -117,58 +92,20 @@ const root = {
   }) {
     return taskDatabase[id];
   },
-  oneUser({
-    where: {
-      id: { eq: id },
-    },
-  }) {
-    return userDatabase[id];
-  },
-  createUser({ input }) {
-    const id = Math.floor((Math.random() + 1) * 100);
-
-    userDatabase[id] = new User(id, input);
-
+  allTask({ take }) {
     return {
-      id,
+      results: Object.values(taskDatabase).slice(0, take),
+      totalCount: Object.keys(taskDatabase).length,
     };
   },
-  updateUser({ id, input }) {
-    userDatabase[id].update(input);
-  },
-  deleteUser({ id }) {
-    const user = userDatabase[id];
+  deleteManyTask({ input: { ids } }) {
+    const task = taskDatabase[0];
 
-    delete userDatabase[id];
+    ids.forEach((id) => {
+      delete taskDatabase[id];
+    });
 
-    return user;
-  },
-  generateJwt({ authProfileUuid, userId, username, password }) {
-    const accessExpiresIn = 7200;
-    const refreshExpiresIn = 259200;
-    const token = {
-      accessExpiresAt: new Date(Date.now() + accessExpiresIn * 1000),
-      accessExpiresIn,
-      isValid: true,
-      jwtToken: 'my-awesome-token',
-      refreshExpiresAt: new Date(Date.now() + refreshExpiresIn * 1000),
-      refreshExpiresIn,
-      refreshToken: 'my-awesome-refresh-token',
-    };
-
-    if (authProfileUuid === 'username-password-profile-id') {
-      if (loginUser(username, password)) {
-        return token;
-      }
-    } else if (authProfileUuid === 'custom-authentication-profile-id') {
-      if (userDatabase[userId]) {
-        return token;
-      }
-    } else {
-      throw new Error('Unknown authentication profile');
-    }
-
-    throw new AuthenticationError('Wrong credentials, please try again');
+    return task;
   },
 };
 
