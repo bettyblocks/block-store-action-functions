@@ -9,6 +9,7 @@ const getAll = async (modelName, queryBody) => {
   `;
 
   const { data, errors } = await gql(getAllQuery, { take: 200 });
+
   if (errors) {
     throw errors;
   }
@@ -54,13 +55,9 @@ const deleteAll = async ({ model }) => {
       result: `All records from ${modelName} have been deleted (${totalCount})`,
     };
   } catch (error) {
-    if (error instanceof TypeError) {
-      throw new Error(
-        `Something went wrong while deleting all records from ${modelName}`,
-      );
-    } else {
-      throw error;
-    }
+    throw [
+      `Something went wrong while deleting all records from ${modelName}: ${error}`,
+    ];
   }
 };
 
