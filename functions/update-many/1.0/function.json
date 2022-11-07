@@ -2,7 +2,10 @@
   "description": "Update many records based on a collection variable",
   "label": "Update Many Records",
   "category": "CRUD",
-  "icon": "UpdateIcon",
+  "icon": {
+    "color": "Green",
+    "name": "ArrowClockwiseIcon"
+  },
   "options": [
     {
       "meta": {
@@ -39,11 +42,12 @@
       "meta": {
         "type": "Output",
         "output": {
-          "type": "Text"
+          "type": "Collection",
+          "model": "selectedCollection"
         }
       },
-      "name": "result",
-      "label": "Result",
+      "name": "as",
+      "label": "As",
       "info": "The name of the variable you want for the updated collection."
     }
   ],
