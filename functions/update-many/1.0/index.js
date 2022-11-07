@@ -1,4 +1,4 @@
-import { parseAssignedProperties } from '../../utils/index';
+import { parseAssignedProperties, fetchRecords } from '../../utils';
 
 const updateMany = async ({
   selectedCollection: {
@@ -7,40 +7,31 @@ const updateMany = async ({
   },
   mapping,
 }) => {
-  try {
-    const queryName = `updateMany${modelName}`;
-    const assignProperties = parseAssignedProperties(mapping);
-    const ids = data.map((item) => item.id);
-    const mutation = `
-      mutation {
-        ${queryName}(input: $input, where: $where) {
-          id
-        }
+  const mutationName = `updateMany${modelName}`;
+  const assignProperties = parseAssignedProperties(mapping);
+  const ids = data.map((item) => item.id);
+  const mutation = `
+    mutation($input: ${modelName}Input, $where: ${modelName}FilterInput) {
+      ${mutationName}(input: $input, where: $where) {
+        id
       }
-    `;
-
-    const {
-      data: { [queryName]: updatedData },
-      errors,
-    } = await gql(mutation, {
-      input: assignProperties,
-      where: { id: { in: ids } },
-    });
-
-    if (errors) {
-      throw errors;
     }
+  `;
 
-    return {
-      result: `${
-        updatedData.length
-      } ${modelName} records have been updated. Here's a list of all updated record ids: ${updatedData
-        .map((obj) => obj.id)
-        .join(', ')}`,
-    };
-  } catch (error) {
-    throw error;
+  const { errors } = await gql(mutation, {
+    input: assignProperties,
+    where: { id: { in: ids } },
+  });
+
+  if (errors) {
+    throw errors;
   }
+
+  const updatedRecords = await fetchRecords(modelName, ids, mapping);
+
+  return {
+    as: updatedRecords,
+  };
 };
 
 export default updateMany;
