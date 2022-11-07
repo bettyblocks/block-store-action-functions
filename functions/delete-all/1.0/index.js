@@ -55,7 +55,12 @@ const deleteAll = async ({ model }) => {
       result: `All records from ${modelName} have been deleted (${totalCount})`,
     };
   } catch (error) {
-    throw error;
+    const errorMessage = [
+      {
+        message: `Something went wrong while deleting all records from ${modelName}: ${error}`,
+      },
+    ];
+    throw errorMessage;
   }
 };
 
