@@ -29,6 +29,6 @@ const equalsText = async ({ leftValue, rightValue, comparator, toLower }) => {
         return {
             result: res
         }
-
 }
+
 export default equalsText;
