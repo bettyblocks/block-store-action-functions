@@ -3,6 +3,7 @@ module.exports = {
   collectCoverage: true,
   coveragePathIgnorePatterns: ['/node_modules/'],
   coverageProvider: 'v8',
+  setupFiles: ['./__tests__/support/setup/index.js'],
   testEnvironment: 'node',
   testMatch: ['**/__tests__/**/*.test.[jt]s?(x)'],
   coverageThreshold: {
