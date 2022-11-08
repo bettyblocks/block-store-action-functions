@@ -1,10 +1,10 @@
 {
   "description": "Count the amount of records in a collection",
   "label": "Count collection",
-  "category": "Calculation",
+  "category": "CRUD",
   "icon": {
     "name": "DataIcon",
-    "color": "Orange"
+    "color": "Purple"
   },
   "options": [
     {
