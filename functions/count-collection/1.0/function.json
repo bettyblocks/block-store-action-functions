@@ -1,0 +1,36 @@
+{
+  "description": "Count the amount of records in a collection based on the take. The default take is 50 and the is max 200.",
+  "label": "Count collection",
+  "category": "CRUD",
+  "icon": {
+    "name": "DataIcon",
+    "color": "Purple"
+  },
+  "options": [
+    {
+      "meta": {
+        "type": "Collection",
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "collection",
+      "label": "Collection",
+      "info": "The collection you want to count"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Number"
+        },
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "result",
+      "label": "Result"
+    }
+  ],
+  "yields": "NONE"
+}
