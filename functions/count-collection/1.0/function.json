@@ -1,5 +1,5 @@
 {
-  "description": "Count the amount of records in a collection",
+  "description": "Count the amount of records in a collection based on the take. The default take is 50 and the is max 200.",
   "label": "Count collection",
   "category": "CRUD",
   "icon": {
