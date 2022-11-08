@@ -1,11 +1,11 @@
-# blockstore-action-functions
+# Block store action functions
 
 ## Example config.json
 
+For testing purposes you can publish the functions to your own app by adding your application ID to the `config.json`.
+
 ```
 {
-  "host": "https://actions-js.bettyblocks.com/",
-  "applicationId": "d5928153304149f7bded5ce4f1afaf30",
-  "zone": "nl3"
+  "applicationId": "d5928153304149f7cded5ce4f1afaf32",
 }
 ```
