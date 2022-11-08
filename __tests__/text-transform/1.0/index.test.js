@@ -1,6 +1,6 @@
 import textTransform from '../../../functions/text-transform/1.0';
 
-describe('Native text transform', () => {
+describe('Text transform', () => {
   test('It downcases a string value', async () => {
     const { result } = await textTransform({
       value: 'DOWNCASE ME',
