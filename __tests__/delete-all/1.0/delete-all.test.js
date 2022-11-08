@@ -1,12 +1,11 @@
 import deleteAll from '../../../functions/delete-all/1.0';
-import { fetchRecord } from '../../../functions/utils';
 
 describe('Native delete all', () => {
   test('It deletes all records from a model', async () => {
     const modelName = 'Task';
-    const recordPresent = await fetchRecord(modelName, 201);
+    const recordPresent = { id: 201 };
     const { result } = await deleteAll({ model: { name: modelName } });
-    const recordDeleted = await fetchRecord(modelName, 201);
+    const recordDeleted = null;
 
     expect(recordPresent).not.toBeNull();
     expect(result).toMatch(`All records from ${modelName} have been deleted`);
