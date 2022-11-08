@@ -1,6 +1,6 @@
 import deleteAll from '../../../functions/delete-all/1.0';
 
-describe('Native delete all', () => {
+describe('Delete all', () => {
   test('It deletes all records from a model', async () => {
     const modelName = 'Task';
     const recordPresent = { id: 201 };
