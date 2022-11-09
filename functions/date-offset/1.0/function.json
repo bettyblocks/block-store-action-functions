@@ -1,0 +1,68 @@
+{
+  "description": "Description",
+  "label": "Date Offset",
+  "category": "Misc",
+  "icon": {
+    "color": "Blue",
+    "name": "DateDayIcon"
+  },
+  "options": [
+    {
+      "name": "firstDate",
+      "label": "First date",
+      "meta": {
+        "type": "Text"
+      },
+      "info": "The date used to check against the second date. Leave empty for todays date."
+    },
+    {
+      "name": "secondDate",
+      "label": "Second date",
+      "meta": {
+        "type": "Text"
+      },
+      "info": "The date used to check against the first date. Leave empty for todays date."
+    },
+    {
+      "name": "unit",
+      "label": "Output the difference in",
+      "meta": {
+        "type": "Select",
+        "values": [
+          {
+            "label": "Days",
+            "value": "days"
+          },
+          {
+            "label": "Weeks",
+            "value": "weeks"
+          },
+          {
+            "label": "Months",
+            "value": "months"
+          },
+          {
+            "label": "Years",
+            "value": "years"
+          }
+        ],
+        "validations": {
+          "required": true
+        }
+      },
+      "info": "Select in which units the offset should be returned"
+    },
+    {
+      "name": "result",
+      "label": "as",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Number"
+        }
+      },
+      "info": "This outputs the amount between the given two days"
+    }
+  ],
+  "yields": "NONE"
+}
