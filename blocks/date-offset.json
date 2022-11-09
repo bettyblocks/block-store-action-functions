@@ -1,0 +1,5 @@
+{
+  "dependencies": ["moment"],
+  "functions": ["dateOffset 1.0"],
+  "includes": []
+}
