@@ -1,0 +1,22 @@
+{
+  "description": "Leave some notes for your application!",
+  "label": "Note",
+  "category": "Misc",
+  "icon": {
+    "name": "ClipboardIcon",
+    "color": "Orange"
+  },
+  "options": [
+    {
+      "name": "text",
+      "label": "Notes",
+      "meta": {
+        "type": "MultilineText"
+      },
+      "configuration": {
+        "placeholder": "Leave a message!"
+      }
+    }
+  ],
+  "yields": "NONE"
+}
