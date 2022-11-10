@@ -1,3 +1,4 @@
+/* eslint-disable no-new-func */
 import moment from 'moment';
 import dateExpired from '../../functions/date-past-now/1.0';
 
@@ -10,7 +11,7 @@ describe('Check if a date(time) input is past the current date(time)', () => {
         timeZone,
         dateTime,
       },
-      new Function(), //steps
+      new Function(),
     );
 
     expect(result).not.toBeNull();
@@ -25,7 +26,7 @@ describe('Check if a date(time) input is past the current date(time)', () => {
         timeZone,
         dateTime,
       },
-      new Function(), //steps
+      new Function(),
     );
 
     expect(result).not.toBeNull();
