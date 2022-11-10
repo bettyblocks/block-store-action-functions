@@ -1,4 +1,5 @@
 import moment from 'moment-timezone';
+
 const datePastNow = async ({ timeZone, dateTime }, steps) => {
   const now = moment().tz(timeZone);
   const ExpiryDateTime = moment(dateTime).tz(timeZone, true);
@@ -8,11 +9,10 @@ const datePastNow = async ({ timeZone, dateTime }, steps) => {
     return {
       result: true,
     };
-  } else {
-    return {
-      result: false,
-    };
   }
+  return {
+    result: false,
+  };
 };
 
 export default datePastNow;
