@@ -24,6 +24,7 @@ const https2 = async ({
   queryParameters = [],
 }) => {
   const variableMap = variables.reduce((previousValue, currentValue) => {
+    // eslint-disable-next-line no-param-reassign
     previousValue[currentValue.key] = currentValue.value;
     return previousValue;
   }, {});
