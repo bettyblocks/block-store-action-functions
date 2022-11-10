@@ -1,5 +1,5 @@
 {
-  "description": "Description",
+  "description": "Returns the amount of days/weeks/months/years between two days",
   "label": "Date Offset",
   "category": "Misc",
   "icon": {
