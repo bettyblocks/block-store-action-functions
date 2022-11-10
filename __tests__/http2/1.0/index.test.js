@@ -1,4 +1,4 @@
-import https2 from '../../functions/http2/1.0';
+import https2 from '../../../functions/http2/1.0';
 
 describe('HTTPS2 Step', () => {
   test('Makes a succesfull http call.', async () => {
