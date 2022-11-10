@@ -1,0 +1,65 @@
+{
+  "description": "Check whether a date(time) is past the current date(time). If it is, it will go into the right-hand flow.",
+  "label": "Date Past Now?",
+  "category": "Dates",
+  "icon": {
+    "name": "DateTimeIcon",
+    "color": "Blue"
+  },
+  "options": [
+    {
+      "name": "dateTime",
+      "label": "DateTime Input",
+      "info": "Put in the DateTime here",
+      "meta": {
+        "type": "Text"
+      }
+    },
+    {
+      "info": "Your application has a particular timezone based on the zone that your application is hosted in. Please select the zone of your application below.",
+      "label": "Applications' zone",
+      "name": "timeZone",
+      "meta": {
+        "type": "Select",
+        "values": [
+          {
+            "label": "EU1",
+            "value": "Europe/Amsterdam"
+          },
+          {
+            "label": "NL1",
+            "value": "Europe/Amsterdam"
+          },
+          {
+            "label": "NL3",
+            "value": "Europe/Amsterdam"
+          },
+          {
+            "label": "NL4",
+            "value": "Europe/Amsterdam"
+          },
+          {
+            "label": "US2",
+            "value": "US/Pacific"
+          },
+          {
+            "label": "CA3",
+            "value": "US/Pacific"
+          }
+        ]
+      }
+    },
+    {
+      "name": "result",
+      "label": "AS",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Boolean"
+        }
+      },
+      "info": "Outputs whether it was expired (true) or not (false)"
+    }
+  ],
+  "yields": "ALL"
+}
