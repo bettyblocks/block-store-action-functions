@@ -1,5 +1,3 @@
-const notes = async () => {
-
-}
+const notes = async () => {};
 
 export default notes;
