@@ -1,5 +1,5 @@
-const isPresent = async ({ record }) => ({
-  result: record.data !== null,
+const isPresent = async ({ record: { data } }) => ({
+  result: !!data,
 });
 
 export default isPresent;
