@@ -1,37 +1,37 @@
 {
-  "description": "Checks if the given record is present and returns a Checkbox value that can be used in the condition step.",
+  "description": "Checks if the given record is present and returns a checkbox value that can be used in the condition step.",
   "label": "Is present",
   "category": "Flow",
-  "icon": "CreateIcon",
-  "options": [{
-    "meta": {
-      "type": "Record",
-      "additional": {
-        "model": [
-          "name"
-        ]
-      },
-      "validations": {
-        "required": true
-      }
-    },
-    "name": "record",
-    "label": "Record",
-    "info": "The record you want to know if its present or not."
+  "icon": {
+    "color": "Green",
+    "name": "CheckboxLineIcon"
   },
-  {
-    "meta": {
-      "type": "Output",
-      "output": {
-        "type": "Boolean"
+  "options": [
+    {
+      "meta": {
+        "type": "Record",
+        "validations": {
+          "required": true
+        }
       },
-      "validations": {
-        "required": true
-      }
+      "name": "record",
+      "label": "Record",
+      "info": "The record you want to know if it is present or not."
     },
-    "name": "as",
-    "label": "As",
-    "info": "The name of the variable you want as the checkbox value, can be used in conditions."
-  }],
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Boolean"
+        },
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "result",
+      "label": "Result",
+      "info": "The name of the variable you want as the checkbox value, can be used in conditions."
+    }
+  ],
   "yields": "NONE"
 }
