@@ -1,0 +1,77 @@
+{
+  "description": "Calculate two number fields with an operator. (eg, total is: 1 + 2 = 3)",
+  "label": "Calculate",
+  "category": "Misc",
+  "icon": {
+    "color": "Green",
+    "name": "SumIcon"
+  },
+  "options": [
+    {
+      "meta": {
+        "type": "Number",
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "left",
+      "label": "Left",
+      "info": "The left part of the sum",
+      "advanced": false
+    },
+    {
+      "meta": {
+        "type": "Select",
+        "values": [
+          {
+            "label": "+",
+            "value": "+"
+          },
+          {
+            "label": "-",
+            "value": "-"
+          },
+          {
+            "label": "/",
+            "value": "/"
+          },
+          {
+            "label": "*",
+            "value": "*"
+          }
+        ],
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "operator",
+      "label": "Operator",
+      "info": "Operator between left and right part",
+      "advanced": false
+    },
+    {
+      "meta": {
+        "type": "Number",
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "right",
+      "label": "Right",
+      "info": "The right part of the sum",
+      "advanced": false
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Number"
+        }
+      },
+      "name": "result",
+      "label": "Result",
+      "info": "The result as the sumed number"
+    }
+  ],
+  "yields": "NONE"
+}
