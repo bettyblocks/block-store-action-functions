@@ -13,16 +13,7 @@ const parseBelongsTo = (name, value) => {
   if (isRecord(value)) {
     const keys = Object.keys(value);
     return `${name} {
-      ${keys
-        .map((key) => {
-          if (isRecord(value[key])) {
-            return `${key} {
-              ${Object.keys(value[key]).join('\n')}
-            }`;
-          }
-          return key;
-        })
-        .join('\n')}
+      ${keys.map((key) => key).join('\n')}
     }`;
   }
 
@@ -68,12 +59,8 @@ const getQueryKeys = (properties) =>
 const belongsToValue = (value) => (isRecord(value) ? value.id : value);
 
 const hasManyOrHasAndBelongsToManyValue = (value) => {
-  if (Array.isArray(value)) {
-    const recordIds = value.map((val) => (isRecord(val) ? val.id : val));
-    return { id: recordIds };
-  }
-
-  return value;
+  const recordIds = value.map((val) => (isRecord(val) ? val.id : val));
+  return { id: recordIds };
 };
 
 const getAssignedValue = (kind, value) => {
@@ -101,34 +88,11 @@ export const parseAssignedProperties = (properties) =>
     };
   }, {});
 
-export const fetchRecord = async (modelName, id, properties = []) => {
-  const queryName = `one${modelName}`;
-
-  const query = `
-    query($where: ${modelName}FilterInput) {
-      ${queryName}(where: $where) {
-        id
-        ${getQueryKeys(properties)}
-      }
-    }
-  `;
-
-  const { data, errors } = await gql(query, { where: { id: { eq: id } } });
-
-  if (errors) {
-    throw new Error(errors);
-  }
-
-  const { [queryName]: record } = data;
-
-  return record;
-};
-
 export const fetchRecords = async (modelName, ids, properties = []) => {
   const queryName = `all${modelName}`;
 
   const query = `
-    query($where: ${modelName}FilterInput) {
+    query($where: Many${modelName}FilterInput) {
       ${queryName}(where: $where) {
         results {
           id

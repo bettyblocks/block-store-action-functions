@@ -11,7 +11,7 @@ const updateMany = async ({
   const assignProperties = parseAssignedProperties(mapping);
   const ids = data.map((item) => item.id);
   const mutation = `
-    mutation($input: ${modelName}Input, $where: ${modelName}FilterInput) {
+    mutation($input: ${modelName}Input, $where: Many${modelName}FilterInput) {
       ${mutationName}(input: $input, where: $where) {
         id
       }
