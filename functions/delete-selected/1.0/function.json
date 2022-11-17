@@ -1,0 +1,53 @@
+{
+  "description": "Description",
+  "label": "Delete Selected",
+  "category": "CRUD",
+  "icon": {
+    "name": "DeleteIcon",
+    "color": "Blue"
+  },
+  "options": [
+    {
+      "name": "model",
+      "label": "Model",
+      "info": "The model where you want to delete the selected records from.",
+      "meta": {
+        "type": "Model",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "selectedIds",
+      "label": "Selected ids",
+      "info": "The selected record ids that will be deleted.",
+      "meta": {
+        "type": "Value",
+        "allowedKinds": ["ARRAY"],
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "logging",
+      "label": "Enable logging",
+      "info": "Log variables and mutation response.",
+      "meta": {
+        "type": "Boolean"
+      }
+    },
+    {
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}
