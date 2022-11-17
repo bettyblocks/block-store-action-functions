@@ -1,37 +1,22 @@
-import templayed from "./templayed";
+import templayed from 'templayed';
 
-const Expression = async ({ expression, variables, outputType, logging }) => {
-  const asKey = { number: "asNumber", text: "asText", checkbox: "asCheckbox" };
+const expression = async ({ expression: expres, variables, outputType }) => {
+  const asKey = { number: 'asNumber', text: 'asText', checkbox: 'asCheckbox' };
 
-  if (logging) {
-    console.log("Input Variables:");
-    console.log(variables);
-  }
-  const variableMap = variables.reduce((previousValue, currentValue) => {
-    previousValue[currentValue.key] = currentValue.value;
-    return previousValue;
-  }, {});
+  const variableMap = variables.reduce(
+    (previousValue, currentValue) => ({
+      ...previousValue,
+      [currentValue.key]: currentValue.value,
+    }),
+    {},
+  );
 
-  if (logging) {
-    console.log("Mapped Variables:");
-    console.log(variableMap);
-  }
-
-  const replacedContent = templayed(expression)(variableMap);
-  if (logging) {
-    console.log("Expression with resolved variables:");
-    console.log(replacedContent);
-  }
-
-  const result = eval(replacedContent);
-  if (logging) {
-    console.log(`Result returned as ${outputType.toUpperCase()}:`);
-    console.log(result);
-  }
+  const result = templayed(expres)(variableMap);
 
   return {
-    [asKey[outputType]]: result,
+    // eslint-disable-next-line no-eval
+    [asKey[outputType]]: eval(result),
   };
 };
 
-export default Expression;
+export default expression;

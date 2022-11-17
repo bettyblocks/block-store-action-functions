@@ -1,8 +1,11 @@
 {
-  "description": "You can find documentation, intructions and examples for this NextGen Expression step here: https://github.com/Betty-Services/NextGen-expression",
+  "description": "Based on https://github.com/heldr/node-templayed",
   "label": "Expression",
   "category": "Misc",
-  "icon": "CreateIcon",
+  "icon": {
+    "name": "ExpressionIcon",
+    "color": "Orange"
+  },
   "options": [
     {
       "meta": {
@@ -10,7 +13,6 @@
       },
       "name": "expression",
       "label": "Expression",
-      "advanced": false,
       "configuration": {
         "placeholder": "See documentation for instructions and examples"
       }
@@ -77,14 +79,6 @@
       "name": "asCheckbox",
       "label": "As Checkbox",
       "info": "Result"
-    },
-    {
-      "meta": {
-        "type": "Boolean"
-      },
-      "name": "logging",
-      "label": "Enable debug logging",
-      "info": "Debug your expressions with logging"
     }
   ],
   "yields": "NONE"
