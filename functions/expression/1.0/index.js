@@ -1,8 +1,6 @@
 import templayed from 'templayed';
 
 const expression = async ({ expression: expres, variables, outputType }) => {
-  const asKey = { number: 'asNumber', text: 'asText', checkbox: 'asCheckbox' };
-
   const variableMap = variables.reduce(
     (previousValue, currentValue) => ({
       ...previousValue,
@@ -15,7 +13,7 @@ const expression = async ({ expression: expres, variables, outputType }) => {
 
   return {
     // eslint-disable-next-line no-eval
-    [asKey[outputType]]: eval(result),
+    [outputType]: eval(result),
   };
 };
 

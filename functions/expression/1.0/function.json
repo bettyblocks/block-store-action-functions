@@ -9,12 +9,13 @@
   "options": [
     {
       "meta": {
-        "type": "MultilineText"
+        "type": "MultilineText",
+        "validations": { "required": true }
       },
       "name": "expression",
       "label": "Expression",
       "configuration": {
-        "placeholder": "{{age}} > 17 ? 'Adult' : 'Child'"
+        "placeholder": "\"{{first_name}}\" + \" \" + \"{{last_name}}\""
       }
     },
     {
@@ -41,9 +42,12 @@
           },
           {
             "label": "Checkbox",
-            "value": "checkbox"
+            "value": "boolean"
           }
-        ]
+        ],
+        "validations": {
+          "required": true
+        }
       },
       "name": "outputType"
     },
@@ -54,7 +58,7 @@
           "type": "Text"
         }
       },
-      "name": "asText",
+      "name": "text",
       "label": "As Text"
     },
     {
@@ -64,7 +68,7 @@
           "type": "Number"
         }
       },
-      "name": "asNumber",
+      "name": "number",
       "label": "As Number"
     },
     {
@@ -74,7 +78,7 @@
           "type": "Boolean"
         }
       },
-      "name": "asCheckbox",
+      "name": "boolean",
       "label": "As Checkbox"
     }
   ],
