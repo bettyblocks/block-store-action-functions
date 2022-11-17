@@ -1,5 +1,5 @@
 {
-  "description": "Based on https://github.com/heldr/node-templayed",
+  "description": "Evaluate a javascript expression (use {{name_of_your_value}} to interpolate values)",
   "label": "Expression",
   "category": "Misc",
   "icon": {
@@ -14,11 +14,11 @@
       "name": "expression",
       "label": "Expression",
       "configuration": {
-        "placeholder": "See documentation for instructions and examples"
+        "placeholder": "{{age}} > 17 ? 'Adult' : 'Child'"
       }
     },
     {
-      "info": "Select all the variables you want to have available in the template with a key",
+      "info": "Map the values that you want to use in your expression",
       "label": "Variables",
       "meta": {
         "type": "Map"
@@ -26,7 +26,7 @@
       "name": "variables"
     },
     {
-      "info": "Type of output",
+      "info": "Choose the type of your output variable",
       "label": "Output Type",
       "meta": {
         "type": "Select",
@@ -55,8 +55,7 @@
         }
       },
       "name": "asText",
-      "label": "As Text",
-      "info": "Result"
+      "label": "As Text"
     },
     {
       "meta": {
@@ -66,8 +65,7 @@
         }
       },
       "name": "asNumber",
-      "label": "As Number",
-      "info": "Result"
+      "label": "As Number"
     },
     {
       "meta": {
@@ -77,8 +75,7 @@
         }
       },
       "name": "asCheckbox",
-      "label": "As Checkbox",
-      "info": "Result"
+      "label": "As Checkbox"
     }
   ],
   "yields": "NONE"
