@@ -33,6 +33,7 @@
     "gql": "readonly",
     "fetch": "readonly",
     "smtp": "readonly",
-    "storeFile": "readonly"
+    "storeFile": "readonly",
+    "generateDocx": "readonly"
   }
 }

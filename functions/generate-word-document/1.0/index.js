@@ -13,8 +13,12 @@ const generateWordDocument = async ({
   }
 
   const variableMap = variables.reduce((previousValue, currentValue) => {
-    previousValue[currentValue.key] = currentValue.value;
-    return previousValue;
+    const newValue = {
+      ...previousValue,
+      [currentValue.key]: currentValue.value,
+    };
+
+    return newValue;
   }, {});
 
   const buffer = await generateDocx(template, variableMap, {
