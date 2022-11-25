@@ -1,0 +1,86 @@
+{
+  "description": "Evaluate a javascript expression (use {{name_of_your_value}} to interpolate values)",
+  "label": "Expression",
+  "category": "Misc",
+  "icon": {
+    "name": "ExpressionIcon",
+    "color": "Orange"
+  },
+  "options": [
+    {
+      "meta": {
+        "type": "MultilineText",
+        "validations": { "required": true }
+      },
+      "name": "expression",
+      "label": "Expression",
+      "configuration": {
+        "placeholder": "\"{{first_name}}\" + \" \" + \"{{last_name}}\""
+      }
+    },
+    {
+      "info": "Map the values that you want to use in your expression",
+      "label": "Variables",
+      "meta": {
+        "type": "Map"
+      },
+      "name": "variables"
+    },
+    {
+      "info": "Choose the type of your output variable",
+      "label": "Output Type",
+      "meta": {
+        "type": "Select",
+        "values": [
+          {
+            "label": "Text",
+            "value": "text"
+          },
+          {
+            "label": "Number",
+            "value": "number"
+          },
+          {
+            "label": "Checkbox",
+            "value": "boolean"
+          }
+        ],
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "outputType"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      },
+      "name": "text",
+      "label": "As Text"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Number"
+        }
+      },
+      "name": "number",
+      "label": "As Number"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Boolean"
+        }
+      },
+      "name": "boolean",
+      "label": "As Checkbox"
+    }
+  ],
+  "yields": "NONE"
+}
