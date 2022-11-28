@@ -1,0 +1,5 @@
+{
+  "dependencies": ["moment"],
+  "functions": ["calculateDate 1.0"],
+  "includes": []
+}
