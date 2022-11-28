@@ -1,0 +1,100 @@
+{
+  "description": "Returns a DateTime property calculated from the given offsets",
+  "label": "Calculate DateTime from Now",
+  "category": "Utilities",
+  "icon": {
+    "color": "Purple",
+    "name": "DateTimeIcon"
+  },
+  "options": [
+    {
+      "name": "method",
+      "label": "Add or Subtract?",
+      "meta": {
+        "type": "Select",
+        "values": [
+          {
+            "label": "Add",
+            "value": "add"
+          },
+          {
+            "label": "Subtract",
+            "value": "subtract"
+          }
+        ]
+      }
+    },
+    {
+      "name": "date",
+      "meta": {
+        "type": "Text"
+      },
+      "label": "Date",
+      "info": "Leave empty for now, or set a dateTime to use."
+    },
+    {
+      "name": "years",
+      "meta": {
+        "type": "Number",
+        "validations": {
+          "required": false
+        }
+      },
+      "configuration": {
+        "placeholder": "0"
+      },
+      "label": "years"
+    },
+    {
+      "name": "months",
+      "meta": {
+        "type": "Number",
+        "validations": {
+          "required": false
+        }
+      },
+      "configuration": {
+        "placeholder": "0"
+      },
+      "label": "months"
+    },
+    {
+      "name": "weeks",
+      "meta": {
+        "type": "Number",
+        "validations": {
+          "required": false
+        }
+      },
+      "configuration": {
+        "placeholder": "0"
+      },
+      "label": "weeks"
+    },
+    {
+      "name": "days",
+      "meta": {
+        "type": "Number",
+        "validations": {
+          "required": false
+        }
+      },
+      "configuration": {
+        "placeholder": "0"
+      },
+      "label": "Days"
+    },
+    {
+      "name": "as",
+      "label": "as",
+      "info": "Returns the output formatted as YYYY-MM-DD",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}

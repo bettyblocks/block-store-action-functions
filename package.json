@@ -9,6 +9,8 @@
     "test": "jest --coverage --config ./jest.config.js"
   },
   "dependencies": {
+    "moment": "^2.29.4",
+    "moment-timezone": "^0.5.39",
     "templayed": "^0.2.3",
     "xml-js": "^1.6.11"
   },
