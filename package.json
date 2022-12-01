@@ -9,7 +9,6 @@
     "test": "jest --coverage --config ./jest.config.js"
   },
   "dependencies": {
-    "templayed": "^0.2.3",
     "xml-js": "^1.6.11"
   },
   "devDependencies": {
