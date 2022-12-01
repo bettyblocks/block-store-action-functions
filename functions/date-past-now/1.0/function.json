@@ -50,7 +50,7 @@
       }
     },
     {
-      "name": "result",
+      "name": "as",
       "label": "AS",
       "meta": {
         "type": "Output",

@@ -1,17 +1,24 @@
 import moment from 'moment-timezone';
 
 const datePastNow = async ({ timeZone, dateTime }, steps) => {
+  if (!moment(dateTime, 'DD-MM-YYYY', true).isValid()) {
+    throw Error('Date input is invalid');
+  }
+
   const now = moment().tz(timeZone);
-  const ExpiryDateTime = moment(dateTime).tz(timeZone, true);
+  const ExpiryDateTime = moment(dateTime, 'DD-MM-YYYY', true).tz(
+    timeZone,
+    true,
+  );
 
   if (now.isAfter(ExpiryDateTime)) {
     await steps();
     return {
-      result: true,
+      as: true,
     };
   }
   return {
-    result: false,
+    as: false,
   };
 };
 
