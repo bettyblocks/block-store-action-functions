@@ -1,0 +1,113 @@
+{
+  "description": "Calculate a date, time or date with time based on a provided date in text (YYYY-MM-DD hh:mm:ss) or the current date",
+  "label": "Date/Time Offset",
+  "category": "Misc",
+  "icon": {
+    "name": "DateTimeIcon",
+    "color": "yellow"
+  },
+  "options": [
+    {
+      "name": "customStartDate",
+      "label": "Specify your date in YYYY-MM-DD hh:mm:ss notation",
+      "meta": {
+        "type": "Text"
+      }
+    },
+    {
+      "name": "currentDate",
+      "label": "OR use the current date/time ",
+      "meta": {
+        "type": "Boolean"
+      }
+    },
+    {
+      "name": "offsetType",
+      "label": "Offset Type",
+      "meta": {
+        "type": "Select",
+        "validations": {
+          "required": true
+        },
+        "values": [
+          { "label": "Seconds", "value": "ss" },
+          { "label": "Minutes", "value": "mm" },
+          { "label": "Hours", "value": "hh" },
+          { "label": "Days", "value": "DD" },
+          { "label": "Weeks", "value": "WW" },
+          { "label": "Months", "value": "MM" },
+          { "label": "Years", "value": "YYYY" }
+        ]
+      }
+    },
+    {
+      "name": "offset",
+      "label": "offset",
+      "meta": {
+        "type": "Number",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "resultType",
+      "label": "Result type",
+      "meta": {
+        "type": "Select",
+        "validations": {
+          "required": true
+        },
+        "values": [
+          { "label": "Date", "value": "D" },
+          { "label": "Date Time", "value": "DT" },
+          { "label": "Time", "value": "T" },
+          { "label": "Unix Time stamp (epoch)", "value": "UT" }
+        ]
+      }
+    },
+    {
+      "name": "TimeZoneOffset",
+      "label": "UTC timezone offset for your zone (i.e. NL3 = UTC+1, USA2 = UTC-6)",
+      "meta": {
+        "type": "Select",
+        "validations": {
+          "required": true
+        },
+        "values": [
+          { "label": "UTC-8", "value": "-480" },
+          { "label": "UTC-7", "value": "-420" },
+          { "label": "UTC-6", "value": "-360" },
+          { "label": "UTC-5", "value": "-300" },
+          { "label": "UTC-4", "value": "-240" },
+          { "label": "UTC-3", "value": "-180" },
+          { "label": "UTC-2", "value": "-120" },
+          { "label": "UTC-1", "value": "-60" },
+          { "label": "UTC", "value": "0" },
+          { "label": "UTC+1", "value": "60" },
+          { "label": "UTC+2", "value": "120" },
+          { "label": "UTC+3", "value": "180" },
+          { "label": "UTC+4", "value": "240" },
+          { "label": "UTC+5", "value": "300" },
+          { "label": "UTC+6", "value": "360" },
+          { "label": "UTC+7", "value": "420" },
+          { "label": "UTC+8", "value": "480" }
+        ]
+      }
+    },
+    {
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "validations": {
+          "required": true
+        },
+        "output": {
+          "type": "Text"
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}
