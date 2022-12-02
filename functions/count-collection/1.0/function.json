@@ -1,37 +1,36 @@
 {
-  "description": "Count collection",
-  "label": "Count collection up to 200 records",
-  "category": "Misc",
-  "icon": "CreateIcon",
-  "options": [{
-    "meta": {
-      "type": "Collection",
-      "additional": {
-        "model": [
-          "name"
-        ]
-      },
-      "validations": {
-        "required": true
-      }
-    },
-    "name": "collection",
-    "label": "Collection",
-    "info": "The collection you want to count."
+  "description": "Count the amount of records in a collection based on the take. The default take is 50 and the maximum 200.",
+  "label": "Count Collection",
+  "category": "CRUD",
+  "icon": {
+    "name": "DataIcon",
+    "color": "Purple"
   },
-  {
-    "meta": {
-      "type": "Output",
-      "output": {
-        "type": "Number"
+  "options": [
+    {
+      "meta": {
+        "type": "Collection",
+        "validations": {
+          "required": true
+        }
       },
-      "validations": {
-        "required": true
-      }
+      "name": "collection",
+      "label": "Collection",
+      "info": "The collection you want to count"
     },
-    "name": "result",
-    "label": "Result",
-    "info": "The name of the variable you want as the collection value."
-  }],
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Number"
+        },
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "result",
+      "label": "Result"
+    }
+  ],
   "yields": "NONE"
 }
