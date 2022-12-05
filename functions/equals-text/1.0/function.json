@@ -2,7 +2,10 @@
   "description": "An action step that compares two text values and returns a true or false",
   "label": "Equals - text",
   "category": "Misc",
-  "icon": "ConditionIcon",
+  "icon": {
+    "color": "Yellow",
+    "name": "ConditionIcon"
+  },
   "options": [
     {
       "meta": {
@@ -20,12 +23,30 @@
       "meta": {
         "type": "Select",
         "values": [
-          { "label": "Equals", "value": "eq" },
-          { "label": "Not equals", "value": "neq" },
-          { "label": "Contains", "value": "cont" },
-          { "label": "Starts with", "value": "startsWith" },
-          { "label": "Ends with", "value": "endsWith" },
-          { "label": "Regex match", "value": "regMatch" }
+          {
+            "label": "Equals",
+            "value": "eq"
+          },
+          {
+            "label": "Not equals",
+            "value": "neq"
+          },
+          {
+            "label": "Contains",
+            "value": "cont"
+          },
+          {
+            "label": "Starts with",
+            "value": "startsWith"
+          },
+          {
+            "label": "Ends with",
+            "value": "endsWith"
+          },
+          {
+            "label": "Regex match",
+            "value": "regMatch"
+          }
         ]
       },
       "name": "comparator",
