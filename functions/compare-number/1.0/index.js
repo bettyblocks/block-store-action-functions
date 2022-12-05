@@ -1,30 +1,31 @@
-const compareNumber = async ({ leftValue, rightValue, comparator }) => {
+const compareNumber = ({ leftValue, rightValue, comparator }) => {
     let result = false;
 
     switch (comparator) {
         case 'eq':
-            result = leftValue === rightValue
+            result = leftValue === rightValue;
             break;
         case 'neq':
-            result = leftValue !== rightValue
+            result = leftValue !== rightValue;
             break;
         case 'lower':
-            result = leftValue < rightValue
+            result = leftValue < rightValue;
             break;
         case 'lowerEq':
-            result = leftValue <= rightValue
+            result = leftValue <= rightValue;
             break;
         case 'higher':
-            result = leftValue > rightValue
+            result = leftValue > rightValue;
             break;
         case 'higherEq':
-            result = leftValue >= rightValue
+            result = leftValue >= rightValue;
             break;
     }
 
     return {
-        result
+        result,
     };
+
 }
 
 export default compareNumber;

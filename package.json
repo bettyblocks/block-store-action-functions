@@ -2,7 +2,11 @@
   "name": "app-functions",
   "version": "1.0.0",
   "dependencies": {
+    "@babel/preset-env": "^7.20.2",
     "lodash": "^4.17.15"
+  },
+  "scripts": {
+    "test": "jest"
   },
   "private": "true"
 }
