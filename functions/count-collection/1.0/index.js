@@ -1,8 +1,5 @@
-const countCollection = async ({ collection }) => {
-  const { data } = collection;
-  return {
-    result: data.length,
-  };
-};
+const countCollection = async ({ collection: { data } }) => ({
+  result: data.length,
+});
 
 export default countCollection;

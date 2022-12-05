@@ -1,8 +1,11 @@
 {
-  "description": "Transforms all the letters of a string to lowercase or uppercase, changes the first letter of a string to a capital, or transforms a string to a parameter making it a URL-friendly value.",
+  "description": "Make a text value downcased, upcased, capitalized or parameterized.",
   "label": "Transform Text",
-  "category": "Misc",
-  "icon": "LightningIcon",
+  "category": "Text",
+  "icon": {
+    "color": "Orange",
+    "name": "CapitalizeIcon"
+  },
   "options": [
     {
       "meta": {
@@ -16,36 +19,33 @@
       "info": "The value that's going to be transformed"
     },
     {
-      "name": "downcase",
-      "label": "Downcase",
-      "info": "Transforms all characters of a string to lowercase.",
+      "info": "Select the type of transformation. Downcase: Transforms all characters of a string to lowercase. Upcase: Transforms all the letters of a string to uppercase. Capitalize: Transforms the first letter of a string to a capital, everything else is lowercase. Parameterize: Transforms a string to a parameter, making it a URL-friendly value.",
+      "label": "Transformation style",
       "meta": {
-        "type": "Boolean"
-      }
-    },
-    {
-      "name": "capitalize",
-      "label": "Capitalize",
-      "info": "Changes the first letter of a string to a capital.",
-      "meta": {
-        "type": "Boolean"
-      }
-    },
-    {
-      "name": "upcase",
-      "label": "Upcase",
-      "info": "Transforms all the letters of a string to uppercase.",
-      "meta": {
-        "type": "Boolean"
-      }
-    },
-    {
-      "name": "parameterize",
-      "label": "Parameterize",
-      "info": "Transforms a string to a parameter, making it a URL-friendly value.",
-      "meta": {
-        "type": "Boolean"
-      }
+        "type": "Select",
+        "values": [
+          {
+            "label": "Downcase",
+            "value": "downcase"
+          },
+          {
+            "label": "Upcase",
+            "value": "upcase"
+          },
+          {
+            "label": "Capitalize",
+            "value": "capitalize"
+          },
+          {
+            "label": "Parameterize",
+            "value": "parameterize"
+          }
+        ],
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "transformation"
     },
     {
       "name": "result",
