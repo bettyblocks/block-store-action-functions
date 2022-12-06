@@ -64,7 +64,7 @@ describe("Text equals 1.0:", () => {
     const leftValueProcessed = toLower ? leftValue.toLowerCase() : leftValue;
     const rightValueProcessed = toLower ? rightValue.toLowerCase() : rightValue;
 
-    test(`If "${leftValueProcessed}" ${comparators[i]} "${rightValueProcessed}" then return ${expectedResult}`, () => {
+    test(`If "${leftValueProcessed}" ${comparator} "${rightValueProcessed}" then return ${expectedResult}`, () => {
       expect(
         textEquals({
           leftValue: leftValue,
