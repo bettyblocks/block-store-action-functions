@@ -1,5 +1,5 @@
 {
-  "description": "Evaluate a javascript expression (use {{name_of_your_value}} to interpolate values)",
+  "description": "Evaluate a javascript expression (use {{name_of_your_value}} to interpolate values). Warning: You can use this step to execute any Javascript code, be careful and make sure not to use user input data directly!",
   "label": "Expression",
   "category": "Misc",
   "icon": {
