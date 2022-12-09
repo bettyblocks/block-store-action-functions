@@ -1,5 +1,5 @@
 {
-  "description": "Update many records based on a collection variable",
+  "description": "Update many records based on a collection variable. Currently it does not support assigning has_many and has_and_belongs_to_many relations.",
   "label": "Update Many Records",
   "category": "CRUD",
   "icon": {
