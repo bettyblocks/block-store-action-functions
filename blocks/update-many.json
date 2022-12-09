@@ -1,5 +1,5 @@
 {
   "dependencies": [],
   "functions": ["updateMany 1.0"],
-  "includes": []
+  "includes": ["../../utils"]
 }
