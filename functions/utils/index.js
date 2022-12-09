@@ -1,11 +1,6 @@
 import { RelationKind } from './constants';
 
-const isRecord = (value) =>
-  value &&
-  typeof value === 'object' &&
-  !Array.isArray(value) &&
-  Object.keys(value).length > 0 &&
-  value.id !== undefined;
+const isRecord = (value) => value && value.id !== undefined;
 
 const isCollection = (value) => Array.isArray(value) && isRecord(value[0]);
 
