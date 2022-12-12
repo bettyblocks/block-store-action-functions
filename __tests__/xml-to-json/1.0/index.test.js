@@ -1,6 +1,6 @@
 import processXmlToJson from '../../../functions/xml-to-json/1.0';
 
-describe('JSON to XML', () => {
+describe('XML to JSON', () => {
   test('It parsed the XML input to JSON', async () => {
     const { output } = await processXmlToJson({
       input:

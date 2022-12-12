@@ -13,6 +13,16 @@ const userDatabase = {
     city: null,
     tasks: { id: [] },
   }),
+  2: new User(2, {
+    id: 2,
+    firstName: 'Jane',
+    lastName: 'Poe',
+    age: 30,
+    username: 'jane@test.test',
+    password: 'test4321',
+    city: null,
+    tasks: { id: [] },
+  }),
 };
 
 const taskDatabase = {
@@ -46,6 +56,11 @@ const schema = buildSchema(`
     tasks: [Task]
   }
 
+  type ManyUser {
+    results: [User]
+    totalCount: Int!
+  }
+
   type City {
     id: Int!
     name: String!
@@ -62,8 +77,30 @@ const schema = buildSchema(`
     totalCount: Int!
   }
 
+  input UserTasksInput {
+    id: [Int] 
+  }
+
+  input UserInput {
+    firstName: String
+    lastName: String
+    age: Int
+    createdAt: String
+    updatedAt: String
+    city: Int
+    tasks: UserTasksInput
+  }
+
   input IdEquals {
     eq: Int!
+  }
+
+  input IdsIn {
+    in: [Int]
+  }
+
+  input ManyUserFilterInput {
+    id: IdsIn!
   }
 
   input TaskFilterInput {
@@ -75,11 +112,13 @@ const schema = buildSchema(`
   }
 
   type Query {
+    allUser(where: ManyUserFilterInput): ManyUser
     oneTask(where: TaskFilterInput): Task
     allTask(where: TaskFilterInput, take: Int!): ManyTask
   }
 
   type Mutation {
+    updateManyUser(where: ManyUserFilterInput, input: UserInput): User
     deleteManyTask(input: TaskInput): Task
   }
 `);
@@ -92,11 +131,26 @@ const root = {
   }) {
     return taskDatabase[id];
   },
-  allTask({ take }) {
+  allUser({
+    where: {
+      id: { in: ids },
+    },
+  }) {
+    return { results: ids.map((id) => userDatabase[id]) };
+  },
+  allTask({ take = 50 }) {
     return {
       results: Object.values(taskDatabase).slice(0, take),
       totalCount: Object.keys(taskDatabase).length,
     };
+  },
+  updateManyUser({
+    where: {
+      id: { in: ids },
+    },
+    input,
+  }) {
+    ids.map((id) => userDatabase[id].update(input));
   },
   deleteManyTask({ input: { ids } }) {
     const task = taskDatabase[0];

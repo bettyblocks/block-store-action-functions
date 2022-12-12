@@ -32,4 +32,12 @@ describe('Text transform', () => {
     });
     expect(result).toBe('parameterize-me');
   });
+
+  test('It parameterizes a string value', async () => {
+    const { result } = await textTransform({
+      value: 'Default value',
+      transformation: 'invalidValue',
+    });
+    expect(result).toBe('Default value');
+  });
 });
