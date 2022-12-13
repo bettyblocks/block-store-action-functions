@@ -1,0 +1,29 @@
+{
+	"description": "Returns the highest number of an array of numbers.",
+	"label": "Max",
+	"category": "Misc",
+	"icon": { "name": "LightningIcon", "color": "Green" },
+	"options": [
+		{
+			"meta": {
+				"type": "Text"
+			},
+			"name": "array",
+			"label": "Input array",
+			"info": "Input array",
+			"advanced": false
+		},
+		{
+			"meta": {
+				"type": "Output",
+				"output": {
+					"type": "Number"
+				}
+			},
+			"name": "result",
+			"label": "Result",
+			"info": "The result"
+		}
+	],
+	"yields": "NONE"
+}
