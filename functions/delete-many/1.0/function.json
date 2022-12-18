@@ -2,16 +2,19 @@
   "description": "Delete many records based on a collection variable",
   "label": "Delete Many Records",
   "category": "CRUD",
-  "icon": "DeleteIcon",
+  "icon": {
+    "color": "Pink",
+    "name": "TrashIcon"
+  },
   "options": [
     {
       "meta": {
         "type": "Collection",
-        "validations": {
-          "required": true
-        },
         "additional": {
           "model": ["name"]
+        },
+        "validations": {
+          "required": true
         }
       },
       "name": "collection",
