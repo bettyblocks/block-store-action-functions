@@ -77,6 +77,11 @@ const schema = buildSchema(`
     totalCount: Int!
   }
 
+  type DeleteManyTask {
+    id: Int
+    deleteManyTask: [Task]
+  }
+
   input UserTasksInput {
     id: [Int] 
   }
@@ -119,7 +124,7 @@ const schema = buildSchema(`
 
   type Mutation {
     updateManyUser(where: ManyUserFilterInput, input: UserInput): User
-    deleteManyTask(input: TaskInput): Task
+    deleteManyTask(input: TaskInput): DeleteManyTask
   }
 `);
 
@@ -153,13 +158,14 @@ const root = {
     ids.map((id) => userDatabase[id].update(input));
   },
   deleteManyTask({ input: { ids } }) {
-    const task = taskDatabase[0];
+    const deleteManyTask = [];
 
     ids.forEach((id) => {
+      taskDatabase.hasOwnProperty(id) && deleteManyTask.push({ id });
       delete taskDatabase[id];
     });
 
-    return task;
+    return { id: 1, data: { deleteManyTask } };
   },
 };
 
