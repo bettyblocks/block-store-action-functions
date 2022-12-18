@@ -1,0 +1,5 @@
+{
+  "dependencies": [],
+  "functions": ["deleteMany 1.0"],
+  "includes": ["./functions/utils"]
+}
