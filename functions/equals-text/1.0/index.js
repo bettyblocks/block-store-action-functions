@@ -1,5 +1,4 @@
 const equalsText = ({ leftValue, rightValue, comparator, toLower }) => {
-  console.log("🚀 ~ file: index.js:2 ~ equalsText ~ comparator", comparator)
   let result = false;
 
   if (toLower) {
@@ -31,7 +30,6 @@ const equalsText = ({ leftValue, rightValue, comparator, toLower }) => {
       result = regex.test(leftValue);
       break;
     }
-  console.log("🚀 ~ file: index.js:34 ~ equalsText ~ result", result)
 
   return {
     result,
