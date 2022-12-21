@@ -29,7 +29,7 @@
         }
       },
       "name": "result",
-      "label": "Result"
+      "label": "Variable"
     }
   ],
   "yields": "NONE"
