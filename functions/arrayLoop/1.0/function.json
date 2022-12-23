@@ -20,20 +20,47 @@
       "info": "The array you want to loop through."
     },
     {
+      "info": "Choose the type of your output variable",
+      "label": "Output Type",
       "meta": {
-        "type": "Output",
-        "output": {
-          "type": "Record",
-          "model": "collection",
-          "scoped": true
-        },
+        "type": "Select",
+        "values": [
+          {
+            "label": "Text",
+            "value": "text"
+          },
+          {
+            "label": "Number",
+            "value": "number"
+          }
+        ],
         "validations": {
           "required": true
         }
       },
-      "name": "iterator",
-      "label": "Iterator name",
-      "info": "The name for the iterator under which the object of each iteration will be available."
+      "name": "outputType"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text",
+          "scoped": true
+        }
+      },
+      "name": "text",
+      "label": "As Text"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Number",
+          "scoped": true
+        }
+      },
+      "name": "number",
+      "label": "As Number"
     },
     {
       "meta": {
