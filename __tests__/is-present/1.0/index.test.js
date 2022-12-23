@@ -18,6 +18,6 @@ describe('Check if record is present', () => {
 
   test('Check if empty collection is present', async () => {
     const { result } = await isPresent({ anyValue: [] });
-    expect(result).toEqual(false);
+    expect(result).not.toBe(true);
   });
 });
