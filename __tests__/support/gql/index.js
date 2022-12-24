@@ -161,8 +161,9 @@ const root = {
     const deleteManyTask = [];
 
     ids.forEach((id) => {
-      Object.prototype.hasOwnProperty.call(taskDatabase, id) &&
+      if (Object.prototype.hasOwnProperty.call(taskDatabase, id)) {
         deleteManyTask.push({ id });
+      }
       delete taskDatabase[id];
     });
 
