@@ -1,11 +1,11 @@
-# blockstore-action-functions
+# Block store action functions
 
 ## Example config.json
 
+For testing purposes you can publish the functions to your own app by adding your application ID to the `config.json`.
+
 ```
 {
-  "host": "https://speer-nl4.bettyblocks.com",
-  "applicationId": "66d402f9e38a4877ac89c977ddb37cf3",
-  "zone": "nl4"
+  "applicationId": "d5928153304149f7cded5ce4f1afaf32",
 }
 ```

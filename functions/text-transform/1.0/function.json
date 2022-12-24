@@ -1,0 +1,65 @@
+{
+  "description": "Make a text value downcased, upcased, capitalized or parameterized.",
+  "label": "Transform Text",
+  "category": "Text",
+  "icon": {
+    "color": "Orange",
+    "name": "CapitalizeIcon"
+  },
+  "options": [
+    {
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "value",
+      "label": "Text value",
+      "info": "The value that's going to be transformed"
+    },
+    {
+      "info": "Select the type of transformation. Downcase: Transforms all characters of a string to lowercase. Upcase: Transforms all the letters of a string to uppercase. Capitalize: Transforms the first letter of a string to a capital, everything else is lowercase. Parameterize: Transforms a string to a parameter, making it a URL-friendly value.",
+      "label": "Transformation style",
+      "meta": {
+        "type": "Select",
+        "values": [
+          {
+            "label": "Downcase",
+            "value": "downcase"
+          },
+          {
+            "label": "Upcase",
+            "value": "upcase"
+          },
+          {
+            "label": "Capitalize",
+            "value": "capitalize"
+          },
+          {
+            "label": "Parameterize",
+            "value": "parameterize"
+          }
+        ],
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "transformation"
+    },
+    {
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        },
+        "validations": {
+          "required": true
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}
