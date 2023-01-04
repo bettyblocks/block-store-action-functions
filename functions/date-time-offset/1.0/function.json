@@ -67,7 +67,7 @@
       }
     },
     {
-      "name": "TimeZoneOffset",
+      "name": "timeZoneOffset",
       "label": "UTC timezone offset for your zone (i.e. NL3 = UTC+1, USA2 = UTC-6)",
       "meta": {
         "type": "Select",
