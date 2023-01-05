@@ -51,4 +51,37 @@ describe('Expression', () => {
 
     expect(result).toEqual({ [outputType]: 2 });
   });
+
+  test('It respects pipelines', async () => {
+    const outputType = 'text';
+    const result = await expression({
+      expression: '"hello || world"',
+      variables: [],
+      outputType: 'text',
+    });
+
+    expect(result).toEqual({ [outputType]: 'hello || world' });
+  });
+
+  test('It respects interpolating falsy values', async () => {
+    const outputType = 'number';
+    const result = await expression({
+      expression: '{{count}} || 1',
+      variables: [{ key: 'count', value: 0 }],
+      outputType: 'number',
+    });
+
+    expect(result).toEqual({ [outputType]: 1 });
+  });
+
+  test('It handles arrays', async () => {
+    const outputType = 'text';
+    const result = await expression({
+      expression: '"{{#names}}{{.}}, {{/names}}"',
+      variables: [{ key: 'names', value: ['John', 'Jane'] }],
+      outputType: 'text',
+    });
+
+    expect(result).toEqual({ [outputType]: 'John, Jane, ' });
+  });
 });
