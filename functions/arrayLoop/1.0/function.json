@@ -1,0 +1,79 @@
+{
+  "description": "Loops through a given array.",
+  "label": "Array loop",
+  "category": "FLOW",
+  "icon": {
+    "name": "LoopIcon",
+    "color": "Blue"
+  },
+  "options": [
+    {
+      "meta": {
+        "type": "Value",
+        "allowedKinds": ["ARRAY"],
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "array",
+      "label": "Array",
+      "info": "The array you want to loop through."
+    },
+    {
+      "info": "Choose the type of your output variable",
+      "label": "Output Type",
+      "meta": {
+        "type": "Select",
+        "values": [
+          {
+            "label": "Text",
+            "value": "text"
+          },
+          {
+            "label": "Number",
+            "value": "number"
+          }
+        ],
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "outputType"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text",
+          "scoped": true
+        }
+      },
+      "name": "text",
+      "label": "As Text"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Number",
+          "scoped": true
+        }
+      },
+      "name": "number",
+      "label": "As Number"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Number",
+          "scoped": true
+        }
+      },
+      "name": "index",
+      "label": "Index",
+      "info": "The name for the variable under which the current iteration will be available. Starts at 0. For example, in the 1st iteration this variable holds the value 0 and in 10th iteration, this variable holds the value 9."
+    }
+  ],
+  "yields": "ALL"
+}
