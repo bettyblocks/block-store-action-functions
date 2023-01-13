@@ -1,0 +1,55 @@
+{
+  "description": "Update many records based on a collection variable. Currently it does not support assigning has_many and has_and_belongs_to_many relations.",
+  "label": "Update Many Records",
+  "category": "CRUD",
+  "icon": {
+    "color": "Green",
+    "name": "ArrowClockwiseIcon"
+  },
+  "options": [
+    {
+      "meta": {
+        "type": "Collection",
+        "additional": {
+          "model": ["name"]
+        },
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "selectedCollection",
+      "label": "Collection",
+      "info": "The collection you want to update. Note that this collection has a maximum of 200 records."
+    },
+    {
+      "meta": {
+        "type": "PropertyMap",
+        "model": "selectedCollection"
+      },
+      "configuration": {
+        "dependsOn": [
+          {
+            "option": "selectedCollection",
+            "action": "CLEAR"
+          }
+        ]
+      },
+      "name": "mapping",
+      "label": "Value Mapping",
+      "info": "Mapping of values to properties for the updated collection of records. The properties are based on the model from the selected collection."
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Collection",
+          "model": "selectedCollection"
+        }
+      },
+      "name": "as",
+      "label": "As",
+      "info": "The name of the variable you want for the updated collection."
+    }
+  ],
+  "yields": "NONE"
+}
