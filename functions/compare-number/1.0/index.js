@@ -2,9 +2,6 @@ const compareNumber = ({ leftValue, rightValue, comparator }) => {
     let result = false;
 
     switch (comparator) {
-        case 'eq':
-            result = leftValue === rightValue;
-            break;
         case 'neq':
             result = leftValue !== rightValue;
             break;
