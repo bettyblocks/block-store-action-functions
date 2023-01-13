@@ -15,7 +15,3 @@ config.*.json
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-babel.config.js
-jest.config.js
-
