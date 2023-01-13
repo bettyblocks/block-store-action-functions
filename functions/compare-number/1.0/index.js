@@ -1,4 +1,4 @@
-const compareNumber = ({ leftValue, rightValue, comparator }) => {
+const compareNumber = ({ leftValue, rightValue, comparator = "eq"}) => {
     let result = false;
 
     switch (comparator) {
