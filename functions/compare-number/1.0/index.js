@@ -1,4 +1,4 @@
-const compareNumber = ({ leftValue, rightValue, comparator = "eq"}) => {
+const compareNumber = ({ leftValue, rightValue, comparator }) => {
     let result = false;
 
     switch (comparator) {
@@ -19,6 +19,9 @@ const compareNumber = ({ leftValue, rightValue, comparator = "eq"}) => {
             break;
         case 'higherEq':
             result = leftValue >= rightValue;
+            break;
+        default:
+            result = leftValue === rightValue;
             break;
     }
 
