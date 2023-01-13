@@ -1,0 +1,36 @@
+{
+  "description": "(Re)assign a text variable",
+  "label": "(Re)assign Text Variable",
+  "category": "Text",
+  "icon": {
+    "color": "Orange",
+    "name": "TTIcon"
+  },
+  "options": [
+    {
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "value",
+      "label": "Text value",
+      "info": "The value you want to assign"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text",
+          "validations": {
+            "required": true
+          }
+        }
+      },
+      "name": "result",
+      "label": "Variable"
+    }
+  ],
+  "yields": "NONE"
+}
