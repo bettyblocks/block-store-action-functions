@@ -2,7 +2,7 @@
   "description": "Generate UUID",
   "label": "Generate UUID",
   "category": "Misc",
-  "icon": { "color": "Green", "name": "CreateIcon" },
+  "icon": { "color": "Green", "name": "IDIcon" },
   "options": [
     {
       "meta": {
