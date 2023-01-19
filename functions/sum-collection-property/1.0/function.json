@@ -1,0 +1,44 @@
+{
+  "description": "Select a property from a collection and sum the values.",
+  "label": "Sum Collection Property",
+  "category": "Misc",
+  "icon": {
+    "name": "PlusCircle",
+    "color": "Green"
+  },
+  "options": [
+    {
+      "meta": {
+        "type": "Collection",
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "collection",
+      "label": "Collection",
+      "info": "Collection of data"
+    },
+    {
+      "name": "propname",
+      "label": "Property name from Data API which you want to sum",
+      "meta": {
+        "type": "Text"
+      }
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Number"
+        },
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "result",
+      "label": "Result",
+      "info": "The total value of the summed property."
+    }
+  ],
+  "yields": "NONE"
+}
