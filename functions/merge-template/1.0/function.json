@@ -1,0 +1,39 @@
+{
+  "description": "Template text",
+  "label": "Merge Template",
+  "category": "Text Functions",
+  "icon": {
+    "color": "Green",
+    "name": "MergeIcon"
+  },
+  "options": [
+    {
+      "meta": {
+        "type": "MultilineText"
+      },
+      "info": "The template text you want to use to merge with the variables",
+      "name": "templateText",
+      "label": "Template Text"
+    },
+    {
+      "info": "Select all the variables you want to have available in the template with a key",
+      "label": "Template Variables",
+      "meta": {
+        "type": "Map"
+      },
+      "name": "variables"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      },
+      "name": "result",
+      "label": "As",
+      "info": "The resulting text merged with the variables."
+    }
+  ],
+  "yields": "NONE"
+}
