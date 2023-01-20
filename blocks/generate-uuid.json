@@ -1,0 +1,5 @@
+{
+  "dependencies": [],
+  "functions": ["generateUuid 1.0"],
+  "includes": []
+}
