@@ -1,0 +1,46 @@
+{
+  "description": "Encode a string to Base64 or decode Base64 to a string",
+  "label": "Base64 Encode/Decode",
+  "category": "String functions",
+  "icon": {
+    "color": "Blue",
+    "name": "TextBolderIcon"
+  },
+  "options": [
+    {
+      "name": "input",
+      "label": "Input",
+      "meta": {
+        "type": "Text"
+      }
+    },
+    {
+      "name": "action",
+      "label": "Action",
+      "meta": {
+        "type": "Select",
+        "values": [
+          {
+            "label": "Encode",
+            "value": "ENCODE"
+          },
+          {
+            "label": "Decode",
+            "value": "DECODE"
+          }
+        ]
+      }
+    },
+    {
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}
