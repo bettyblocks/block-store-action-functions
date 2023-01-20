@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "date-fns": "^2.29.3",
+    "js-base64": "^3.7.4",
     "xml-js": "^1.6.11"
   },
   "devDependencies": {
