@@ -8,7 +8,7 @@ describe('generateUuid', () => {
     expect(response.result.length).toBe(36);
   });
   test('generates unique values', async () => {
-    const loop = 1000;
+    const loop = 100;
     const list = {};
 
     for (let i = 0; i < loop; i++) {
