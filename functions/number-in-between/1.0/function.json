@@ -1,0 +1,93 @@
+{
+  "description": "Description",
+  "label": "Number In Between",
+  "category": "Misc",
+  "icon": {
+    "name": "ActionsIcon",
+    "color": "Orange"
+  },
+  "options": [{
+    "meta": {
+      "type": "Collection",
+      "validations": {
+        "required": true
+      }
+    },
+    "name": "collection",
+    "label": "Collection",
+    "info": "Collection of records you want to evaluate if the number is between two properties"
+  },
+  {
+    "meta": {
+      "type": "Text",
+      "validations": {
+        "required": true
+      }
+    },
+    "name": "leftProperty",
+    "label": "Left property",
+    "info": "Left property you want to use for the between case"
+  },
+  {
+    "meta": {
+      "type": "Text",
+      "validations": {
+        "required": true
+      }
+    },
+    "name": "rightProperty",
+    "label": "Right property",
+    "info": "Right property you want to use for the between case"
+  },
+  {
+    "meta": {
+      "type": "Number",
+      "validations": {
+        "required": true
+      }
+    },
+    "name": "value",
+    "label": "Value",
+    "info": "Value that should be checked if it is in between two other values"
+  },
+  {
+    "meta": {
+      "type": "Text",
+      "validations": {
+        "required": true
+      }
+    },
+    "name": "returnProperty",
+    "label": "Return property",
+    "info": "Property you want to be returned"
+  },
+  {
+    "meta": {
+      "type": "Output",
+      "output": {
+        "type": "Number"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    "name": "recordId",
+    "label": "Record ID",
+    "info": "Returns the record id"
+  },
+  {
+    "meta": {
+      "type": "Output",
+      "output": {
+        "type": "Text"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    "name": "name",
+    "label": "Name",
+    "info": "Returns the name of the record"
+  }],
+  "yields": "NONE"
+}
