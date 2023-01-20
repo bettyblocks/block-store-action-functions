@@ -1,0 +1,20 @@
+{
+  "description": "Generate UUID",
+  "label": "Generate UUID",
+  "category": "Misc",
+  "icon": { "color": "Green", "name": "IDIcon" },
+  "options": [
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      },
+      "name": "result",
+      "label": "Result",
+      "info": "Generate UUID"
+    }
+  ],
+  "yields": "NONE"
+}
