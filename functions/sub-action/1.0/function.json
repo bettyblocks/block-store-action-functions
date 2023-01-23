@@ -1,0 +1,42 @@
+{
+  "description": "Execute an action",
+  "label": "Sub Action",
+  "category": "Misc",
+  "icon": {
+    "color": "Orange",
+    "name": "LightingIcon"
+  },
+  "options": [
+    {
+      "meta": {
+        "type": "Action",
+        "validations": { "required": true }
+      },
+      "name": "action",
+      "label": "Action",
+      "info": "The (sub) action that needs to be executed"
+    },
+    {
+      "meta": {
+        "type": "InputVariableMap",
+        "action": "action"
+      },
+      "name": "input",
+      "label": "Input Variables",
+      "info": "The input variables passed to the (sub) action"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Inherit",
+          "action": "action"
+        }
+      },
+      "name": "result",
+      "label": "As",
+      "info": "The resulting value of the (sub) action"
+    }
+  ],
+  "yields": "NONE"
+}

@@ -30,8 +30,9 @@
     ]
   },
   "globals": {
-    "gql": "readonly",
     "fetch": "readonly",
+    "gql": "readonly",
+    "runAction": "readonly",
     "smtp": "readonly",
     "storeFile": "readonly"
   }

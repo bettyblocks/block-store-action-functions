@@ -1,31 +1,30 @@
 const compareNumber = ({ leftValue, rightValue, comparator }) => {
-    let result = false;
+  let result = false;
 
-    switch (comparator) {
-        case 'neq':
-            result = leftValue !== rightValue;
-            break;
-        case 'lower':
-            result = leftValue < rightValue;
-            break;
-        case 'lowerEq':
-            result = leftValue <= rightValue;
-            break;
-        case 'higher':
-            result = leftValue > rightValue;
-            break;
-        case 'higherEq':
-            result = leftValue >= rightValue;
-            break;
-        default:
-            result = leftValue === rightValue;
-            break;
-    }
+  switch (comparator) {
+    case 'neq':
+      result = leftValue !== rightValue;
+      break;
+    case 'lower':
+      result = leftValue < rightValue;
+      break;
+    case 'lowerEq':
+      result = leftValue <= rightValue;
+      break;
+    case 'higher':
+      result = leftValue > rightValue;
+      break;
+    case 'higherEq':
+      result = leftValue >= rightValue;
+      break;
+    default:
+      result = leftValue === rightValue;
+      break;
+  }
 
-    return {
-        result,
-    };
-
-}
+  return {
+    result,
+  };
+};
 
 export default compareNumber;
