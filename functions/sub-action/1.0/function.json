@@ -21,6 +21,14 @@
         "type": "InputVariableMap",
         "action": "action"
       },
+      "configuration": {
+        "dependsOn": [
+          {
+            "option": "action",
+            "action": "CLEAR"
+          }
+        ]
+      },
       "name": "input",
       "label": "Input Variables",
       "info": "The input variables passed to the (sub) action"
