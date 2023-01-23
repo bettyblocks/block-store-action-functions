@@ -21,7 +21,7 @@
         "type": "InputVariableMap",
         "action": "action"
       },
-      "name": "inputVariables",
+      "name": "input",
       "label": "Input Variables",
       "info": "The input variables passed to the (sub) action"
     },

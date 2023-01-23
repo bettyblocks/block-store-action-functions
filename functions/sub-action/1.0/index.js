@@ -1,5 +1,5 @@
-const subAction = async ({ action: id, inputVariables }) => ({
-  result: await runAction({ id, input: inputVariables }),
+const subAction = async ({ action: id, input }) => ({
+  result: await runAction({ id, input }),
 });
 
 export default subAction;
