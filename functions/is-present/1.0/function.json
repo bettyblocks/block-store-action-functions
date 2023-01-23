@@ -1,0 +1,38 @@
+{
+  "description": "Checks if any given value is present and returns a checkbox value that for example can be used in the condition step.",
+  "label": "Is present",
+  "category": "Flow",
+  "icon": {
+    "color": "Green",
+    "name": "CheckboxLineIcon"
+  },
+  "options": [
+    {
+      "meta": {
+        "type": "Value",
+        "allowedKinds": [],
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "anyValue",
+      "label": "Value",
+      "info": "Any value you want to know if it is present or not."
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Boolean"
+        },
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "result",
+      "label": "Result",
+      "info": "The name of the variable you want as the checkbox value, can be used in conditions."
+    }
+  ],
+  "yields": "NONE"
+}
