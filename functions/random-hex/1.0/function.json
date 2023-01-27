@@ -1,0 +1,29 @@
+{
+  "description": "Description",
+  "label": "Random Hex",
+  "category": "String Functions",
+  "icon": {
+    "name": "QuestionIcon",
+    "color": "Blue"
+  },
+  "options": [{
+    "meta": {
+      "type": "Number"
+    },
+    "name": "size",
+    "label": "Size",
+    "info": "The length of the result string",
+    "advanced": false    
+  },{
+    "meta": {
+      "type": "Output",
+      "output": {
+        "type": "Text"
+      }
+    },
+    "name": "result",
+    "label": "Result",
+    "info": "The result as the concatenated string"
+  }],
+  "yields": "NONE"
+}
