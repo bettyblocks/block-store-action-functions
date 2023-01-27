@@ -8,7 +8,12 @@
   },
   "options": [{
     "meta": {
-      "type": "Number"
+      "type": "Number",
+      "default": 8,
+      "validations": {
+        "required": true,
+        "min": 1
+      }
     },
     "name": "size",
     "label": "Size",
