@@ -2,7 +2,10 @@
   "description": "Description",
   "label": "Compare Number",
   "category": "Misc",
-  "icon": "ConditionIcon",
+  "icon": {
+    "name": "ConditionIcon",
+    "color": "Yellow"
+  },
   "options": [
     {
       "meta": {
@@ -20,7 +23,7 @@
           { "name": "eq", "label": "Equals" },
           { "name": "neq", "label": "Not Equals" },
           { "name": "lower", "label": "Lower than" },
-          { "name": "lowerEq", "label": "Lower than or equal to"},
+          { "name": "lowerEq", "label": "Lower than or equal to" },
           { "name": "higher", "label": "Higher then" },
           { "name": "higherEq", "label": "Higher then or equal to" }
         ]
@@ -28,7 +31,7 @@
       "name": "comparator",
       "label": "Comparator",
       "info": "Which type of comparisson is applied to the given values",
-      "advanced": false     
+      "advanced": false
     },
     {
       "meta": {
