@@ -1,0 +1,5 @@
+{
+  "dependencies": ["date-fns"],
+  "functions": ["dateTimeOffset 1.0"],
+  "includes": []
+}
