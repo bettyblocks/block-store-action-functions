@@ -49,4 +49,30 @@ describe('Number in between', () => {
     expect(recordId).toBe(3);
     expect(name).toBe('Objective significantly failed');
   });
+
+  test('it will return an error when there is no data present', async () => {
+    await expect(
+      numberInBetween({
+        collection: { data: [] },
+        leftProperty: 'from',
+        rightProperty: 'till',
+        value: '0',
+        returnProperty: 'name',
+      }),
+    ).rejects.toThrow(
+      'The collection is empty. Please make sure there is data present in the collection.',
+    );
+  });
+
+  test('it will return an error when there is no result present', async () => {
+    await expect(
+      numberInBetween({
+        collection,
+        leftProperty: 'from',
+        rightProperty: 'till',
+        value: '999',
+        returnProperty: 'name',
+      }),
+    ).rejects.toThrow('No record found where the value is in between.');
+  });
 });
