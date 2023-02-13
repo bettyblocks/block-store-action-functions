@@ -143,6 +143,19 @@ describe('Date Time Offset', () => {
     const { result } = await dateTimeOffset(testData);
     expect(result).toMatch('2023-01-01 00:00:00');
   });
+  
+  test('return timestamp for 5 seconds added to 16409916720 for UTC+1 zone', async () => {
+    const testData = {
+      currentDate: false,
+      customStartDate: '2022-01-01 00:00:00',
+      offsetType: 'ss',
+      offset: '120',
+      resultType: 'UT',
+      timeZoneOffset: '60',
+    };
+    const { result } = await dateTimeOffset(testData);
+    expect(result).toBe(1640991720);
+  });
 
   test('return invalid offset type', async () => {
     const testData = {
