@@ -7,6 +7,7 @@ import {
   addMonths,
   addYears,
   format,
+  getUnixTime,
   parseISO,
   isValid,
 } from 'date-fns';
@@ -40,6 +41,8 @@ const formatDate = (resultType, calculatedOffset) => {
       return format(calculatedOffset, 'yyyy-MM-dd HH:mm:ss');
     case 'T':
       return format(calculatedOffset, 'HH:mm:ss');
+    case 'UT':
+      return getUnixTime(calculatedOffset);
     default:
       return 'Incorrect formatting type';
   }
