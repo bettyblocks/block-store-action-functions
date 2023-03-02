@@ -32,6 +32,7 @@
           "required": true
         }
       },
+      "info": "Select the model for which you want to generate the PDF",
       "name": "model",
       "label": "Model"
     },
@@ -55,6 +56,7 @@
           }
         ]
       },
+      "info": "Select the corresponding property, for the purpose of file validation",
       "name": "property",
       "label": "Property"
     },
@@ -73,6 +75,9 @@
         "type": "Output",
         "output": {
           "type": "Text"
+        },
+        "validations": {
+          "required": true
         }
       },
       "info": "The file reference",
