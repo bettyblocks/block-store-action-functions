@@ -1,4 +1,4 @@
-import templayed from './templayed';
+import templayed from '../../utils/templayed';
 
 const expression = async ({ expression: expres, variables, outputType }) => {
   const variableMap = variables.reduce(
