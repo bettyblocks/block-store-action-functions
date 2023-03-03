@@ -1,0 +1,9 @@
+{
+  "dependencies": [],
+  "functions": [
+    "generatePdf 1.0"
+  ],
+  "includes": [
+    "./functions/utils"
+  ]
+}
