@@ -5,7 +5,7 @@ const generatePdf = async ({
   fileName,
   model: { name: modelName },
   property: [{ name: propertyName }],
-  variables,
+  variables = [],
 }) => {
   const variableMap = variables.reduce(
     (previousValue, { key, value }) => ({
