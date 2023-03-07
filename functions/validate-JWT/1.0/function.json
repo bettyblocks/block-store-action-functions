@@ -1,0 +1,39 @@
+{
+  "description": "Description",
+  "label": "Validate JWT",
+  "category": "Security",
+  "icon": { 
+    "name": "CheckCircleIcon", 
+    "color": "Green"
+  },
+  "options": [
+    {
+      "meta": {
+        "type": "Text"
+      },
+      "name": "token",
+      "label": "JWT token",
+      "info": "JWT to validate"
+    },
+    {
+      "meta": {
+        "type": "Text"
+      },
+      "name": "secret",
+      "label": "Secret",
+      "info": "Secret to verify"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Boolean"
+        }
+      },
+      "name": "isValidJwt",
+      "label": "Is valid JWT",
+      "info": "Valdiation result of JWT"
+    }
+  ],
+  "yields": "NONE"
+}

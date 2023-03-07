@@ -1,0 +1,5 @@
+{
+  "dependencies": ["js-base64", "jssha"],
+  "functions": ["createJWT 1.0", "validateJWT 1.0"],
+  "includes": ["./functions/utils/JWT"]
+}

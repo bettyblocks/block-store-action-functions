@@ -1,0 +1,47 @@
+{
+  "description": "Create JWT",
+  "label": "Create JWT",
+  "category": "Security",
+  "icon": { 
+    "name": "CreateIcon", 
+    "color": "Green"
+  },
+  "options": [
+    {
+      "meta": {
+        "type": "Text"
+      },
+      "name": "userName",
+      "label": "User name",
+      "info": "User name"
+    },
+    {
+      "meta": {
+        "type": "Number"
+      },
+      "name": "expiresIn",
+      "label": "Expires in",
+      "info": "Number of seconds for JWT expiration"
+    },
+     {
+      "meta": {
+        "type": "Text"
+      },
+      "name": "secret",
+      "label": "Secret",
+      "info": "Secret"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      },
+      "name": "JWT",
+      "label": "JWT",
+      "info": "JWT"
+    }
+  ],
+  "yields": "NONE"
+}
