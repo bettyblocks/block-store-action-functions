@@ -28,14 +28,12 @@ export default class JWT {
   }
 
   sign(secret) {
-    console.log('sign secret= ', secret);
     const header = this.header.alg || 'HS256';
     const isHmac = header.startsWith('H');
     const isSha = header.startsWith(isHmac ? 'HS' : 'S');
     const hasSecret = !!secret;
 
     if (isHmac && isSha && !hasSecret) {
-      console.log('isHmac, isSha, hasSecret', isHmac, isSha, hasSecret);
       throw new Error('Hmac signage needs a valid secret');
     }
 

@@ -3,7 +3,7 @@
   "label": "Validate JWT",
   "category": "Security",
   "icon": { 
-    "name": "CheckCircleIcon", 
+    "name": "CreateIcon", 
     "color": "Green"
   },
   "options": [

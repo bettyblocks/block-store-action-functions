@@ -6,9 +6,9 @@ describe('Validate JWT', () => {
     const userName = 'testo@testerditest.tst';
     const expiresIn = 3600;
     const secret = 'This is a secret!';
-    const token = await createJWT(userName, expiresIn, secret);
+    const { JWT } = await createJWT({ userName, expiresIn, secret });
 
-    const isValidJwt = await validateJWT(token, secret);
+    const { isValidJwt } = await validateJWT({ token: JWT, secret });
     expect(isValidJwt).toBe(true);
   });
 
@@ -16,9 +16,9 @@ describe('Validate JWT', () => {
     const userName = 'testo@testerditest.tst';
     const expiresIn = 0.000001;
     const secret = 'This is a secret!';
-    const token = await createJWT(userName, expiresIn, secret);
+    const { JWT } = await createJWT({ userName, expiresIn, secret });
 
-    const isValidJwt = await validateJWT(token, secret);
+    const { isValidJwt } = await validateJWT({ token: JWT, secret });
     expect(isValidJwt).toBe(false);
   });
 
@@ -26,10 +26,17 @@ describe('Validate JWT', () => {
     const userName = 'testo@testerditest.tst';
     const expiresIn = 3600;
     const incorrectSecret = 'This is an incorrect secret!';
-    const token = await createJWT(userName, expiresIn, incorrectSecret);
+    const { JWT } = await createJWT({
+      userName,
+      expiresIn,
+      secret: incorrectSecret,
+    });
     const correctSecret = 'This should have been the secret!';
 
-    const isValidJwt = await validateJWT(token, correctSecret);
+    const { isValidJwt } = await validateJWT({
+      token: JWT,
+      secret: correctSecret,
+    });
     expect(isValidJwt).toBe(false);
   });
 });

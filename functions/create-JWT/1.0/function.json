@@ -23,7 +23,7 @@
       "label": "Expires in",
       "info": "Number of seconds for JWT expiration"
     },
-     {
+    {
       "meta": {
         "type": "Text"
       },

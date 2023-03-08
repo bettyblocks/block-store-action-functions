@@ -1,6 +1,6 @@
 import JWT from '../../utils/JWT';
 
-const validateJWT = async (token, secret) => {
+const validateJWT = async ({ token, secret }) => {
   const decodedJwt = JWT.fromSerialized(token);
 
   // Is token expired?
@@ -14,7 +14,7 @@ const validateJWT = async (token, secret) => {
 
   const isValidJwt = !isExpired && isCorrectSecret;
 
-  return isValidJwt;
+  return { isValidJwt };
 };
 
 export default validateJWT;
