@@ -1,0 +1,31 @@
+{
+  "description": "Get payload from JWT",
+  "label": "Get JWT payload",
+  "category": "Security",
+  "icon": { "color": "Orange", "name": "DownIcon" },
+  "options": [
+    {
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "token",
+      "label": "JWT token",
+      "info": "JWT to get the payload from"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Object"
+        }
+      },
+      "name": "jwtPayload",
+      "label": "Payload object",
+      "info": "The payload object from the JWT"
+    }
+  ],
+  "yields": "NONE"
+}

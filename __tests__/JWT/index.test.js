@@ -10,12 +10,11 @@ describe('JWT', () => {
     expect(jwt.isExpired).toBe(true);
   });
 
-  test('Create Expiring JWT', () => {
-    const emptyObject = {};
+  test('Create JWT with expiration', () => {
     const jwt = new JWT();
     jwt.expiresIn = 5;
     expect(jwt.header.alg).toBe('HS256');
-    expect(jwt.payload).not.toEqual(emptyObject);
+    expect(jwt.payload).toMatchObject({ exp: expect.any(Number) });
     expect(jwt.signage).toBe('');
     expect(jwt.isExpired).toBe(false);
   });

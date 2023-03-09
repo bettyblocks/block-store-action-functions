@@ -1,8 +1,12 @@
 import JWT from '../../utils/JWT';
 
-const createJWT = async ({ userName, expiresIn, secret }) => {
+const createJWT = async ({ payloadVariables, expiresIn, secret }) => {
+  const payload = {};
+  payloadVariables.forEach((item) => {
+    payload[item.key] = item.value;
+  });
   const jwt = new JWT();
-  jwt.payload = { userName };
+  jwt.payload = payload;
   jwt.expiresIn = expiresIn;
   jwt.sign(secret);
 

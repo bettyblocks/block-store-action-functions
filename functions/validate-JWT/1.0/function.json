@@ -1,11 +1,8 @@
 {
-  "description": "Description",
+  "description": "Check if the JWT is not expired and secret is correct",
   "label": "Validate JWT",
   "category": "Security",
-  "icon": { 
-    "name": "CreateIcon", 
-    "color": "Green"
-  },
+  "icon": { "color":"Green", "name":"CheckCircleIcon" },
   "options": [
     {
       "meta": {

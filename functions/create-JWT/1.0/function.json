@@ -2,34 +2,37 @@
   "description": "Create JWT",
   "label": "Create JWT",
   "category": "Security",
-  "icon": { 
-    "name": "CreateIcon", 
-    "color": "Green"
-  },
+  "icon": { "color":"Green", "name":"PlusIcon" },
   "options": [
     {
       "meta": {
-        "type": "Text"
+        "type": "Map"
       },
-      "name": "userName",
-      "label": "User name",
-      "info": "User name"
+      "name": "payloadVariables",
+      "label": "Payload variables",
+      "info": "Key value pairs for the payload object containing for example a userName"
     },
     {
       "meta": {
-        "type": "Number"
+        "type": "Number",
+        "validations": {
+          "required": true
+        }
       },
       "name": "expiresIn",
       "label": "Expires in",
-      "info": "Number of seconds for JWT expiration"
+      "info": "Number of seconds for JWT expiration (will be added to the payload)"
     },
     {
       "meta": {
-        "type": "Text"
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
       },
       "name": "secret",
       "label": "Secret",
-      "info": "Secret"
+      "info": "Secret used as signage"
     },
     {
       "meta": {
