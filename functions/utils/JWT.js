@@ -58,10 +58,6 @@ export default class JWT {
     return (this.payload.exp || 0) < Date.now();
   }
 
-  get payload() {
-    return this.payload;
-  }
-
   get serialized() {
     return this.#_serialized;
   }
