@@ -1,10 +1,10 @@
-import JWT from '../../utils/JWT';
+import JWT from '../../utils/jwt';
 
-const getJWTPayload = async ({ token }) => {
+const getJwtPayload = async ({ token }) => {
   const decodedJwt = JWT.fromSerialized(token);
 
   const { payload } = decodedJwt;
   return { jwtPayload: payload };
 };
 
-export default getJWTPayload;
+export default getJwtPayload;

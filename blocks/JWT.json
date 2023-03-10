@@ -1,5 +1,5 @@
 {
   "dependencies": ["js-base64", "jssha"],
-  "functions": ["createJWT 1.0", "validateJWT 1.0", "getJWTPayload 1.0"],
-  "includes": ["./functions/utils/JWT"]
+  "functions": ["createJwt 1.0", "validateJwt 1.0", "getJwtPayload 1.0"],
+  "includes": ["./functions/utils/jwt.js"]
 }

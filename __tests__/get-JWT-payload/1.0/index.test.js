@@ -1,5 +1,5 @@
-import createJWT from '../../../functions/create-JWT/1.0';
-import getJWTPayload from '../../../functions/get-JWT-payload/1.0';
+import createJwt from '../../../functions/create-jwt/1.0';
+import getJwtPayload from '../../../functions/get-jwt-payload/1.0';
 
 describe('Get JWT payload', () => {
   test('It returns payload containing custom variables', async () => {
@@ -9,9 +9,9 @@ describe('Get JWT payload', () => {
     ];
     const expiresIn = 3600;
     const secret = 'This is a secret!';
-    const { JWT } = await createJWT({ payloadVariables, expiresIn, secret });
+    const { JWT } = await createJwt({ payloadVariables, expiresIn, secret });
 
-    const { jwtPayload } = await getJWTPayload({ token: JWT });
+    const { jwtPayload } = await getJwtPayload({ token: JWT });
     expect(jwtPayload).toMatchObject({
       userName: 'testo@testerditest.tst',
       something: 'else',
@@ -23,9 +23,9 @@ describe('Get JWT payload', () => {
     const payloadVariables = [];
     const expiresIn = 3600;
     const secret = 'This is a secret!';
-    const { JWT } = await createJWT({ payloadVariables, expiresIn, secret });
+    const { JWT } = await createJwt({ payloadVariables, expiresIn, secret });
 
-    const { jwtPayload } = await getJWTPayload({ token: JWT });
+    const { jwtPayload } = await getJwtPayload({ token: JWT });
     expect(jwtPayload).toMatchObject({ exp: expect.any(Number) });
   });
 });

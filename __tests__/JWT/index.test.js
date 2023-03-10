@@ -1,4 +1,4 @@
-import JWT from '../../functions/utils/JWT';
+import JWT from '../../functions/utils/jwt';
 
 describe('JWT', () => {
   test('Create JWT', () => {

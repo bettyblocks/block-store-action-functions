@@ -1,6 +1,6 @@
-import JWT from '../../utils/JWT';
+import JWT from '../../utils/jwt';
 
-const createJWT = async ({ payloadVariables, expiresIn, secret }) => {
+const createJwt = async ({ payloadVariables, expiresIn, secret }) => {
   const payload = {};
   payloadVariables.forEach((item) => {
     payload[item.key] = item.value;
@@ -13,4 +13,4 @@ const createJWT = async ({ payloadVariables, expiresIn, secret }) => {
   return { JWT: jwt.serialized };
 };
 
-export default createJWT;
+export default createJwt;

@@ -1,5 +1,5 @@
-import validateJWT from '../../../functions/validate-JWT/1.0';
-import createJWT from '../../../functions/create-JWT/1.0';
+import validateJwt from '../../../functions/validate-jwt/1.0';
+import createJwt from '../../../functions/create-jwt/1.0';
 
 describe('Validate JWT', () => {
   test('Token is valid', async () => {
@@ -8,9 +8,9 @@ describe('Validate JWT', () => {
     ];
     const expiresIn = 3600;
     const secret = 'This is a secret!';
-    const { JWT } = await createJWT({ payloadVariables, expiresIn, secret });
+    const { JWT } = await createJwt({ payloadVariables, expiresIn, secret });
 
-    const { isValidJwt } = await validateJWT({ token: JWT, secret });
+    const { isValidJwt } = await validateJwt({ token: JWT, secret });
     expect(isValidJwt).toBe(true);
   });
 
@@ -20,9 +20,9 @@ describe('Validate JWT', () => {
     ];
     const expiresIn = -3600;
     const secret = 'This is a secret!';
-    const { JWT } = await createJWT({ payloadVariables, expiresIn, secret });
+    const { JWT } = await createJwt({ payloadVariables, expiresIn, secret });
 
-    const { isValidJwt } = await validateJWT({ token: JWT, secret });
+    const { isValidJwt } = await validateJwt({ token: JWT, secret });
     expect(isValidJwt).toBe(false);
   });
 
@@ -32,14 +32,14 @@ describe('Validate JWT', () => {
     ];
     const expiresIn = 3600;
     const incorrectSecret = 'This is an incorrect secret!';
-    const { JWT } = await createJWT({
+    const { JWT } = await createJwt({
       payloadVariables,
       expiresIn,
       secret: incorrectSecret,
     });
     const correctSecret = 'This should have been the secret!';
 
-    const { isValidJwt } = await validateJWT({
+    const { isValidJwt } = await validateJwt({
       token: JWT,
       secret: correctSecret,
     });
