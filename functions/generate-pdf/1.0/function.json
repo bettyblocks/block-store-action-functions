@@ -1,5 +1,5 @@
 {
-  "description": "Generate a PDF based on HTML using Prince 12.5",
+  "description": "Generate a PDF based on HTML and CSS",
   "label": "Generate PDF",
   "category": "Misc",
   "icon": {
