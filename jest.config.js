@@ -3,6 +3,7 @@ module.exports = {
   collectCoverage: true,
   collectCoverageFrom: [
     'functions/**/*.js',
+    '!functions/liquid/**/liquid.min.js',
     '!functions/expression/**/templayed.js',
   ],
   coveragePathIgnorePatterns: ['/node_modules/'],
