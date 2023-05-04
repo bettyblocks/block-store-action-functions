@@ -1,0 +1,5 @@
+{
+  "dependencies": ["lodash.groupby"],
+  "functions": ["liquid 1.0"],
+  "includes": []
+}
