@@ -2,55 +2,6 @@ import { RelationKind } from './constants';
 
 const isRecord = (value) => value && value.id !== undefined;
 
-const isCollection = (value) => Array.isArray(value) && isRecord(value[0]);
-
-const parseBelongsTo = (name, value) => {
-  if (isRecord(value)) {
-    const keys = Object.keys(value);
-    return `${name} {
-      ${keys.map((key) => key).join('\n')}
-    }`;
-  }
-
-  return `${name} {
-    id\n
-  }`;
-};
-
-const parseHasManyAndHasAndBelongsToMany = (name, value) => {
-  if (isCollection(value)) {
-    const keys = Object.keys(value[0]);
-    return `${name} {
-      ${keys.map((key) => key).join('\n')}
-    }`;
-  }
-
-  return `${name} {
-    id\n
-  }`;
-};
-
-const getQueryKeys = (properties) =>
-  properties
-    .map((property) => {
-      const {
-        key: [{ kind, name }],
-        value,
-      } = property;
-
-      switch (kind) {
-        case RelationKind.BELONGS_TO:
-          return parseBelongsTo(name, value);
-        case RelationKind.HAS_MANY:
-        case RelationKind.HAS_AND_BELONGS_TO_MANY:
-          return parseHasManyAndHasAndBelongsToMany(name, value);
-
-        default:
-          return name;
-      }
-    })
-    .join('\n');
-
 const belongsToValue = (value) => (isRecord(value) ? value.id : value);
 
 const hasManyOrHasAndBelongsToManyValue = (value) => {
@@ -83,15 +34,16 @@ export const parseAssignedProperties = (properties) =>
     };
   }, {});
 
-export const fetchRecords = async (modelName, ids, properties = []) => {
+export const fetchRecords = async (modelName, ids, fragment = {}) => {
   const queryName = `all${modelName}`;
+  const { name, gql: fragmentGql } = fragment;
 
   const query = `
+   ${fragmentGql || ''}
     query($where: Many${modelName}FilterInput) {
       ${queryName}(where: $where) {
         results {
-          id
-          ${getQueryKeys(properties)}
+          ${fragmentGql ? `...${name}` : 'id'}
         }
       }
     }
@@ -108,4 +60,36 @@ export const fetchRecords = async (modelName, ids, properties = []) => {
   } = data;
 
   return records;
+};
+
+export const fetchRecord = async (modelName, id, fragment = {}) => {
+  const queryName = `one${modelName}`;
+  const { name, gql: fragmentGql } = fragment;
+
+  const query = `
+  ${fragmentGql || ''}
+  query($where: ${modelName}FilterInput) {
+    ${queryName}(where: $where) {
+      ${fragmentGql ? `...${name}` : 'id'}
+    }
+  }
+`;
+
+  const { data, errors } = await gql(query, { where: { id: { eq: id } } });
+
+  if (errors) {
+    throw new Error(errors);
+  }
+
+  const { [queryName]: record } = data;
+
+  return record;
+};
+
+export const validatesToValidationSets = (validate) => {
+  if (validate === false) {
+    return ['empty'];
+  }
+
+  return ['default'];
 };
