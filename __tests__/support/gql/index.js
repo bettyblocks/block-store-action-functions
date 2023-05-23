@@ -95,6 +95,10 @@ const schema = buildSchema(`
     eq: Int!
   }
 
+  input UserFilterInput {
+    id: IdEquals!
+  }
+
   input IdsIn {
     in: [Int]
   }
@@ -115,11 +119,13 @@ const schema = buildSchema(`
     allUser(where: ManyUserFilterInput): ManyUser
     oneTask(where: TaskFilterInput): Task
     allTask(where: TaskFilterInput, take: Int!): ManyTask
+    oneUser(where: UserFilterInput): User
   }
 
   type Mutation {
     updateManyUser(where: ManyUserFilterInput, input: UserInput): User
     deleteManyTask(input: TaskInput): Task
+    upsertUser(input: UserInput, uniqueBy: [String], validationSets: [String]): User
   }
 `);
 
@@ -144,6 +150,13 @@ const root = {
       totalCount: Object.keys(taskDatabase).length,
     };
   },
+  oneUser({
+    where: {
+      id: { eq: id },
+    },
+  }) {
+    return userDatabase[id];
+  },
   updateManyUser({
     where: {
       id: { in: ids },
@@ -151,6 +164,29 @@ const root = {
     input,
   }) {
     ids.map((id) => userDatabase[id].update(input));
+  },
+  upsertUser({ input, uniqueBy, validationSets }) {
+    const id = Math.floor((Math.random() + 1) * 100);
+
+    if (input.firstName === 'Pete') {
+      if (validationSets[0] !== 'empty') {
+        throw new Error('firstName should be John');
+      }
+    }
+
+    const users = Object.values(userDatabase).filter(
+      (user) => user[uniqueBy] === input[uniqueBy],
+    );
+
+    if (users.length > 0) {
+      return users[0].update(input);
+    }
+
+    userDatabase[id] = new User(id, input);
+
+    return {
+      id,
+    };
   },
   deleteManyTask({ input: { ids } }) {
     const task = taskDatabase[0];
