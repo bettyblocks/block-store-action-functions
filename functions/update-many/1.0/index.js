@@ -7,6 +7,10 @@ const updateMany = async ({
   },
   mapping,
 }) => {
+  const fragment = await parseToGqlFragment({
+    propertyMap: mapping,
+    modelName,
+  });
   const mutationName = `updateMany${modelName}`;
   const assignProperties = parseAssignedProperties(mapping);
   const ids = data.map((item) => item.id);
@@ -27,7 +31,7 @@ const updateMany = async ({
     throw errors;
   }
 
-  const updatedRecords = await fetchRecords(modelName, ids, mapping);
+  const updatedRecords = await fetchRecords(modelName, ids, fragment);
 
   return {
     as: updatedRecords,

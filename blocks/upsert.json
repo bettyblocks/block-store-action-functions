@@ -1,0 +1,5 @@
+{
+  "dependencies": [],
+  "functions": ["createOrUpdateRecord 1.0"],
+  "includes": ["./functions/utils"]
+}
