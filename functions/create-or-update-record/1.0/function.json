@@ -37,7 +37,7 @@
     },
     {
       "meta": {
-        "allowedKinds": ["INTEGER", "STRING", "SERIAL", "TEXT"],
+        "allowedKinds": ["INTEGER", "STRING", "TEXT"],
         "type": "Property",
         "model": "model",
         "validations": {
