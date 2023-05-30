@@ -24,7 +24,7 @@ const createOrUpdateRecord = async ({
   const mutationName = `upsert${modelName}`;
 
   const mutation = `
-    mutation($input: ${modelName}Input, $uniqueBy: [String], $validationSets: [String]) {
+    mutation($input: ${modelName}Input, $uniqueBy: [String!]!, $validationSets: [String]) {
       ${mutationName}(input: $input, uniqueBy: $uniqueBy, validationSets: $validationSets) {
         id
       }
