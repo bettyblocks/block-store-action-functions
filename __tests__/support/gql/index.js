@@ -125,7 +125,7 @@ const schema = buildSchema(`
   type Mutation {
     updateManyUser(where: ManyUserFilterInput, input: UserInput): User
     deleteManyTask(input: TaskInput): Task
-    upsertUser(input: UserInput, uniqueBy: [String], validationSets: [String]): User
+    upsertUser(input: UserInput, uniqueBy: [String!]!, validationSets: [String]): User
   }
 `);
 
