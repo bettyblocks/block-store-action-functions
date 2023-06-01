@@ -1,0 +1,10 @@
+{
+  "description": "Capture GQL mutations and mass execute them all at once",
+  "label": "Mass Mutate",
+  "category": "CRUD",
+  "icon": {
+    "name": "DataIcon",
+    "color": "Purple"
+  },
+  "yields": "ALL"
+}
