@@ -1,43 +1,40 @@
-import switchText from '../../../functions/switch-text/1.0/index.js';
-
+import switchText from '../../../functions/switch-text/1.0/index';
 // The first test case checks if the function returns the expected value when the input matches a case.
 // The second test case verifies that the function returns the input itself when it doesn't match any case.
 // The third test case ensures that the function returns the defaultCase value when no matches are found.
 
 describe('switchText', () => {
-    test('should return the corresponding value if input matches a case', async () => {
-        const input = 'firstName';
-        const cases = [{ key: 'firstName', value: 'Betty' }];
-        const defaultCase = '';
+  test('should return the corresponding value if input matches a case', async () => {
+    const input = 'firstName';
+    const cases = [{ key: 'firstName', value: 'Betty' }];
+    const defaultCase = '';
+    const expectedResult = { result: 'Betty' };
+    const result = await switchText({ input, cases, defaultCase });
 
-        const expectedResult = { result: 'Betty' };
+    expect(result).toEqual(expectedResult);
+  });
 
-        const result = await switchText({ input, cases, defaultCase });
+  test('should return the input if it does not match any case', async () => {
+    const input = 'lastName';
+    const cases = [{ key: 'firstName', value: 'Betty' }];
+    const defaultCase = '';
 
-        expect(result).toEqual(expectedResult);
-    });
+    const expectedResult = { result: '' };
 
-    test('should return the input if it does not match any case', async () => {
-        const input = 'lastName';
-        const cases = [{ key: 'firstName', value: 'Betty' }];
-        const defaultCase = '';
+    const result = await switchText({ input, cases, defaultCase });
 
-        const expectedResult = { result: '' };
+    expect(result).toEqual(expectedResult);
+  });
 
-        const result = await switchText({ input, cases, defaultCase });
+  test('should return the defaultCase if no matches found', async () => {
+    const input = 'lastName';
+    const cases = [{ key: 'firstName', value: 'Betty' }];
+    const defaultCase = 'No match found';
 
-        expect(result).toEqual(expectedResult);
-    });
+    const expectedResult = { result: 'No match found' };
 
-    test('should return the defaultCase if no matches found', async () => {
-        const input = 'lastName';
-        const cases = [{ key: 'firstName', value: 'Betty' }];
-        const defaultCase = 'No match found';
+    const result = await switchText({ input, cases, defaultCase });
 
-        const expectedResult = { result: 'No match found' };
-
-        const result = await switchText({ input, cases, defaultCase });
-
-        expect(result).toEqual(expectedResult);
-    });
+    expect(result).toEqual(expectedResult);
+  });
 });
