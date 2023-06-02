@@ -1,0 +1,57 @@
+{
+  "description": "A 'switch' function which compares the input against the cases. If it matches it returns the value of the key it matched. If no match is found, it returns the default value.",
+  "label": "Switch Text",
+  "category": "Misc",
+  "icon": {
+    "name": "ActionsIcon",
+    "color": "Orange"
+  },
+  "options": [
+    {
+      "name": "input",
+      "label": "Input",
+      "info": "The input to compare against the cases",
+      "meta": {
+        "type": "Text",
+        "default": "",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "cases",
+      "label": "Cases",
+      "info": "The cases and their outputs",
+      "meta": {
+        "type": "Map",
+        "validations": {
+          "required": true
+        }
+        }
+    },
+    {
+      "name": "defaultCase",
+      "label": "Default",
+      "info": "The default output if no match is found",
+      "meta": {
+        "type": "Text",
+        "default": "",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}
