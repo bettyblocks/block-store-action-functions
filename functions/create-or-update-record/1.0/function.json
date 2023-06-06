@@ -37,7 +37,7 @@
     },
     {
       "meta": {
-        "allowedKinds": ["INTEGER", "STRING", "TEXT"],
+        "allowedKinds": ["INTEGER", "EMAIL_ADDRESS", "TEXT", "STRING"],
         "type": "Property",
         "model": "model",
         "validations": {
