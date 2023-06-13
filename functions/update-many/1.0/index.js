@@ -7,6 +7,12 @@ const updateMany = async ({
   },
   mapping,
 }) => {
+  if (!data || data.length === 0) {
+    return {
+      as: [],
+    };
+  }
+
   const fragment = await parseToGqlFragment({
     propertyMap: mapping,
     modelName,
