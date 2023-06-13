@@ -36,6 +36,27 @@ describe('Update many', () => {
     ]);
   });
 
+  test('It skips updating when data is empty collection', async () => {
+    const { as: result } = await updateMany({
+      selectedCollection: {
+        data: [],
+        model: { name: 'User' },
+      },
+      mapping,
+    });
+    expect(result).toStrictEqual([]);
+  });
+
+  test('It skips updating when data is undefined collection', async () => {
+    const { as: result } = await updateMany({
+      selectedCollection: {
+        model: { name: 'User' },
+      },
+      mapping,
+    });
+    expect(result).toStrictEqual([]);
+  });
+
   test('It updates a belongs to relation based on a record variable', async () => {
     const { as: result } = await updateMany({
       selectedCollection: {
