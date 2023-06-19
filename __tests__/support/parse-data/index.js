@@ -4,6 +4,10 @@ const parseData = async ({ data, format }) => {
       return [{ test: 'data' }];
     case format === 'JSON' && data === 'https://example.com/data.json':
       return [{ test: 'data' }];
+    case format === 'JSON' && data === 'https://example.com/object_data.json':
+      return { test: 'data' };
+    case format === 'JSON' && data === 'https://example.com/string_data.json':
+      return 'data';
     case format === 'CSV' &&
       data === 'test,description\ndata,this is a description':
       return [{ test: 'data', description: 'this is a description' }];

@@ -38,7 +38,7 @@
         "validations": {
           "required": true
         },
-        "allowedKinds": ["STRING"]
+        "allowedKinds": ["STRING", "FILE"]
       }
     },
     {

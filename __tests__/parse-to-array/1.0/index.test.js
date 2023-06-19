@@ -42,3 +42,27 @@ data,this is a description`;
     ]);
   });
 });
+
+describe('It throws an error', () => {
+  test('when data is not an array but an object', async () => {
+    const testFunction = () =>
+      parseToArray({
+        data: 'https://example.com/object_data.json',
+        dataType: 'JSON',
+      });
+    return expect(testFunction).rejects.toThrow(
+      'The parsed data is not an array',
+    );
+  });
+
+  test('when data is not an array but a string', async () => {
+    const testFunction = () =>
+      parseToArray({
+        data: 'https://example.com/string_data.json',
+        dataType: 'JSON',
+      });
+    return expect(testFunction).rejects.toThrow(
+      'The parsed data is not an array',
+    );
+  });
+});
