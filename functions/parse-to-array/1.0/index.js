@@ -1,5 +1,10 @@
 const parseToArray = async ({ data, dataType }) => {
-  const parsedData = await parseData({ data, format: dataType });
+  let urlOrData = data;
+  if (data.url) {
+    urlOrData = data.url;
+  }
+
+  const parsedData = await parseData({ data: urlOrData, format: dataType });
 
   if (Array.isArray(parsedData)) {
     return {

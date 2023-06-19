@@ -16,6 +16,14 @@ describe('data to JSON', () => {
     });
     expect(as).toEqual([{ test: 'data' }]);
   });
+
+  test('It parsed a file as JSON', async () => {
+    const { as } = await parseToArray({
+      data: { url: 'https://example.com/data.json', name: 'data.json' },
+      dataType: 'JSON',
+    });
+    expect(as).toEqual([{ test: 'data' }]);
+  });
 });
 
 describe('data to CSV', () => {
@@ -35,6 +43,16 @@ data,this is a description`;
   test('It parsed the url as CSV', async () => {
     const { as } = await parseToArray({
       data: 'https://example.com/data.csv',
+      dataType: 'CSV',
+    });
+    expect(as).toEqual([
+      { test: 'data', description: 'this is a description' },
+    ]);
+  });
+
+  test('It parsed a file as CSV', async () => {
+    const { as } = await parseToArray({
+      data: { url: 'https://example.com/data.csv', name: 'data.csv' },
       dataType: 'CSV',
     });
     expect(as).toEqual([
