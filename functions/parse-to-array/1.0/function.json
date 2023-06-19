@@ -1,5 +1,5 @@
 {
-  "description": "Parses the data as an array of the given Schema Model",
+  "description": "Parses the data as an array of objects based on the given Schema Model",
   "label": "Parse Data To Array",
   "category": "Data",
   "icon": {
@@ -30,7 +30,7 @@
       "name": "dataType"
     },
     {
-      "info": "The actual data, can be text or a file",
+      "info": "The actual data; can be text, file or a URL",
       "name": "data",
       "label": "Data",
       "meta": {
@@ -42,7 +42,7 @@
       }
     },
     {
-      "info": "The output format of the parsed data. This is used so that in later steps you can select the properties of this data",
+      "info": "The output format of the parsed data. Can be used in later steps to select the properties of this data",
       "meta": {
         "type": "SchemaModel",
         "validations": {
@@ -64,7 +64,7 @@
           "schemaModel": "schemaModel"
         }
       },
-      "info": "Choose a name for the variable under which the unique value which is grouped on will be available.",
+      "info": "Choose a name for the variable that will store the array",
       "name": "as",
       "label": "As"
     }

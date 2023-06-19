@@ -1,9 +1,7 @@
-const isArray = (data) => typeof data === 'object' && 'length' in data;
-
 const parseToArray = async ({ data, dataType }) => {
   const parsedData = await parseData({ data, format: dataType });
 
-  if (isArray(parsedData)) {
+  if (Array.isArray(parsedData)) {
     return {
       as: parsedData,
     };
