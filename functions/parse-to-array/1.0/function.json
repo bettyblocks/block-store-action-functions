@@ -1,14 +1,14 @@
 {
   "description": "Parses the data as an array of the given Schema Model",
   "label": "Parse Data To Array",
-  "category": "Misc",
+  "category": "Data",
   "icon": {
     "name": "DataLineIcon",
     "color": "Purple"
   },
   "options": [
     {
-      "info": "Enter what protocol the receiving end needs to use. You can choose between HTTP and HTTPS, which one you should use depends on your host.",
+      "info": "The format of the data, can be CSV or JSON",
       "label": "Data Type",
       "meta": {
         "type": "Select",
@@ -30,6 +30,7 @@
       "name": "dataType"
     },
     {
+      "info": "The actual data, can be text or a file",
       "name": "data",
       "label": "Data",
       "meta": {
@@ -41,6 +42,7 @@
       }
     },
     {
+      "info": "The output format of the parsed data. This is used so that in later steps you can select the properties of this data",
       "meta": {
         "type": "SchemaModel",
         "validations": {

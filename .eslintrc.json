@@ -33,9 +33,10 @@
     "fetch": "readonly",
     "generatePDF": "readonly",
     "gql": "readonly",
+    "parseData": "readonly",
+    "parseToGqlFragment": "readonly",
     "runAction": "readonly",
     "smtp": "readonly",
-    "storeFile": "readonly",
-    "parseToGqlFragment": "readonly"
+    "storeFile": "readonly"
   }
 }
