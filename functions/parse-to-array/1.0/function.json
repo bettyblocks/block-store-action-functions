@@ -1,0 +1,71 @@
+{
+  "description": "Parses the data as an array of the given Schema Model",
+  "label": "Parse Data To Array",
+  "category": "Misc",
+  "icon": {
+    "name": "DataLineIcon",
+    "color": "Purple"
+  },
+  "options": [
+    {
+      "info": "Enter what protocol the receiving end needs to use. You can choose between HTTP and HTTPS, which one you should use depends on your host.",
+      "label": "Data Type",
+      "meta": {
+        "type": "Select",
+        "validations": {
+          "required": true
+        },
+        "default": "JSON",
+        "values": [
+          {
+            "label": "JSON",
+            "value": "JSON"
+          },
+          {
+            "label": "CSV",
+            "value": "CSV"
+          }
+        ]
+      },
+      "name": "dataType"
+    },
+    {
+      "name": "data",
+      "label": "Data",
+      "meta": {
+        "type": "Value",
+        "validations": {
+          "required": true
+        },
+        "allowedKinds": ["STRING"]
+      }
+    },
+    {
+      "meta": {
+        "type": "SchemaModel",
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "schemaModel",
+      "label": "Schema Model"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "validations": {
+          "required": true
+        },
+        "output": {
+          "type": "Array",
+          "dataType": "SCHEMA",
+          "schemaModel": "schemaModel"
+        }
+      },
+      "info": "Choose a name for the variable under which the unique value which is grouped on will be available.",
+      "name": "as",
+      "label": "As"
+    }
+  ],
+  "yields": "NONE"
+}
