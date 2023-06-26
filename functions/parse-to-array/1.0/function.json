@@ -1,0 +1,73 @@
+{
+  "description": "Parses the data as an array of objects based on the given Schema Model",
+  "label": "Parse Data To Array",
+  "category": "Data",
+  "icon": {
+    "name": "DataLineIcon",
+    "color": "Purple"
+  },
+  "options": [
+    {
+      "info": "The format of the data, can be CSV or JSON",
+      "label": "Data Type",
+      "meta": {
+        "type": "Select",
+        "validations": {
+          "required": true
+        },
+        "default": "JSON",
+        "values": [
+          {
+            "label": "JSON",
+            "value": "JSON"
+          },
+          {
+            "label": "CSV",
+            "value": "CSV"
+          }
+        ]
+      },
+      "name": "dataType"
+    },
+    {
+      "info": "The actual data; can be text, file or a URL",
+      "name": "data",
+      "label": "Data",
+      "meta": {
+        "type": "Value",
+        "validations": {
+          "required": true
+        },
+        "allowedKinds": ["STRING", "FILE"]
+      }
+    },
+    {
+      "info": "The output format of the parsed data. Can be used in later steps to select the properties of this data",
+      "meta": {
+        "type": "SchemaModel",
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "schemaModel",
+      "label": "Schema Model"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "validations": {
+          "required": true
+        },
+        "output": {
+          "type": "Array",
+          "dataType": "SCHEMA",
+          "schemaModel": "schemaModel"
+        }
+      },
+      "info": "Choose a name for the variable that will store the array",
+      "name": "as",
+      "label": "As"
+    }
+  ],
+  "yields": "NONE"
+}
