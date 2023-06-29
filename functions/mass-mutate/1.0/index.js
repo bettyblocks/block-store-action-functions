@@ -1,8 +1,13 @@
 const massMutate = async (_, steps) => {
-  await gql.buffer({ steps }, async (mutations) => {
-    await Promise.all(
-      Object.entries(mutations).map(async ([_mutation, execute]) => execute()),
-    );
+  await gql.buffer({ steps }, async (mutationGroups) => {
+    await mutationGroups.reduce(async (promise, mutations) => {
+      await promise;
+      return Promise.all(
+        Object.entries(mutations).map(async ([mutation, execute]) => {
+          return await execute();
+        })
+      );
+    }, Promise.resolve());
   });
 };
 
