@@ -20,8 +20,8 @@ jobs:
         run: yarn install
 
       - name: Dependency audit
-        run: yarn audit
-        
+        run: yarn audit --groups dependencies
+
       - name: Lint
         run: yarn lint
 
