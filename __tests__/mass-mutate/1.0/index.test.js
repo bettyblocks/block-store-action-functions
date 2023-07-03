@@ -6,10 +6,12 @@ describe('Mass mutate', () => {
     const bulkCreateComment = jest.fn();
 
     global.gql.buffer = async (_input, fn) => {
-      fn({
-        createArticle: bulkCreateArticle,
-        createComment: bulkCreateComment,
-      });
+      fn([
+        {
+          createArticle: bulkCreateArticle,
+          createComment: bulkCreateComment,
+        },
+      ]);
     };
 
     await massMutate({}, async () => {});
