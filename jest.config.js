@@ -5,6 +5,7 @@ module.exports = {
     'functions/**/*.js',
     '!functions/liquid/**/liquid.min.js',
     '!functions/expression/**/templayed.js',
+    '!functions/utils/**/jsonpath.min.js',
   ],
   coveragePathIgnorePatterns: ['/node_modules/'],
   coverageProvider: 'v8',
