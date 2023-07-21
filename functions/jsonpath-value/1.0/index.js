@@ -1,6 +1,6 @@
-import jsonpath from './jsonpath.min';
+import jsonpath from '../../utils/jsonpath.min';
 
-const jsonpathImplementation = async ({ data, path, outputType }) => {
+export default async ({ data, path, outputType }) => {
   let parsed = data;
   if (typeof data === 'string') {
     parsed = JSON.parse(data);
@@ -10,5 +10,3 @@ const jsonpathImplementation = async ({ data, path, outputType }) => {
 
   return { [outputType]: result };
 };
-
-export default jsonpathImplementation;
