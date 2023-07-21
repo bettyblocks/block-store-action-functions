@@ -1,0 +1,5 @@
+{
+  "dependencies": ["jsonpath"],
+  "functions": ["jsonpathValue 1.0"],
+  "includes": []
+}

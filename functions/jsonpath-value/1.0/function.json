@@ -1,0 +1,91 @@
+{
+  "description": "Description",
+  "label": "Jsonpath",
+  "category": "Misc",
+  "icon": {
+    "name": "ActionsIcon",
+    "color": "Orange"
+  },
+  "options": [
+    {
+      "info": "The actual data; can be text",
+      "name": "data",
+      "label": "Data",
+      "meta": {
+        "type": "Value",
+        "validations": {
+          "required": true
+        },
+        "allowedKinds": ["STRING"]
+      }
+    },
+    {
+      "info": "the jsonpath",
+      "name": "path",
+      "label": "Jsonpath",
+      "meta": {
+        "type": "Value",
+        "validations": {
+          "required": true
+        },
+        "allowedKinds": ["STRING"]
+      }
+    },
+    {
+      "info": "Choose the type of your output variable",
+      "label": "Output Type",
+      "meta": {
+        "type": "Select",
+        "values": [
+          {
+            "label": "Text",
+            "value": "text"
+          },
+          {
+            "label": "Number",
+            "value": "number"
+          },
+          {
+            "label": "Checkbox",
+            "value": "boolean"
+          }
+        ],
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "outputType"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      },
+      "name": "text",
+      "label": "As Text"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Number"
+        }
+      },
+      "name": "number",
+      "label": "As Number"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Boolean"
+        }
+      },
+      "name": "boolean",
+      "label": "As Checkbox"
+    }
+  ],
+  "yields": "NONE"
+}
