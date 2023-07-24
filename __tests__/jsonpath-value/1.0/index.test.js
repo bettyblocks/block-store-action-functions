@@ -38,54 +38,65 @@ const TEST_DATA = `
 `;
 
 describe('Jsonpath value', () => {
-  test('object', async () => {
-    const { text } = await jsonpath({
-      data: TEST_DATA,
-      path: '$..book[(@.length-1)]',
-      outputType: 'text',
+  describe('with input type string and return type', () => {
+    test('object', async () => {
+      const { text } = await jsonpath({
+        data: TEST_DATA,
+        path: '$..book[(@.length-1)]',
+        outputType: 'text',
+      });
+      expect(text).toStrictEqual({
+        author: 'J. R. R. Tolkien',
+        category: 'fiction',
+        isbn: '0-395-19395-8',
+        price: 22.99,
+        title: 'The Lord of the Rings',
+      });
     });
-    expect(text).toStrictEqual({
-      author: 'J. R. R. Tolkien',
-      category: 'fiction',
-      isbn: '0-395-19395-8',
-      price: 22.99,
-      title: 'The Lord of the Rings',
+
+    test('text', async () => {
+      const { text } = await jsonpath({
+        data: TEST_DATA,
+        path: '$.store.bicycle.color',
+        outputType: 'text',
+      });
+      expect(text).toBe('red');
+    });
+
+    test('number', async () => {
+      const { number } = await jsonpath({
+        data: TEST_DATA,
+        path: '$.store.bicycle.price',
+        outputType: 'number',
+      });
+      expect(number).toBe(19.95);
+    });
+
+    test('boolean', async () => {
+      const { boolean } = await jsonpath({
+        data: TEST_DATA,
+        path: '$.store.bicycle.sold',
+        outputType: 'boolean',
+      });
+      expect(boolean).toBe(true);
+    });
+
+    test('list returns the first item', async () => {
+      const { text } = await jsonpath({
+        data: TEST_DATA,
+        path: '$.store.book[*].author',
+        outputType: 'text',
+      });
+      expect(text).toStrictEqual('Nigel Rees');
     });
   });
 
-  test('text', async () => {
+  test('with input type object return type text', async () => {
     const { text } = await jsonpath({
-      data: TEST_DATA,
+      data: JSON.parse(TEST_DATA),
       path: '$.store.bicycle.color',
       outputType: 'text',
     });
     expect(text).toBe('red');
-  });
-
-  test('number', async () => {
-    const { number } = await jsonpath({
-      data: TEST_DATA,
-      path: '$.store.bicycle.price',
-      outputType: 'number',
-    });
-    expect(number).toBe(19.95);
-  });
-
-  test('boolean', async () => {
-    const { boolean } = await jsonpath({
-      data: TEST_DATA,
-      path: '$.store.bicycle.sold',
-      outputType: 'boolean',
-    });
-    expect(boolean).toBe(true);
-  });
-
-  test('list returns the first item', async () => {
-    const { text } = await jsonpath({
-      data: TEST_DATA,
-      path: '$.store.book[*].author',
-      outputType: 'text',
-    });
-    expect(text).toStrictEqual('Nigel Rees');
   });
 });

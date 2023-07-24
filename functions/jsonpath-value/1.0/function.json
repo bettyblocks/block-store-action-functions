@@ -12,10 +12,11 @@
       "name": "data",
       "label": "Data",
       "meta": {
-        "type": "Text",
+        "type": "Value",
         "validations": {
           "required": true
-        }
+        },
+        "allowedKinds": ["OBJECT", "JSON", "STRING"]
       }
     },
     {
