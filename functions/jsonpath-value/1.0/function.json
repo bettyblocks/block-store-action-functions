@@ -1,6 +1,6 @@
 {
-  "description": "Allows to select fields from json/objects using Jsonpath: https://www.npmjs.com/package/jsonpath",
-  "label": "Jsonpath",
+  "description": "Allows to select fields from json/objects using JSONPath: https://www.npmjs.com/package/jsonpath",
+  "label": "JSONPath",
   "category": "Misc",
   "icon": {
     "name": "ActionsIcon",
@@ -21,7 +21,7 @@
     {
       "info": "The jsonpath, see: https://www.npmjs.com/package/jsonpath",
       "name": "path",
-      "label": "Jsonpath",
+      "label": "JSONPath",
       "meta": {
         "type": "Text",
         "validations": {
