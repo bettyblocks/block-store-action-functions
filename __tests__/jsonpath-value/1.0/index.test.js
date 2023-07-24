@@ -99,4 +99,13 @@ describe('Jsonpath value', () => {
     });
     expect(text).toBe('red');
   });
+
+  test('with input type integer', async () =>
+    expect(async () =>
+      jsonpath({
+        data: 12345,
+        path: '$.store.bicycle.color',
+        outputType: 'text',
+      }),
+    ).rejects.toThrow(new Error('obj needs to be an object')));
 });
