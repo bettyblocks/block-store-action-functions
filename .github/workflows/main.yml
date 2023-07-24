@@ -40,5 +40,5 @@ jobs:
 
       - name: Test isolate
         run: |
-          yarn install -g @betty-blocks/cli
+          yarn global add @betty-blocks/cli
           yarn test:isolate
