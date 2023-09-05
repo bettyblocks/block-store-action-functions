@@ -1,10 +1,10 @@
 {
   "description": "Allows to select fields from json/objects using JSONPath: https://www.npmjs.com/package/jsonpath",
   "label": "JSONPath",
-  "category": "Misc",
+  "category": "Data",
   "icon": {
-    "name": "ActionsIcon",
-    "color": "Orange"
+    "name": "RightIcon",
+    "color": "Purple"
   },
   "options": [
     {
