@@ -38,7 +38,7 @@
         "type": "Output",
         "output": {
           "type": "Inherit",
-          "action": "action"
+          "source": "action"
         }
       },
       "name": "result",
