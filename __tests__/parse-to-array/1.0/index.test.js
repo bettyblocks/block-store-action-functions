@@ -24,6 +24,14 @@ describe('data to JSON', () => {
     });
     expect(as).toEqual([{ test: 'data' }]);
   });
+
+  test('It returns if the data is already parsed', async () => {
+    const { as } = await parseToArray({
+      data: [{ test: 'data' }],
+      dataType: 'JSON',
+    });
+    expect(as).toEqual([{ test: 'data' }]);
+  });
 });
 
 describe('data to CSV', () => {
@@ -58,6 +66,16 @@ data,this is a description`;
     expect(as).toEqual([
       { test: 'data', description: 'this is a description' },
     ]);
+  });
+
+  test('It returns and error if the data is already parsed', async () => {
+    const testFunction = () =>
+      parseToArray({
+        data: [{ test: 'data' }],
+        dataType: 'CSV',
+      });
+
+    return expect(testFunction).rejects.toThrow('Invalid CSV');
   });
 });
 
