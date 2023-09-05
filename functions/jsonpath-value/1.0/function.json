@@ -1,0 +1,90 @@
+{
+  "description": "Allows to select fields from json/objects using JSONPath: https://www.npmjs.com/package/jsonpath",
+  "label": "JSONPath",
+  "category": "Data",
+  "icon": {
+    "name": "RightIcon",
+    "color": "Purple"
+  },
+  "options": [
+    {
+      "info": "The data or object",
+      "name": "data",
+      "label": "Data",
+      "meta": {
+        "type": "Value",
+        "validations": {
+          "required": true
+        },
+        "allowedKinds": ["OBJECT", "JSON", "STRING"]
+      }
+    },
+    {
+      "info": "The jsonpath, see: https://www.npmjs.com/package/jsonpath",
+      "name": "path",
+      "label": "JSONPath",
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "info": "Choose the type of your output variable",
+      "label": "Output Type",
+      "meta": {
+        "type": "Select",
+        "values": [
+          {
+            "label": "Text",
+            "value": "text"
+          },
+          {
+            "label": "Number",
+            "value": "number"
+          },
+          {
+            "label": "Checkbox",
+            "value": "boolean"
+          }
+        ],
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "outputType"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      },
+      "name": "text",
+      "label": "As Text"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Number"
+        }
+      },
+      "name": "number",
+      "label": "As Number"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Boolean"
+        }
+      },
+      "name": "boolean",
+      "label": "As Checkbox"
+    }
+  ],
+  "yields": "NONE"
+}

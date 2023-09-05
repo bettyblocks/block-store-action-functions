@@ -14,7 +14,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+
+      - uses: actions/cache@v3
+        with:
+          path: '.tmp'
+          key: ${{ runner.os }}-isolatetmp
+          restore-keys: |
+            ${{ runner.os }}-isolatetmp
 
       - name: Install packages
         run: yarn install
@@ -30,3 +37,8 @@ jobs:
 
       - name: Test
         run: yarn test
+
+      - name: Test isolate
+        run: |
+          yarn global add @betty-blocks/cli
+          yarn test:isolate

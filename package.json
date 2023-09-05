@@ -1,12 +1,14 @@
 {
   "name": "blockstore-action-functions",
+  "version": "1.0.0",
   "scripts": {
     "prepare": "husky install",
     "lint": "eslint --ext js ./functions ./__tests__",
     "prettier:base": "prettier --single-quote",
     "prettier:check": "yarn prettier:base --list-different \"{functions,__tests__}/**/*.js\"",
     "prettier:write": "yarn prettier:base --write \"{functions,__tests__}/**/*.js\"",
-    "test": "jest --coverage --config ./jest.config.js"
+    "test": "jest --coverage --config ./jest.config.js",
+    "test:isolate": "bb functions test isolate-tests/"
   },
   "dependencies": {
     "date-fns": "^2.29.3",
