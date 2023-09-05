@@ -13,6 +13,9 @@ const parseData = async ({ data, format }) => {
       return [{ test: 'data', description: 'this is a description' }];
     case format === 'CSV' && data === 'https://example.com/data.csv':
       return [{ test: 'data', description: 'this is a description' }];
+    case format === 'CSV' &&
+      JSON.stringify(data) === JSON.stringify([{ test: 'data' }]):
+      throw Error(`Invalid CSV`);
     default:
       throw Error(`invalid input: ${data} + ${format}`);
   }
