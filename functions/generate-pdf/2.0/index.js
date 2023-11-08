@@ -1,4 +1,4 @@
-import templayed from '../../utils/templayed';
+import Liquid from '../../utils/liquid.min';
 
 const generatePdf = async ({
   html,
@@ -7,15 +7,17 @@ const generatePdf = async ({
   property: [{ name: propertyName }],
   variables = [],
 }) => {
-  const variableMap = variables.reduce(
-    (previousValue, { key, value }) => ({
-      ...previousValue,
-      [key]: value,
-    }),
-    {},
-  );
+  const engine = new Liquid();
 
-  const htmlTemplate = templayed(html)(variableMap);
+  engine.registerFilter('group', (collection, key) => groupBy(collection, key));
+
+  const htmlTemplate = engine.parseAndRenderSync(
+    html,
+    variables.reduce((ctx, { key, value }) => {
+      ctx[key] = value;
+      return ctx;
+    }, {}),
+  );
 
   const reference = await generatePDF({
     html: htmlTemplate,

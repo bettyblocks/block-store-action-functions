@@ -1,0 +1,89 @@
+{
+  "description": "Generate a PDF based on HTML and CSS",
+  "label": "Generate PDF",
+  "category": "Misc",
+  "icon": {
+    "name": "FilePDFIcon",
+    "color": "Purple"
+  },
+  "options": [
+    {
+      "meta": {
+        "type": "MultilineText",
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "html",
+      "label": "HTML"
+    },
+    {
+      "meta": {
+        "type": "Map"
+      },
+      "info": "Select all the variables you want to have available in the HTML textfield",
+      "name": "variables",
+      "label": "Variables"
+    },
+    {
+      "meta": {
+        "type": "Model",
+        "validations": {
+          "required": true
+        }
+      },
+      "info": "Select the model for which you want to generate the PDF",
+      "name": "model",
+      "label": "Model"
+    },
+    {
+      "meta": {
+        "allowedKinds": [
+          "FILE",
+          "IMAGE"
+        ],
+        "type": "Property",
+        "model": "model",
+        "validations": {
+          "required": true
+        }
+      },
+      "configuration": {
+        "dependsOn": [
+          {
+            "option": "model",
+            "action": "CLEAR"
+          }
+        ]
+      },
+      "info": "Select the corresponding property, for the purpose of file validation",
+      "name": "property",
+      "label": "Property"
+    },
+    {
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "fileName",
+      "label": "File name"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        },
+        "validations": {
+          "required": true
+        }
+      },
+      "info": "The file reference",
+      "name": "reference",
+      "label": "As"
+    }
+  ],
+  "yields": "NONE"
+}
