@@ -3,7 +3,7 @@
   "label": "AI - Prompt",
   "category": "AI",
   "icon": {
-    "name": "DataModelIcon",
+    "name": "AIModelIcon",
     "color": "Purple"
   },
   "options": [
