@@ -73,7 +73,7 @@
       "info": "Specify the maximum token limit for the generated response",
       "meta": {
         "type": "Number",
-        "default": 256
+        "default": 1024
       }
     },
     {
