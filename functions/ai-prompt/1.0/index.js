@@ -24,7 +24,7 @@ const agent = async ({
       prompt,
       variables: variableMap,
       model: {
-        model: model,
+        model,
         settings: { maxNewTokens: maxTokens, temperature: temperature / 100 },
       },
     },
