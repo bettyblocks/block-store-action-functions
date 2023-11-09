@@ -37,6 +37,7 @@
     "parseToGqlFragment": "readonly",
     "runAction": "readonly",
     "smtp": "readonly",
-    "storeFile": "readonly"
+    "storeFile": "readonly",
+    "generativeAI": "readonly"
   }
 }
