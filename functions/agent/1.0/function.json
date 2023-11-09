@@ -1,6 +1,6 @@
 {
-  "description": "Prompt an agent to generate text",
-  "label": "AI - Agent",
+  "description": "Prompt a language model to generate text",
+  "label": "AI - Prompt",
   "category": "AI",
   "icon": {
     "name": "DataModelIcon",
@@ -46,18 +46,23 @@
       },
       "name": "apiKey",
       "label": "API Key",
-      "info": "The API key for the model"
+      "info": "Enter the API key for accessing the model"
     },
     {
       "name": "prompt",
       "label": "Prompt",
+      "info": "Write your prompt for the model here",
       "meta": {
-        "type": "MultilineText"
+        "type": "MultilineText",
+        "validations": {
+          "required": true
+        }
       }
     },
     {
       "name": "variables",
       "label": "Variables",
+      "info": "Define variables to be used in the prompt",
       "meta": {
         "type": "Map"
       }
@@ -65,7 +70,7 @@
     {
       "name": "maxTokens",
       "label": "Max New Tokens",
-      "info": "The maximum number of tokens to generate.",
+      "info": "Specify the maximum token limit for the generated response",
       "meta": {
         "type": "Number",
         "default": 256
@@ -74,7 +79,7 @@
     {
       "name": "temperature",
       "label": "Temperature",
-      "info": "The higher the temperature, the crazier the text",
+      "info": "Set the creativity level for the response (0 is most predictable, 100 is most random)",
       "meta": {
         "type": "Number",
         "default": 20,
