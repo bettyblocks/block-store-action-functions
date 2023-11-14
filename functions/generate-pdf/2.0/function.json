@@ -9,22 +9,22 @@
   "options": [
     {
       "meta": {
-        "type": "Map"
-      },
-      "info": "Select all the variables you want to have available in the PDF",
-      "name": "variables",
-      "label": "Variables"
-    },
-    {
-      "meta": {
         "type": "MultilineText",
         "validations": {
           "required": true
         }
       },
-      "info": "Use HTML and CSS to create the layout of your PDF and fill it with data using LiquidJS",
+      "info": "The HTML and CSS with help of LiquidJS to generate the PDF",
       "name": "html",
-      "label": "HTML, CSS and LiquidJS"
+      "label": "HTML"
+    },
+    {
+      "meta": {
+        "type": "Map"
+      },
+      "info": "Select all the variables you want to have available in the PDF",
+      "name": "variables",
+      "label": "Variables"
     },
     {
       "meta": {
