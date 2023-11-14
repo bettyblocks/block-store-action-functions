@@ -19,7 +19,6 @@ const agent = async ({
       apiKey,
     },
     endpoint: 'text-to-text',
-
     params: {
       prompt,
       variables: variableMap,
