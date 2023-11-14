@@ -1,5 +1,5 @@
 import groupBy from 'lodash.groupby';
-import Liquid from './liquid.min';
+import Liquid from '../../utils/liquid.min';
 
 const liquid = async ({ template, context = [] }) => {
   const engine = new Liquid();
