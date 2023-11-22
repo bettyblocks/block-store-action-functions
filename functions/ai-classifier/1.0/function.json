@@ -54,7 +54,7 @@
       "label": "Prompt",
       "meta": {
         "type": "MultilineText",
-        "default": "What tool is best suited for: Searching for the current weather.\n\n{{ __CHOICES__ }}",
+        "default": "To determine the most appropriate tool for the task specified, please evaluate: Searching for the current weather. Based on this task, select the optimal tool from the following options:\n\n{{ __CHOICES__ }}",
         "validations": {
           "required": true
         }

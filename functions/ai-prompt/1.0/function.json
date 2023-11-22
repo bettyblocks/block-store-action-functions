@@ -54,6 +54,7 @@
       "info": "Write your prompt for the model here",
       "meta": {
         "type": "MultilineText",
+        "default": "Write a story about Apples",
         "validations": {
           "required": true
         }
