@@ -1,9 +1,9 @@
 {
-  "description": "Prompt a language model to generate text",
-  "label": "Prompt",
+  "description": "Classifies a set of paths using a language model",
+  "label": "Classifier",
   "category": "AI",
   "icon": {
-    "name": "AIModelIcon",
+    "name": "ConditionIcon",
     "color": "Pink"
   },
   "options": [
@@ -38,58 +38,38 @@
       }
     },
     {
+      "info": "The API key for the model",
+      "name": "apiKey",
+      "label": "API Key",
       "meta": {
         "type": "Text",
         "validations": {
           "required": true
         }
-      },
-      "name": "apiKey",
-      "label": "API Key",
-      "info": "Enter the API key for accessing the model"
+      }
     },
     {
+      "info": "The prompt to use for classification. Use {{ __CHOICES__ }} to template the classification values and descriptions into the prompt",
       "name": "prompt",
       "label": "Prompt",
-      "info": "Write your prompt for the model here",
       "meta": {
         "type": "MultilineText",
+        "default": "What tool is best suited for: Searching for the current weather.\n\n{{ __CHOICES__ }}",
         "validations": {
           "required": true
         }
       }
     },
     {
+      "info": "The variables associated with the prompt",
       "name": "variables",
       "label": "Variables",
-      "info": "Define variables to be used in the prompt",
       "meta": {
         "type": "Map"
       }
     },
     {
-      "name": "maxTokens",
-      "label": "Max New Tokens",
-      "info": "Specify the maximum token limit for the generated response",
-      "meta": {
-        "type": "Number",
-        "default": 1024
-      }
-    },
-    {
-      "name": "temperature",
-      "label": "Temperature",
-      "info": "Set the creativity level for the response (0 is most predictable, 100 is most random)",
-      "meta": {
-        "type": "Number",
-        "default": 20,
-        "validations": {
-          "min": 0,
-          "max": 100
-        }
-      }
-    },
-    {
+      "info": "The result produced by the classifier",
       "name": "result",
       "label": "Result",
       "meta": {
@@ -100,5 +80,29 @@
       }
     }
   ],
-  "yields": "NONE"
+  "paths": {
+    "min": 1,
+    "max": 10,
+    "filterOption": {
+      "info": "Determines the output options available from the language model's classification",
+      "name": "value",
+      "label": "Value",
+      "meta": {
+        "type": "MultilineText",
+        "placeholder": "Enter an optional classifier description"
+      }
+    },
+    "values": [
+      {
+        "label": "Google"
+      },
+      {
+        "label": "Wikipedia"
+      },
+      {
+        "label": "Language model"
+      }
+    ]
+  },
+  "yields": "PATHS"
 }
