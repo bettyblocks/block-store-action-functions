@@ -2,12 +2,7 @@ import classifier from '../../../functions/ai-classifier/1.0';
 
 const variables = [
   {
-    key: [
-      {
-        name: 'question',
-        kind: 'STRING',
-      },
-    ],
+    key: 'question',
     value: 'What tool is the best to ask for the current weather?',
   },
 ];
@@ -23,71 +18,98 @@ const input = {
   model: 'text-davinci-002',
 };
 
-describe('Classifier function', () => {
-  test('generativeAI is called with correct parameters', async () => {
-    const mockParams = {
-      agent: 'text-to-choice',
-      authorization: {
-        apiKey: 'testApiKey',
-      },
-      params: {
-        choices: ['choice1', 'choice2'],
-        prompt: 'testPrompt',
-        model: {
-          model: 'testModel',
-        },
-        variables,
-      },
-    };
-
-    const { result } = await classifier(input, paths);
-
-    expect(generativeAI).toHaveBeenCalledWith(mockParams);
+const createPaths = (paths) => {
+  const resolvedPaths = paths.map(({ label, description, steps }) => {
+    return { label, value: description, steps: steps ?? jest.fn() };
   });
 
-  test('generativeAI is called once', async () => {
-    const mockParams = {
-      agent: 'text-to-choice',
-      authorization: {
-        apiKey: 'testApiKey',
-      },
-      params: {
-        choices: ['choice1', 'choice2'],
-        prompt: 'testPrompt',
-        model: {
-          model: 'testModel',
+  // similar to ActionsCompiler forEach implementation
+  Object.defineProperty(resolvedPaths, 'forEach', {
+    get() {
+      return async (asyncFn) => {
+        let halted = false;
+        for (const value of this) {
+          await asyncFn(value, () => {
+            halted = true;
+          });
+          if (halted) {
+            break;
+          }
+        }
+      };
+    },
+  });
+
+  return resolvedPaths;
+};
+
+describe('Classifier function', () => {
+  const googleStep = jest.fn();
+  const wikipediaStep = jest.fn();
+
+  const expectedParams = {
+    agent: 'text-to-choice',
+    authorization: {
+      apiKey: 'validApiKey',
+    },
+    params: {
+      choices: [
+        {
+          choice: 'Wikipedia',
+          description: undefined,
         },
-        variables,
+        {
+          choice: 'Google',
+          description: undefined,
+        },
+        {
+          choice: 'Language model',
+          description: undefined,
+        },
+        {
+          choice: 'Else',
+          description: undefined,
+        },
+      ],
+      prompt: 'Hello',
+      model: {
+        model: 'text-davinci-002',
       },
-    };
+      variables: {
+        question: 'What tool is the best to ask for the current weather?',
+      },
+    },
+  };
+
+  let output = null;
+
+  beforeAll(async () => {
+    const paths = createPaths([
+      { label: 'Wikipedia', steps: wikipediaStep },
+      { label: 'Google', steps: googleStep },
+      { label: 'Language model' },
+      { label: 'Else' },
+    ]);
 
     const { result } = await classifier(input, paths);
+    output = result;
+  });
 
+  test('generativeAI is called with correct parameters', () => {
+    expect(generativeAI).toHaveBeenCalledWith(expectedParams);
+  });
+
+  test('the correct steps is called/executed', () => {
+    expect(googleStep).toBeCalled();
+    expect(wikipediaStep).not.toBeCalled();
+  });
+
+  test('generativeAI is called once', () => {
     expect(generativeAI).toHaveBeenCalledTimes(1);
   });
 
-  test('classifier returns the result from generativeAI', async () => {
-    const mockResult = 'Google';
-
-    const mockParams = {
-      agent: 'text-to-choice',
-      authorization: {
-        apiKey: 'testApiKey',
-      },
-      params: {
-        choices: ['choice1', 'choice2'],
-        prompt: 'testPrompt',
-        model: {
-          model: 'testModel',
-        },
-        variables,
-      },
-    };
-
-    const { result } = await classifier(input, paths);
-
-    console.log({ result });
-
-    expect(result).toEqual(mockResult);
+  test('classifier returns the result from generativeAI', () => {
+    const expectedResult = 'Google';
+    expect(output).toEqual(expectedResult);
   });
 });
