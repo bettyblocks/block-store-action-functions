@@ -18,7 +18,7 @@ const agent = async ({
     authorization: {
       apiKey,
     },
-    endpoint: 'text-to-text',
+    agent: 'text-to-text',
     params: {
       prompt,
       variables: variableMap,

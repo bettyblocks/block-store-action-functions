@@ -7,8 +7,6 @@ const variables = [
   },
 ];
 
-const paths = jest.fn();
-
 const input = {
   prompt: 'Hello',
   variables,
@@ -19,16 +17,21 @@ const input = {
 };
 
 const createPaths = (paths) => {
-  const resolvedPaths = paths.map(({ label, description, steps }) => {
-    return { label, value: description, steps: steps ?? jest.fn() };
-  });
+  const resolvedPaths = paths.map(({ label, description, steps }) => ({
+    label,
+    value: description,
+    steps: steps ?? jest.fn(),
+  }));
 
   // similar to ActionsCompiler forEach implementation
   Object.defineProperty(resolvedPaths, 'forEach', {
     get() {
       return async (asyncFn) => {
         let halted = false;
+        /* eslint-disable no-restricted-syntax */
         for (const value of this) {
+          /* eslint-disable no-await-in-loop */
+          /* eslint-disable no-loop-func */
           await asyncFn(value, () => {
             halted = true;
           });
