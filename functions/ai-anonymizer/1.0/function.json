@@ -1,0 +1,86 @@
+{
+  "description": "Use a language model to remove Personal Identifiable Information (PII) from text",
+  "label": "Anonymizer",
+  "category": "AI",
+  "icon": {
+    "name": "EyeClosedIcon",
+    "color": "Pink"
+  },
+  "options": [
+    {
+      "info": "Select a model",
+      "name": "model",
+      "label": "Model",
+      "meta": {
+        "type": "Select",
+        "default": "gpt-4",
+        "validations": {
+          "required": true
+        },
+        "values": [
+          {
+            "label": "GPT 3.5 turbo",
+            "value": "gpt-3.5-turbo"
+          },
+          {
+            "label": "GPT 3.5 turbo 16k",
+            "value": "gpt-3.5-turbo-16k"
+          },
+          {
+            "label": "GPT 4",
+            "value": "gpt-4"
+          },
+          {
+            "label": "GPT 4 16k",
+            "value": "gpt-4-16k"
+          }
+        ]
+      }
+    },
+    {
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "apiKey",
+      "label": "API Key",
+      "info": "Enter the API key for accessing the model"
+    },
+    {
+      "name": "textToAnonymize",
+      "label": "Text to Anonymize",
+      "info": "The text to Anonymize",
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "maxTokens",
+      "label": "Max New Tokens",
+      "info": "Specify the maximum token limit for the generated response",
+      "meta": {
+        "type": "Number",
+        "default": 1024
+      }
+    },
+    {
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "validations": {
+          "required": true
+        },
+        "output": {
+          "type": "Text"
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}

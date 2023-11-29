@@ -1,4 +1,3 @@
-
 const TEST_DATA = `
 {
   "store": {
@@ -42,5 +41,5 @@ test('jsonpathValue 1.0', async () => {
     path: '$.store.book[*].author',
     outputType: 'text',
   });
-  assert(output, {"text":"Nigel Rees"});
+  assert(output, { text: 'Nigel Rees' });
 });

@@ -1,6 +1,5 @@
 {
-    "dependencies": [],
-    "functions": ["isPresent 1.0"],
-    "includes": []
-  }
-  
+  "dependencies": [],
+  "functions": ["isPresent 1.0"],
+  "includes": []
+}

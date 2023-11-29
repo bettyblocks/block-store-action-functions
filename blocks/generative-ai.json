@@ -1,5 +1,10 @@
 {
   "dependencies": [],
-  "functions": ["aiPrompt 1.0", "aiClassifier 1.0"],
+  "functions": [
+    "aiPrompt 1.0",
+    "aiClassifier 1.0",
+    "aiAnonymizer 1.0",
+    "aiSummarizer 1.0"
+  ],
   "includes": []
 }
