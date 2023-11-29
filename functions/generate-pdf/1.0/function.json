@@ -38,10 +38,7 @@
     },
     {
       "meta": {
-        "allowedKinds": [
-          "FILE",
-          "IMAGE"
-        ],
+        "allowedKinds": ["FILE", "IMAGE"],
         "type": "Property",
         "model": "model",
         "validations": {

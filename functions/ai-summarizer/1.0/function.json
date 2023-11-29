@@ -1,0 +1,105 @@
+{
+  "description": "Use a language model to summarize text",
+  "label": "Summarizer",
+  "category": "AI",
+  "icon": {
+    "name": "FieldsetIcon",
+    "color": "Pink"
+  },
+  "options": [
+    {
+      "info": "Select a model",
+      "name": "model",
+      "label": "Model",
+      "meta": {
+        "type": "Select",
+        "default": "gpt-4",
+        "validations": {
+          "required": true
+        },
+        "values": [
+          {
+            "label": "GPT 3.5 turbo",
+            "value": "gpt-3.5-turbo"
+          },
+          {
+            "label": "GPT 3.5 turbo 16k",
+            "value": "gpt-3.5-turbo-16k"
+          },
+          {
+            "label": "GPT 4",
+            "value": "gpt-4"
+          },
+          {
+            "label": "GPT 4 16k",
+            "value": "gpt-4-16k"
+          }
+        ]
+      }
+    },
+    {
+      "info": "Select a summarization style",
+      "name": "style",
+      "label": "Summarization Style",
+      "meta": {
+        "type": "Select",
+        "default": "concise",
+        "validations": {
+          "required": true
+        },
+        "values": [
+          {
+            "label": "Concise",
+            "value": "concise"
+          },
+          {
+            "label": "Bulletpoints",
+            "value": "bulletpoints"
+          }
+        ]
+      }
+    },
+    {
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "apiKey",
+      "label": "API Key",
+      "info": "Enter the API key for accessing the model"
+    },
+    {
+      "name": "textToSummarize",
+      "label": "Text to Summarize",
+      "info": "The text to summarize",
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "maxTokens",
+      "label": "Max New Tokens",
+      "info": "Specify the maximum token limit for the generated response",
+      "meta": {
+        "type": "Number",
+        "default": 1024
+      }
+    },
+    {
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}
