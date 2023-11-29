@@ -18,7 +18,7 @@ const invalidInput = {
   model: 'text-davinci-002',
 };
 
-describe('Agent function', () => {
+describe('AI Anonymizer', () => {
   test('returns the expected result with valid inputs', async () => {
     const { result } = await agent(validInput);
     expect(result).toBe('Hello John');

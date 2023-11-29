@@ -28,13 +28,13 @@ const invalidInput = {
   model: 'text-davinci-002',
 };
 
-describe('AI Summarizer Concise', () => {
-  test('returns the expected result with valid inputs', async () => {
+describe('AI Summarizer', () => {
+  test('returns the expected result using the concise summarizer with valid inputs', async () => {
     const { result } = await agent(validConciseInput);
     expect(result).toBe('Hello John');
   });
 
-  test('returns the expected result with valid inputs', async () => {
+  test('returns the expected result using the bulletpoints summarizer with valid inputs', async () => {
     const { result } = await agent(validBulletpointInput);
     expect(result).toBe('Hello John');
   });
