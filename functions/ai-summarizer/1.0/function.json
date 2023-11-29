@@ -95,6 +95,9 @@
       "label": "Result",
       "meta": {
         "type": "Output",
+        "validations": {
+          "required": true
+        },
         "output": {
           "type": "Text"
         }
