@@ -51,7 +51,7 @@
     {
       "name": "textToAnonymize",
       "label": "Text to Anonymize",
-      "info": "The text to Anonymize",
+      "info": "The text to anonymize",
       "meta": {
         "type": "Text",
         "validations": {

@@ -38,6 +38,17 @@
       }
     },
     {
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "apiKey",
+      "label": "API Key",
+      "info": "Enter the API key for accessing the model"
+    },
+    {
       "info": "Select a summarization style",
       "name": "style",
       "label": "Summarization Style",
@@ -58,17 +69,6 @@
           }
         ]
       }
-    },
-    {
-      "meta": {
-        "type": "Text",
-        "validations": {
-          "required": true
-        }
-      },
-      "name": "apiKey",
-      "label": "API Key",
-      "info": "Enter the API key for accessing the model"
     },
     {
       "name": "textToSummarize",
