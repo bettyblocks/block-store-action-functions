@@ -1,12 +1,16 @@
-function bulletPointsSummary(text) {
-  return `Could you read the text provided and summarize it into clear, concise bullet points? Focus on extracting the essential points and key details, presenting them in a list format for easy understanding: ${text}`;
-}
+const bulletPointsSummary = (text) =>
+  `Could you read the text provided and summarize it into clear, concise bullet points? Focus on extracting the essential points and key details, presenting them in a list format for easy understanding: ${text}`;
 
-function conciseSummary(text) {
-  return `Please read the following text and provide a concise summary, highlighting the main points and key information in a brief and coherent manner: ${text}`;
-}
+const conciseSummary = (text) =>
+  `Please read the following text and provide a concise summary, highlighting the main points and key information in a brief and coherent manner: ${text}`;
 
-const agent = async ({ textToSummarize, style, apiKey, maxTokens, model }) => {
+const summarizer = async ({
+  textToSummarize,
+  style,
+  apiKey,
+  maxTokens,
+  model,
+}) => {
   let prompt;
 
   switch (style) {
@@ -36,4 +40,4 @@ const agent = async ({ textToSummarize, style, apiKey, maxTokens, model }) => {
   };
 };
 
-export default agent;
+export default summarizer;

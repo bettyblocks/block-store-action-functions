@@ -1,4 +1,4 @@
-import agent from '../../../functions/ai-anonymizer/1.0';
+import anonymizer from '../../../functions/ai-anonymizer/1.0';
 
 const validInput = {
   prompt: 'Hello',
@@ -20,11 +20,11 @@ const invalidInput = {
 
 describe('AI Anonymizer', () => {
   test('returns the expected result with valid inputs', async () => {
-    const { result } = await agent(validInput);
+    const { result } = await anonymizer(validInput);
     expect(result).toBe('Hello John');
   });
 
   test('throws an error with invalid inputs', async () => {
-    await expect(agent(invalidInput)).rejects.toThrow('Invalid API Key');
+    await expect(anonymizer(invalidInput)).rejects.toThrow('Invalid API Key');
   });
 });

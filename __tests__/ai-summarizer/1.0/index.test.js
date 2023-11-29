@@ -1,4 +1,4 @@
-import agent from '../../../functions/ai-summarizer/1.0';
+import summarizer from '../../../functions/ai-summarizer/1.0';
 
 const validConciseInput = {
   prompt: 'Hello',
@@ -30,16 +30,16 @@ const invalidInput = {
 
 describe('AI Summarizer', () => {
   test('returns the expected result using the concise summarizer with valid inputs', async () => {
-    const { result } = await agent(validConciseInput);
+    const { result } = await summarizer(validConciseInput);
     expect(result).toBe('Hello John');
   });
 
   test('returns the expected result using the bulletpoints summarizer with valid inputs', async () => {
-    const { result } = await agent(validBulletpointInput);
+    const { result } = await summarizer(validBulletpointInput);
     expect(result).toBe('Hello John');
   });
 
   test('throws an error with invalid inputs', async () => {
-    await expect(agent(invalidInput)).rejects.toThrow('Invalid API Key');
+    await expect(summarizer(invalidInput)).rejects.toThrow('Invalid API Key');
   });
 });

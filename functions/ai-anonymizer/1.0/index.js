@@ -1,4 +1,4 @@
-const agent = async ({ textToAnonymize, apiKey, maxTokens, model }) => {
+const anonymizer = async ({ textToAnonymize, apiKey, maxTokens, model }) => {
   const prompt = `Please review the following document and redact any Personal Identifiable Information (PII) such as names, addresses, phone numbers, email addresses, social security numbers, and any other details that could be used to identify an individual. Ensure the document remains coherent and retains its essential information while ensuring privacy and confidentiality. ${textToAnonymize}`;
 
   const { result } = await generativeAI({
@@ -20,4 +20,4 @@ const agent = async ({ textToAnonymize, apiKey, maxTokens, model }) => {
   };
 };
 
-export default agent;
+export default anonymizer;
