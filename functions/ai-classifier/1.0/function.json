@@ -31,8 +31,8 @@
             "value": "gpt-4"
           },
           {
-            "label": "GPT 4 16k",
-            "value": "gpt-4-16k"
+            "label": "GPT 4 turbo preview",
+            "value": "gpt-4-1106-preview"
           }
         ]
       }
