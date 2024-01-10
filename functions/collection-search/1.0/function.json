@@ -1,0 +1,94 @@
+{
+  "description": "Search through a collection with a query. The output is an array of objects with the following fields: idx, text and score, make add these fields to your schema model.",
+  "label": "Collection Search",
+  "category": "AI Search",
+  "icon": {
+    "name": "MagnifyingGlassIcon",
+    "color": "Pink"
+  },
+  "options": [
+    {
+      "meta": {
+        "type": "Collection",
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "collection",
+      "label": "Collection",
+      "info": "The collection to search through"
+    },
+    {
+      "meta": {
+        "type": "Property",
+        "allowedKinds": ["STRING", "TEXT"],
+        "model": "collection",
+        "validations": {
+          "required": true
+        }
+      },
+      "configuration": {
+        "dependsOn": [
+          {
+            "option": "collection",
+            "action": "CLEAR"
+          }
+        ]
+      },
+      "name": "property",
+      "label": "Property",
+      "info": "The property to search through"
+    },
+    {
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "query",
+      "label": "Query",
+      "info": "The query to search with"
+    },
+    {
+      "meta": {
+        "type": "Boolean",
+        "default": true,
+        "validations": {
+          "required": false
+        }
+      },
+      "name": "chunk",
+      "label": "Chunk",
+      "info": "Whether to chunk the results or not"
+    },
+    {
+      "info": "The output format of the output data. Can be used in later steps to select the properties of this data. Should contain the following fields: idx, text and score",
+      "meta": {
+        "type": "SchemaModel",
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "schemaModel",
+      "label": "Schema Model"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "validations": {
+          "required": true
+        },
+        "output": {
+          "type": "Array",
+          "dataType": "SCHEMA",
+          "schemaModel": "schemaModel"
+        }
+      },
+      "info": "Choose a name for the variable that will store the array",
+      "name": "result",
+      "label": "Result"
+    }
+  ],
+  "yields": "NONE"
+}
