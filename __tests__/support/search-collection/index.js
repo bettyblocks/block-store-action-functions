@@ -1,4 +1,4 @@
-function searchCollection(collection, query, property, chunk = false) {
+function searchCollection(_collection, _query, _property, _chunk) {
   return {
     result: [
       { idx: 1, name: 'John', score: 0.5 },

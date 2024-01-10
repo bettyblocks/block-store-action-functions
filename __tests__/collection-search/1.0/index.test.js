@@ -12,10 +12,9 @@ describe('collectionSearch', () => {
 
     const result = await collectionSearch({
       query: searchTerm,
-      collection: collection,
+      collection,
       property: [{ name: propertyName }],
     });
-    console.log(result);
 
     expect(result.result).toEqual([
       { idx: 1, name: 'John', score: 0.5 },
