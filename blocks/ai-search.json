@@ -1,8 +1,5 @@
 {
-    "dependencies": [],
-    "functions": [
-      "collectionSearch 1.0"
-    ],
-    "includes": []
-  }
-  
+  "dependencies": [],
+  "functions": ["collectionSearch 1.0"],
+  "includes": []
+}
