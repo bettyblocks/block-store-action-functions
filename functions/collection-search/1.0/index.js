@@ -1,12 +1,12 @@
 const collectionSearch = async ({
   query,
   collection,
-  property: [{ name: propertyName }]
+  property: [{ name: propertyName }],
 }) => {
   const { result } = await searchCollection({
     query,
     documents: collection?.data ?? [],
-    fields: [propertyName]
+    fields: [propertyName],
   });
 
   return {
