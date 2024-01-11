@@ -51,18 +51,6 @@
       "info": "The query to search with"
     },
     {
-      "meta": {
-        "type": "Boolean",
-        "default": true,
-        "validations": {
-          "required": false
-        }
-      },
-      "name": "chunk",
-      "label": "Chunk",
-      "info": "Whether to chunk the results or not"
-    },
-    {
       "info": "The output format of the output data. Can be used in later steps to select the properties of this data. Should contain the following fields: idx, text and score",
       "meta": {
         "type": "SchemaModel",
