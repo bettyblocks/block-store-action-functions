@@ -1,9 +1,9 @@
 {
-  "description": "Use a language model to remove Personal Identifiable Information (PII) from text",
-  "label": "Anonymizer",
-  "category": "AI",
+  "description": "Use a language model to extract key terms and generate a query. Regex style can be used in a 'contains' filter on your model",
+  "label": "Query Generator",
+  "category": "AI Search",
   "icon": {
-    "name": "EyeClosedIcon",
+    "name": "TextMultilineIcon",
     "color": "Pink"
   },
   "options": [
@@ -49,9 +49,27 @@
       "info": "Enter the API key for accessing the model"
     },
     {
-      "name": "textToAnonymize",
-      "label": "Text to Anonymize",
-      "info": "The text to anonymize",
+      "info": "Select a query flavor. Regex can be used with a 'contains' filter on your model",
+      "name": "style",
+      "label": "Query style",
+      "meta": {
+        "type": "Select",
+        "default": "regex",
+        "validations": {
+          "required": true
+        },
+        "values": [
+          {
+            "label": "Regex",
+            "value": "regex"
+          }
+        ]
+      }
+    },
+    {
+      "name": "text",
+      "label": "Text to generate a query from",
+      "info": "The text to generate a query from",
       "meta": {
         "type": "Text",
         "validations": {
@@ -65,7 +83,7 @@
       "info": "Specify the maximum token limit for the generated response",
       "meta": {
         "type": "Number",
-        "default": 1024
+        "default": 256
       }
     },
     {
