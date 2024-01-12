@@ -1,0 +1,104 @@
+{
+  "description": "Use a language model to extract key terms and generate a query. Regex style can be used in a 'contains' filter on your model.",
+  "label": "Query Generator",
+  "category": "AI Search",
+  "icon": {
+    "name": "TextMultilineIcon",
+    "color": "Pink"
+  },
+  "options": [
+    {
+      "info": "Select a model",
+      "name": "model",
+      "label": "Model",
+      "meta": {
+        "type": "Select",
+        "default": "gpt-4",
+        "validations": {
+          "required": true
+        },
+        "values": [
+          {
+            "label": "GPT 3.5 turbo",
+            "value": "gpt-3.5-turbo"
+          },
+          {
+            "label": "GPT 3.5 turbo 16k",
+            "value": "gpt-3.5-turbo-16k"
+          },
+          {
+            "label": "GPT 4",
+            "value": "gpt-4"
+          },
+          {
+            "label": "GPT 4 turbo preview",
+            "value": "gpt-4-1106-preview"
+          }
+        ]
+      }
+    },
+    {
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "apiKey",
+      "label": "API Key",
+      "info": "Enter the API key for accessing the model"
+    },
+    {
+      "info": "Select a query flavor. Regex can be used with a 'contains' filter on your model.",
+      "name": "style",
+      "label": "Query style",
+      "meta": {
+        "type": "Select",
+        "default": "regex",
+        "validations": {
+          "required": true
+        },
+        "values": [
+          {
+            "label": "Regex",
+            "value": "regex"
+          }
+        ]
+      }
+    },
+    {
+      "name": "text",
+      "label": "Text to generate a query from",
+      "info": "The text to generate a query from",
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "maxTokens",
+      "label": "Max New Tokens",
+      "info": "Specify the maximum token limit for the generated response",
+      "meta": {
+        "type": "Number",
+        "default": 256
+      }
+    },
+    {
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "validations": {
+          "required": true
+        },
+        "output": {
+          "type": "Text"
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}
