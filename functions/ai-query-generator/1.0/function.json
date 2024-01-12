@@ -1,5 +1,5 @@
 {
-  "description": "Use a language model to extract key terms and generate a query. Regex style can be used in a 'contains' filter on your model.",
+  "description": "Use a language model to extract key terms and generate a query. Regex style can be used in a 'contains' filter on your model",
   "label": "Query Generator",
   "category": "AI Search",
   "icon": {
@@ -8,7 +8,7 @@
   },
   "options": [
     {
-      "info": "Select a model",
+      "info": "Select a language model",
       "name": "model",
       "label": "Model",
       "meta": {
@@ -49,7 +49,7 @@
       "info": "Enter the API key for accessing the model"
     },
     {
-      "info": "Select a query flavor. Regex can be used with a 'contains' filter on your model.",
+      "info": "Select a query flavor. Regex can be used with a 'contains' filter on your model",
       "name": "style",
       "label": "Query style",
       "meta": {

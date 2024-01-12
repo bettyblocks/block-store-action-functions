@@ -8,7 +8,7 @@
   },
   "options": [
     {
-      "info": "Select a model",
+      "info": "Select a language model",
       "name": "model",
       "label": "Model",
       "meta": {

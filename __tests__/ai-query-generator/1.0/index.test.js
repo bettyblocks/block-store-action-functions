@@ -2,7 +2,6 @@ import summarizer from '../../../functions/ai-query-generator/1.0';
 
 describe('ai-query-generator', () => {
   it('should generate a valid query', async () => {
-    // Test case 1
     const query = 'What are rock parrots?';
     const result = await summarizer({
       text: query,
@@ -15,7 +14,6 @@ describe('ai-query-generator', () => {
   });
 
   it('should generate a query with boolean search', async () => {
-    // Test case 1
     const query = 'What are rock parrots?';
     const result = await summarizer({
       text: query,
