@@ -39,7 +39,7 @@ describe('FormatEndpointResult', () => {
     const expectedOutput = {
       result: {
         statusCode: 200,
-        body: '{"message":"Success"}',
+        body: 'Ok',
         headers: [
           ['Content-Type', 'application/json'],
           ['Cache-Control', 'no-cache'],
