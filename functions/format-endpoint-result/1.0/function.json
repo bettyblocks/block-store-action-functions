@@ -1,0 +1,61 @@
+{
+  "description": "Formats the result of an endpoint action that returns a JSON object what can be used as output of your action",
+  "label": "Format endpoint result",
+  "category": "Endpoint",
+  "icon": {
+    "name": "FinishIcon",
+    "color": "Orange"
+  },
+  "options": [
+    {
+      "meta": {
+        "type": "Value",
+        "allowedKinds": [],
+        "validations": {
+          "required": true
+        }
+      },
+      "info": "The body that will be returned by the endpoint",
+      "name": "body",
+      "label": "Body"
+    },
+    {
+      "info": "The headers that will be returned by the endpoint",
+      "name": "headers",
+      "label": "Headers",
+      "meta": {
+        "type": "Map",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "info": "The status code that will be returned by the endpoint",
+      "name": "statusCode",
+      "label": "Status Code",
+      "meta": {
+        "type": "Number",
+        "default": 200,
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "info": "Name the return value of this step",
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "validations": {
+          "required": true
+        },
+        "output": {
+          "type": "Object"
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}
