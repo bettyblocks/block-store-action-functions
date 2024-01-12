@@ -36,10 +36,6 @@ const queryGenerator = async ({ text, style, apiKey, maxTokens, model }) => {
   );
   const regexString = escapedTerms.join('|');
 
-  // const regex = new RegExp(regexString, 'gi').toString();
-
-  // const { regex } = convertToRegex(result);
-
   return {
     result: regexString,
   };
