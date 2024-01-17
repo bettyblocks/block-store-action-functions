@@ -1,5 +1,5 @@
 {
   "dependencies": [],
-  "functions": ["formatEndpointResult 1.0", "jsonpathValue 1.0"],
+  "functions": ["formatEndpointResult 1.0", "jsonpathValue 1.1"],
   "includes": ["./functions/utils"]
 }
