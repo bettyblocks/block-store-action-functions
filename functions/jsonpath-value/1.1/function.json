@@ -1,0 +1,58 @@
+{
+  "description": "Allows to select fields from json/objects using JSONPath: https://www.npmjs.com/package/jsonpath.",
+  "label": "JSONPath",
+  "category": "Data",
+  "icon": {
+    "name": "RightIcon",
+    "color": "Purple"
+  },
+  "options": [
+    {
+      "info": "The data or object.",
+      "name": "data",
+      "label": "Data",
+      "meta": {
+        "type": "Value",
+        "validations": {
+          "required": true
+        },
+        "allowedKinds": ["OBJECT", "JSON", "STRING", "ARRAY"]
+      }
+    },
+    {
+      "info": "The jsonpath, see: https://www.npmjs.com/package/jsonpath.",
+      "name": "path",
+      "label": "JSONPath",
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "validations": {
+          "required": true
+        },
+        "output": {
+          "anyOf": [
+            {
+              "type": "Text"
+            },
+            {
+              "type": "Boolean"
+            },
+            {
+              "type": "Number"
+            }
+          ]
+        }
+      },
+      "name": "result",
+      "label": "Result"
+    }
+  ],
+  "yields": "NONE"
+}
