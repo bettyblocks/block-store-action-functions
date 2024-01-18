@@ -1,11 +1,15 @@
 const createObject = async ({ keyValueMap = [] }) => {
-  const result = keyValueMap.reduce((obj, item) => {
-    // eslint-disable-next-line no-param-reassign
-    obj[item.key] = item.value;
-    return obj;
+  const result = keyValueMap.reduce((previousValue, currentValue) => {
+    if (currentValue.key) {
+      return {
+        ...previousValue,
+        [currentValue.key]: currentValue.value,
+      };
+    }
+    return previousValue;
   }, {});
 
-  return { as: result };
+  return { result };
 };
 
 export default createObject;

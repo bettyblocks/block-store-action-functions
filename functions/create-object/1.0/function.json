@@ -11,6 +11,9 @@
       "info": "The keys and values of the object to create.",
       "label": "Object",
       "meta": {
+        "validations": {
+          "required": true
+        },
         "type": "Map"
       },
       "name": "keyValueMap"
@@ -34,8 +37,8 @@
           "schemaModel": "schemaModel"
         }
       },
-      "name": "as",
-      "label": "As",
+      "name": "result",
+      "label": "Result",
       "info": "The name of the object to create."
     }
   ],
