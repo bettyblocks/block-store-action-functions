@@ -9,14 +9,15 @@
   "options": [
     {
       "meta": {
-        "type": "Text",
+        "type": "Value",
+        "allowedKinds": ["STRING", "FILE"],
         "validations": {
           "required": true
         }
       },
       "name": "document",
-      "label": "Document URL",
-      "info": "Provide the URL of the document to parse."
+      "label": "Document",
+      "info": "Provide the document to parse."
     },
     {
       "meta": {
