@@ -1,5 +1,5 @@
 {
-  "description": "Description",
+  "description": "Extract and convert textual information from various document formats, including docx, pptx, xlsx, odt, odp, ods, and pdf files, transforming diverse file types into an easily accessible text value.",
   "label": "Parse Document to Text",
   "category": "Misc",
   "icon": {
