@@ -1,0 +1,46 @@
+{
+  "description": "Generates an object by associating the provided keys with corresponding values. The schema model can be utilized to type the object output.",
+  "label": "Create Object",
+  "category": "Data",
+  "icon": {
+    "name": "ObjectIcon",
+    "color": "Purple"
+  },
+  "options": [
+    {
+      "info": "The keys and values of the object to create.",
+      "label": "Object",
+      "meta": {
+        "validations": {
+          "required": true
+        },
+        "type": "Map"
+      },
+      "name": "keyValueMap"
+    },
+    {
+      "info": "The schema model can be utilized to type the output of the object.",
+      "meta": {
+        "type": "SchemaModel"
+      },
+      "name": "schemaModel",
+      "label": "Schema Model"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "validations": {
+          "required": true
+        },
+        "output": {
+          "type": "Object",
+          "schemaModel": "schemaModel"
+        }
+      },
+      "name": "result",
+      "label": "Result",
+      "info": "The name of the object to create."
+    }
+  ],
+  "yields": "NONE"
+}
