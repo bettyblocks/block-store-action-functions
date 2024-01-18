@@ -17,7 +17,7 @@
       },
       "name": "document",
       "label": "Document",
-      "info": "Provide the document to parse."
+      "info": "Specify the document to be parsed. This can be a file property or an URL."
     },
     {
       "meta": {
@@ -30,7 +30,7 @@
       "advanced": true,
       "name": "density",
       "label": "Density",
-      "info": "The density of the document to parse. The higher the number, the more dense the document is."
+      "info": "This option specifies the image resolution. The higher the density, the better the quality of the output will be. However, higher density also means slower processing."
     },
     {
       "meta": {
@@ -39,7 +39,7 @@
       "advanced": true,
       "name": "forceImage",
       "label": "Force image",
-      "info": "Force the document to be parsed as an image. Sometimes this can result in a better output."
+      "info": "Force the document to be scanned as an image. Sometimes this can result in a better output."
     },
     {
       "name": "result",
