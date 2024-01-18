@@ -24,15 +24,16 @@
     ]
   },
   "globals": {
+    "documentParser": "readonly",
     "fetch": "readonly",
     "generatePDF": "readonly",
+    "generativeAI": "readonly",
     "gql": "readonly",
     "parseData": "readonly",
     "parseToGqlFragment": "readonly",
     "runAction": "readonly",
+    "searchCollection": "readonly",
     "smtp": "readonly",
-    "storeFile": "readonly",
-    "generativeAI": "readonly",
-    "searchCollection": "readonly"
+    "storeFile": "readonly"
   }
 }

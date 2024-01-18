@@ -1,0 +1,59 @@
+{
+  "description": "Description",
+  "label": "Parse Document to Text",
+  "category": "Misc",
+  "icon": {
+    "name": "FileIcon",
+    "color": "Orange"
+  },
+  "options": [
+    {
+      "meta": {
+        "type": "Value",
+        "allowedKinds": ["STRING", "FILE"],
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "document",
+      "label": "Document",
+      "info": "Specify the document to be parsed. This can be a file property or an URL."
+    },
+    {
+      "meta": {
+        "type": "Number",
+        "default": 300,
+        "validations": {
+          "required": true
+        }
+      },
+      "advanced": true,
+      "name": "density",
+      "label": "Density",
+      "info": "This option specifies the image resolution. The higher the density, the better the quality of the output will be. However, higher density also means slower processing."
+    },
+    {
+      "meta": {
+        "type": "Boolean"
+      },
+      "advanced": true,
+      "name": "forceImage",
+      "label": "Force image",
+      "info": "Force the document to be scanned as an image. Sometimes this can result in a better output."
+    },
+    {
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "validations": {
+          "required": true
+        },
+        "output": {
+          "type": "Text"
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}
