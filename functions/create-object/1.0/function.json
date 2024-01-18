@@ -1,5 +1,5 @@
 {
-  "description": "Creates an object with the given keys and values. The schema model can be utilized to type the output of the object.",
+  "description": "Generates an object by associating the provided keys with corresponding values. The schema model can be utilized to type the object output.",
   "label": "Create Object",
   "category": "Data",
   "icon": {
