@@ -1,5 +1,5 @@
 {
-  "description": "Use a language model to extract key terms and generate a query. Regex style can be used in a 'contains' filter on your model",
+  "description": "This function employs a language model to identify and extract significant keywords from a given input.",
   "label": "Query Generator",
   "category": "AI Search",
   "icon": {
@@ -8,7 +8,7 @@
   },
   "options": [
     {
-      "info": "Select a language model",
+      "info": "Select a model",
       "name": "model",
       "label": "Model",
       "meta": {
@@ -49,9 +49,9 @@
       "info": "Enter the API key for accessing the model"
     },
     {
-      "info": "Select a query flavor. Regex can be used with a 'contains' filter on your model",
+      "info": "Select a query flavor. Regex can be used with a `contains` filter in your data model.",
       "name": "style",
-      "label": "Query style",
+      "label": "Output style",
       "meta": {
         "type": "Select",
         "default": "regex",
@@ -67,9 +67,9 @@
       }
     },
     {
-      "name": "text",
-      "label": "Text to generate a query from",
-      "info": "The text to generate a query from",
+      "name": "query",
+      "label": "Generate query from text",
+      "info": "Enter the text to generate a query from",
       "meta": {
         "type": "Text",
         "validations": {
@@ -80,6 +80,7 @@
     {
       "name": "maxTokens",
       "label": "Max New Tokens",
+      "advanced": true,
       "info": "Specify the maximum token limit for the generated response",
       "meta": {
         "type": "Number",
