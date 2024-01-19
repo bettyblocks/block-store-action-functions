@@ -1,0 +1,46 @@
+{
+  "description": "Chop a text into smaller pieces.",
+  "label": "Chunk",
+  "category": "AI Search",
+  "icon": {
+    "name": "AlignSpaceBetweenIcon",
+    "color": "Pink"
+  },
+  "options": [
+    {
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "input",
+      "label": "Input Text",
+      "info": "The text to chunk"
+    },
+    {
+      "meta": {
+        "type": "Number",
+        "default": 5,
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "chunkSize",
+      "label": "Sentences in a chunk",
+      "info": "The amount of sentences in a chunk"
+    },
+    {
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Array",
+          "dataType": "STRING"
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}

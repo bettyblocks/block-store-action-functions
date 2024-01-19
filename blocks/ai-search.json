@@ -1,5 +1,5 @@
 {
   "dependencies": [],
-  "functions": ["collectionSearch 1.0", "aiQueryGenerator 1.0"],
+  "functions": ["collectionSearch 1.0", "aiQueryGenerator 1.0", "chunk 1.0"],
   "includes": []
 }
