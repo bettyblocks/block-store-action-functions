@@ -1,7 +1,7 @@
 {
   "description": "Search through a collection with a query. The output is an array of objects with the following fields: idx, text and score, make add these fields to your schema model.",
   "label": "Collection Search",
-  "category": "AI",
+  "category": "AI Search",
   "icon": {
     "name": "MagnifyingGlassIcon",
     "color": "Pink"
