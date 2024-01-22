@@ -6,7 +6,7 @@ const parseDocument = async ({ document, density, forceImage }) => {
 
   const { result } = await documentParser({
     document: url,
-    parseOptions: { density, forceImage },
+    parserOptions: { density, forceImage },
   });
 
   return {
