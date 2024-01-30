@@ -1,12 +1,14 @@
 const collectionSearch = async ({
   query,
   collection,
-  property: [{ name: propertyName }],
+  threshold,
+  property: [{ name: propertyName }]
 }) => {
   const { result } = await searchCollection({
     query,
+    prefilterThreshold: threshold,
     documents: collection?.data ?? [],
-    fields: [propertyName],
+    fields: [propertyName]
   });
 
   return {
