@@ -66,11 +66,7 @@
       "advanced": true,
       "meta": {
         "type": "Number",
-        "default": 0.0,
-        "validations": {
-          "min": -10.0,
-          "max": 10.0
-        }
+        "default": 2.0
       },
       "name": "threshold",
       "label": "Prefilter Threshold"
