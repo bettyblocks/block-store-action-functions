@@ -11,7 +11,8 @@ import {
   isValid,
 } from 'date-fns';
 
-const calculateDateTimeOffset = (startDate, offset, offsetType) => {
+const calculateDateTimeOffset = (startDate, offsetString, offsetType) => {
+  const offset = parseInt(offsetString);
   switch (offsetType) {
     case 'ss':
       return addSeconds(startDate, offset);
@@ -56,7 +57,7 @@ const dateTimeOffset = async ({
   const startDate = currentDate
     ? // eslint-disable-next-line radix
       addMinutes(new Date(), parseInt(timeZoneOffset))
-    : parseISO(customStartDate);
+    : parseISO(customStartDate ?? "");
 
   if (!isValid(startDate)) {
     return {
