@@ -31,6 +31,14 @@
       }
     },
     {
+      "info": "The schema model can be utilized to type the output of this step when it is an object or an array of objects.",
+      "meta": {
+        "type": "SchemaModel"
+      },
+      "name": "schemaModel",
+      "label": "Schema Model"
+    },
+    {
       "meta": {
         "type": "Output",
         "validations": {
@@ -46,6 +54,12 @@
             },
             {
               "type": "Number"
+            },
+            { "type": "Object", "schemaModel": "schemaModel" },
+            {
+              "type": "Array",
+              "schemaModel": "schemaModel",
+              "dataType": "SCHEMA"
             }
           ]
         }
