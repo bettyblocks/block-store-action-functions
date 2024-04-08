@@ -1,5 +1,5 @@
 {
   "dependencies": [],
-  "functions": ["expression 1.1"],
+  "functions": ["expression 1.2"],
   "includes": ["functions/utils"]
 }
