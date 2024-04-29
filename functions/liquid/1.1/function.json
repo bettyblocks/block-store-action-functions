@@ -1,0 +1,41 @@
+{
+  "description": "Render templates using LiquidJS",
+  "label": "Liquid",
+  "category": "Templates",
+  "icon": {
+    "name": "BracketsCurly",
+    "color": "Orange"
+  },
+  "options": [
+    {
+      "meta": {
+        "type": "MultilineText",
+        "validations": { "required": true }
+      },
+      "name": "template",
+      "label": "Template",
+      "configuration": {
+        "placeholder": "{{firstName}} {{lastName}}"
+      }
+    },
+    {
+      "info": "Map the values that you want to use in your template",
+      "label": "Context",
+      "meta": {
+        "type": "Map"
+      },
+      "name": "context"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      },
+      "name": "as",
+      "label": "As"
+    }
+  ],
+  "yields": "NONE"
+}
