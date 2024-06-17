@@ -22,6 +22,14 @@
       }
     },
     {
+      "name": "businessDays",
+      "label": "Business days only",
+      "meta": {
+        "type": "Boolean"
+      },
+      "info": "If checked, the calculation will skip weekends (Saturday and Sunday) and will only count working days (Monday to Friday). ONLY WORKS WITH DAYS"
+    },
+    {
       "name": "offsetType",
       "label": "Offset Type",
       "meta": {
