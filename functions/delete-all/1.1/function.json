@@ -1,0 +1,50 @@
+{
+  "description": "Delete all records from a data model. Use the filter option to delete a subset of records.",
+  "label": "Delete All Records",
+  "category": "CRUD",
+  "icon": {
+    "color": "Pink",
+    "name": "TrashIcon"
+  },
+  "options": [
+    {
+      "name": "model",
+      "label": "Model",
+      "info": "The model for which you want to delete all records",
+      "meta": {
+        "type": "Model",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "filter",
+      "label": "Filter",
+      "info": "Filter based on Data API filter with variable options.",
+      "meta": {
+        "type": "Text",
+        "default": ""
+      }
+    },
+    {
+      "name": "filterVariables",
+      "label": "Variables",
+      "info": "Variables to be used in the filter option.",
+      "meta": {
+        "type": "Map"
+      }
+    },
+    {
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}
