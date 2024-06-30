@@ -10,7 +10,7 @@
     {
       "name": "model",
       "label": "Model",
-      "info": "The model for which you want to delete all records",
+      "info": "The model for which you want to delete all records.",
       "meta": {
         "type": "Model",
         "validations": {
@@ -21,7 +21,7 @@
     {
       "name": "filter",
       "label": "Filter",
-      "info": "Filter based on Data API filter with variable options.",
+      "info": "Filter based on Data API filter with variable options. Use {{ name_of_your_variable }} to interpolate values.",
       "meta": {
         "type": "Text",
         "default": ""
@@ -30,7 +30,7 @@
     {
       "name": "filterVariables",
       "label": "Variables",
-      "info": "Variables to be used in the filter option.",
+      "info": "Map the values that you want to use in the filter.",
       "meta": {
         "type": "Map"
       }
