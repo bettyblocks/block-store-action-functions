@@ -4,13 +4,13 @@ const getAll = async (modelName, where, queryBody) => {
   const queryName = `all${modelName}`;
   const getAllQuery = `
     query {
-      ${queryName}(where: ${where}, take: 200) {
+      ${queryName}(where: $where, take: $take) {
         ${queryBody}
       }
     }
   `;
 
-  const { data, errors } = await gql(getAllQuery);
+  const { data, errors } = await gql(getAllQuery, { where, take: 200 });
 
   if (errors) {
     throw errors;
@@ -42,15 +42,23 @@ const deleteBatch = async (modelName, where) => {
   }
 };
 
-const deleteAll = async ({ model, filter, filterVariables = [] }) => {
+const deleteAll = async ({
+  model: { name: modelName },
+  filter,
+  filterVariables = [],
+}) => {
   const variableMap = filterVariables.reduce((previousValue, currentValue) => {
     // eslint-disable-next-line no-param-reassign
     previousValue[currentValue.key] = currentValue.value;
     return previousValue;
   }, {});
 
-  const where = `{ ${templayed(filter || '')(variableMap)} }`;
-  const { name: modelName } = model;
+  const where = JSON.parse(
+    `{ ${templayed(filter || '')(variableMap).replace(
+      /(['"])?([a-z0-9A-Z_]+)(['"])?:/g,
+      '"$2": ',
+    )} }`,
+  );
   try {
     const { totalCount } = await getAll(modelName, where, 'totalCount');
     const maxRequests = Math.ceil(totalCount / 200);
