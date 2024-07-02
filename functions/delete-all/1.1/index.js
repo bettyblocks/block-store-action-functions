@@ -42,6 +42,14 @@ const deleteBatch = async (modelName, where) => {
   }
 };
 
+const filterToMap = (filter, variableMap) =>
+  // Source: https://stackoverflow.com/questions/9637517/parsing-relaxed-json-without-eval
+  JSON.parse(
+    `{ ${templayed(filter || '')(variableMap).replace(
+      /(['"])?([a-z0-9A-Z_]+)(['"])?:/g,
+      '"$2": ',
+    )} }`,
+  );
 const deleteAll = async ({
   model: { name: modelName },
   filter,
@@ -53,12 +61,7 @@ const deleteAll = async ({
     return previousValue;
   }, {});
 
-  const where = JSON.parse(
-    `{ ${templayed(filter || '')(variableMap).replace(
-      /(['"])?([a-z0-9A-Z_]+)(['"])?:/g,
-      '"$2": ',
-    )} }`,
-  );
+  const where = filterToMap(filter, variableMap);
   try {
     const { totalCount } = await getAll(modelName, where, 'totalCount');
     const maxRequests = Math.ceil(totalCount / 200);
