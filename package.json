@@ -9,7 +9,8 @@
     "prettier:check": "yarn prettier:base --list-different \"{functions,__tests__}/**/*.js\"",
     "prettier:write": "yarn prettier:base --write \"{functions,__tests__}/**/*.js\"",
     "test": "vitest",
-    "test:isolate": "bb functions test isolate-tests/"
+    "test:isolate": "bb functions test isolate-tests/",
+    "publish": "bb blocks publish"
   },
   "dependencies": {
     "date-fns": "~2.29.3",
