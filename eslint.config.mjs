@@ -1,25 +1,23 @@
-import pluginJs from '@eslint/js';
+import eslint from '@eslint/js';
 import vitest from 'eslint-plugin-vitest';
-import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
-
-const defaultFiles = {
-  files: [
-    "functions/",
-    '__tests__/',
-  ],
-  ignores: [
-    '**/node_modules/',
-    'functions/utils/liquid.min.js',
-    'functions/utils/templayed.js',
-    'functions/utils/jsonpath.min.js',
-  ],
-}
+import prettierConfig from 'eslint-plugin-prettier/recommended';
 
 export default [
   {
-    ...defaultFiles,
+    ignores: [
+      'node_modules/',
+      'coverage/',
+      'functions/utils/liquid.min.js',
+      'functions/utils/templayed.js',
+      'functions/utils/jsonpath.min.js',
+    ],
+  },
+  eslint.configs.recommended,
+  {
+    files: ['**/*.{js,mjs}'],
     languageOptions: {
       globals: {
+        ...vitest.environments.env.globals,
         documentParser: 'readonly',
         fetch: 'readonly',
         generatePDF: 'readonly',
@@ -33,11 +31,7 @@ export default [
         storeFile: 'readonly',
       },
     },
-    plugins: {
-      vitest,
-    },
     rules: {
-      ...pluginJs.configs.recommended,
       'no-restricted-globals': 0,
       'no-unused-vars': [
         'error',
@@ -55,7 +49,12 @@ export default [
     },
   },
   {
-    ...eslintPluginPrettierRecommended,
-    ...defaultFiles,
+    files: ['__tests__/**/*.test.ts'],
+    plugins: { vitest },
+    rules: {
+      ...vitest.configs.recommended.rules,
+      'vitest/no-identical-title': ['error'],
+    },
   },
+  prettierConfig,
 ];

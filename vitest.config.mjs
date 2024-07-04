@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitest/config'
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
@@ -8,9 +8,7 @@ export default defineConfig({
     coverage: {
       reportsDirectory: 'coverage',
       enabled: true,
-      include: [
-        'functions/**/*.js',
-      ],
+      include: ['functions/**/*.js'],
       exclude: [
         'functions/utils/**/liquid.min.js',
         'functions/expression/**/templayed.js',
@@ -23,6 +21,6 @@ export default defineConfig({
         lines: 85,
         statements: 85,
       },
-    }
+    },
   },
-})
+});
