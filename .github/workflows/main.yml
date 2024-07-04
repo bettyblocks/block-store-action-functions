@@ -30,7 +30,7 @@ jobs:
         run: pnpm install
 
       - name: Dependency audit
-        run: pnpm audit --groups dependencies
+        run: pnpm audit --prod
 
       - name: Lint
         run: pnpm lint
@@ -43,5 +43,5 @@ jobs:
 
       - name: Test isolate
         run: |
-          pnpm global add @betty-blocks/cli
+          pnpm add -g @betty-blocks/cli
           pnpm test:isolate
