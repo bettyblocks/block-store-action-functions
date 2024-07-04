@@ -10,7 +10,6 @@ const expression = async ({ expression: expres, variables }) => {
   );
 
   return {
-    // eslint-disable-next-line no-new-func
     result: new Function(`return ${templayed(expres)(variableMap)}`)(),
   };
 };

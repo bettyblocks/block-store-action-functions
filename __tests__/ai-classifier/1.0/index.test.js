@@ -20,7 +20,7 @@ const createPaths = (paths) => {
   const resolvedPaths = paths.map(({ label, description, steps }) => ({
     label,
     value: description,
-    steps: steps ?? jest.fn(),
+    steps: steps ?? vi.fn(),
   }));
 
   // similar to ActionsCompiler forEach implementation
@@ -28,10 +28,8 @@ const createPaths = (paths) => {
     get() {
       return async (asyncFn) => {
         let halted = false;
-        /* eslint-disable no-restricted-syntax */
+
         for (const value of this) {
-          /* eslint-disable no-await-in-loop */
-          /* eslint-disable no-loop-func */
           await asyncFn(value, () => {
             halted = true;
           });
@@ -47,8 +45,8 @@ const createPaths = (paths) => {
 };
 
 describe('Classifier function', () => {
-  const googleStep = jest.fn();
-  const wikipediaStep = jest.fn();
+  const googleStep = vi.fn();
+  const wikipediaStep = vi.fn();
 
   const expectedParams = {
     agent: 'text-to-choice',
