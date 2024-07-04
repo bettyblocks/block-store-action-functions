@@ -1,10 +1,12 @@
 import eslint from '@eslint/js';
 import vitest from 'eslint-plugin-vitest';
 import prettierConfig from 'eslint-plugin-prettier/recommended';
+import globals from 'globals';
 
 export default [
   {
     ignores: [
+      '.tmp/',
       'node_modules/',
       'coverage/',
       'functions/utils/liquid.min.js',
@@ -17,6 +19,7 @@ export default [
     files: ['**/*.{js,mjs}'],
     languageOptions: {
       globals: {
+        ...globals.node,
         ...vitest.environments.env.globals,
         documentParser: 'readonly',
         fetch: 'readonly',
@@ -29,6 +32,7 @@ export default [
         searchCollection: 'readonly',
         smtp: 'readonly',
         storeFile: 'readonly',
+        $app: 'readonly',
       },
     },
     rules: {
@@ -49,7 +53,7 @@ export default [
     },
   },
   {
-    files: ['__tests__/**/*.test.ts'],
+    files: ['__tests__/**/*.test.js', 'isolate-tests/'],
     plugins: { vitest },
     rules: {
       ...vitest.configs.recommended.rules,

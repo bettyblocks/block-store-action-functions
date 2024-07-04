@@ -1,7 +1,7 @@
 import massMutate from '../../../functions/mass-mutate/1.0';
 
 describe('Mass mutate', () => {
-  test('It only intercepts GQL insert (single) mutations and ', async () => {
+  test('It only intercepts GQL insert (single) mutations', async () => {
     const bulkCreateArticle = vi.fn();
     const bulkCreateComment = vi.fn();
 
