@@ -1,3 +1,4 @@
 **/node_modules/**
 templayed.js
 jsonpath.min.js
+liquid.min.js

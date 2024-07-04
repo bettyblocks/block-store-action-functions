@@ -48,7 +48,7 @@ const deleteAll = async ({ model }) => {
 
     // Loop through batches
     for (let index = 0; index < maxRequests; index += 1) {
-      // eslint-disable-next-line no-await-in-loop
+       
       await deleteBatch(modelName);
     }
     return {

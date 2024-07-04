@@ -56,7 +56,7 @@ const deleteAll = async ({
   filterVariables = [],
 }) => {
   const variableMap = filterVariables.reduce((previousValue, currentValue) => {
-    // eslint-disable-next-line no-param-reassign
+     
     previousValue[currentValue.key] = currentValue.value;
     return previousValue;
   }, {});
@@ -68,7 +68,7 @@ const deleteAll = async ({
 
     // Loop through batches
     for (let index = 0; index < maxRequests; index += 1) {
-      // eslint-disable-next-line no-await-in-loop
+       
       await deleteBatch(modelName, where);
     }
     return {

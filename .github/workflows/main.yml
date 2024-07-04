@@ -24,21 +24,21 @@ jobs:
             ${{ runner.os }}-isolatetmp
 
       - name: Install packages
-        run: yarn install
+        run: pnpm install
 
       - name: Dependency audit
-        run: yarn audit --groups dependencies
+        run: pnpm audit --groups dependencies
 
       - name: Lint
-        run: yarn lint
+        run: pnpm lint
 
       - name: Prettier
-        run: yarn prettier:check
+        run: pnpm prettier:check
 
       - name: Test
-        run: yarn test
+        run: pnpm test
 
       - name: Test isolate
         run: |
-          yarn global add @betty-blocks/cli
-          yarn test:isolate
+          pnpm global add @betty-blocks/cli
+          pnpm test:isolate

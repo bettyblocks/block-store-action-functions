@@ -1,5 +1,5 @@
-/* eslint-disable no-await-in-loop */
-/* eslint-disable no-plusplus */
+ 
+ 
 import generateUuid from '../../functions/generate-uuid/1.0';
 
 describe('generateUuid', () => {
