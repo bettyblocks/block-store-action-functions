@@ -10,7 +10,6 @@ const expression = async ({ expression: expres, variables }) => {
   );
 
   return {
-     
     result: new Function(`return ${templayed(expres)(variableMap)}`)(),
   };
 };

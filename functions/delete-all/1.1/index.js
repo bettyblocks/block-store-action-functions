@@ -56,7 +56,6 @@ const deleteAll = async ({
   filterVariables = [],
 }) => {
   const variableMap = filterVariables.reduce((previousValue, currentValue) => {
-     
     previousValue[currentValue.key] = currentValue.value;
     return previousValue;
   }, {});
@@ -68,7 +67,6 @@ const deleteAll = async ({
 
     // Loop through batches
     for (let index = 0; index < maxRequests; index += 1) {
-       
       await deleteBatch(modelName, where);
     }
     return {

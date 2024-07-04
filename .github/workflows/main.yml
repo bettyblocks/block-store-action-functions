@@ -23,6 +23,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-isolatetmp
 
+      - name: Install pnpm
+        run: npm install -g pnpm@9
+
       - name: Install packages
         run: pnpm install
 

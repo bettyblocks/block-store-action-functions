@@ -28,10 +28,8 @@ const createPaths = (paths) => {
     get() {
       return async (asyncFn) => {
         let halted = false;
-         
+
         for (const value of this) {
-           
-           
           await asyncFn(value, () => {
             halted = true;
           });

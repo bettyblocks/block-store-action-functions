@@ -54,8 +54,7 @@ const dateTimeOffset = async ({
   timeZoneOffset,
 }) => {
   const startDate = currentDate
-    ?  
-      addMinutes(new Date(), parseInt(timeZoneOffset))
+    ? addMinutes(new Date(), parseInt(timeZoneOffset))
     : parseISO(customStartDate);
 
   if (!isValid(startDate)) {

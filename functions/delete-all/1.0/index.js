@@ -48,7 +48,6 @@ const deleteAll = async ({ model }) => {
 
     // Loop through batches
     for (let index = 0; index < maxRequests; index += 1) {
-       
       await deleteBatch(modelName);
     }
     return {

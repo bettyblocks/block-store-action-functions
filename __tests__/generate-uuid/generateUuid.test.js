@@ -1,5 +1,3 @@
- 
- 
 import generateUuid from '../../functions/generate-uuid/1.0';
 
 describe('generateUuid', () => {
