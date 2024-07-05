@@ -14,6 +14,7 @@ const input = {
   maxTokens: 100,
   temperature: 50,
   model: 'text-davinci-002',
+  parameters: [],
 };
 
 const createPaths = (paths) => {
@@ -79,6 +80,7 @@ describe('Classifier function', () => {
       variables: {
         question: 'What tool is the best to ask for the current weather?',
       },
+      parameters: {},
     },
   };
 

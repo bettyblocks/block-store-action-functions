@@ -1,4 +1,4 @@
-const classifier = async ({ prompt, apiKey, model, variables }, paths) => {
+const classifier = async ({ prompt, apiKey, model, variables, parameters = [] }, paths) => {
   const variableMap = variables.reduce(
     (previousValue, currentValue) => ({
       ...previousValue,
@@ -6,6 +6,15 @@ const classifier = async ({ prompt, apiKey, model, variables }, paths) => {
     }),
     {},
   );
+
+    // Convert parameters list to a single object
+    const parameterMap = parameters.reduce(
+      (previousValue, currentValue) => ({
+        ...previousValue,
+        [currentValue.key]: currentValue.value,
+      }),
+      {},
+    );
 
   const choices = paths.map(({ label, value }) => ({
     choice: label,
@@ -27,6 +36,7 @@ const classifier = async ({ prompt, apiKey, model, variables }, paths) => {
         model,
       },
       variables: variableMap,
+      parameters: parameterMap,
     },
   });
 
