@@ -36,7 +36,7 @@ const agent = async ({
         model,
         settings: { maxNewTokens: maxTokens, temperature: temperature / 100 },
       },
-      parameters: parameterMap
+      parameters: parameterMap,
     },
   });
 
