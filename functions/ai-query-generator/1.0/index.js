@@ -8,7 +8,14 @@ const regexQuery = (text) =>
 const booleanQuery = (text) =>
   `Generate a BM25 compatible boolean query for the following text: ${text}`;
 
-const queryGenerator = async ({ query, style, apiKey, maxTokens, model, parameters = [] }) => {
+const queryGenerator = async ({
+  query,
+  style,
+  apiKey,
+  maxTokens,
+  model,
+  parameters = [],
+}) => {
   let prompt;
 
   switch (style) {
@@ -19,14 +26,14 @@ const queryGenerator = async ({ query, style, apiKey, maxTokens, model, paramete
       prompt = regexQuery(query);
   }
 
-    // Convert parameters list to a single object
-    const parameterMap = parameters.reduce(
-      (previousValue, currentValue) => ({
-        ...previousValue,
-        [currentValue.key]: currentValue.value,
-      }),
-      {},
-    );
+  // Convert parameters list to a single object
+  const parameterMap = parameters.reduce(
+    (previousValue, currentValue) => ({
+      ...previousValue,
+      [currentValue.key]: currentValue.value,
+    }),
+    {},
+  );
 
   const { result } = await generativeAI({
     authorization: {
