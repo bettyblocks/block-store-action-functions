@@ -1,9 +1,9 @@
 import massMutate from '../../../functions/mass-mutate/1.0';
 
 describe('Mass mutate', () => {
-  test('It only intercepts GQL insert (single) mutations and ', async () => {
-    const bulkCreateArticle = jest.fn();
-    const bulkCreateComment = jest.fn();
+  test('It only intercepts GQL insert (single) mutations', async () => {
+    const bulkCreateArticle = vi.fn();
+    const bulkCreateComment = vi.fn();
 
     global.gql.buffer = async (_input, fn) => {
       fn([

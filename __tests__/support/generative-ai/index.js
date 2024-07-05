@@ -12,4 +12,4 @@ const generativeAI = async ({ authorization, agent }) => {
   }
   return Promise.reject(new Error('Invalid API Key'));
 };
-export default jest.fn(generativeAI);
+export default vi.fn(generativeAI);
