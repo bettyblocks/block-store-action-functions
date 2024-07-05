@@ -5,7 +5,7 @@ const agent = async ({
   maxTokens,
   temperature,
   model,
-  parameters,
+  parameters = [],
 }) => {
   const variableMap = variables.reduce(
     (previousValue, currentValue) => ({
