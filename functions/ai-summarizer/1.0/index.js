@@ -10,6 +10,7 @@ const summarizer = async ({
   apiKey,
   maxTokens,
   model,
+  parameters = [],
 }) => {
   let prompt;
 
@@ -20,6 +21,15 @@ const summarizer = async ({
     default:
       prompt = conciseSummary(textToSummarize);
   }
+
+  // Convert parameters list to a single object
+  const parameterMap = parameters.reduce(
+    (previousValue, currentValue) => ({
+      ...previousValue,
+      [currentValue.key]: currentValue.value,
+    }),
+    {},
+  );
 
   const { result } = await generativeAI({
     authorization: {
@@ -32,6 +42,7 @@ const summarizer = async ({
         model,
         settings: { maxNewTokens: maxTokens },
       },
+      parameters: parameterMap,
     },
   });
 

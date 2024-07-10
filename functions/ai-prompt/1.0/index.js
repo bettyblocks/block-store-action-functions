@@ -5,8 +5,18 @@ const agent = async ({
   maxTokens,
   temperature,
   model,
+  parameters = [],
 }) => {
   const variableMap = variables.reduce(
+    (previousValue, currentValue) => ({
+      ...previousValue,
+      [currentValue.key]: currentValue.value,
+    }),
+    {},
+  );
+
+  // Convert parameters list to a single object
+  const parameterMap = parameters.reduce(
     (previousValue, currentValue) => ({
       ...previousValue,
       [currentValue.key]: currentValue.value,
@@ -26,6 +36,7 @@ const agent = async ({
         model,
         settings: { maxNewTokens: maxTokens, temperature: temperature / 100 },
       },
+      parameters: parameterMap,
     },
   });
 

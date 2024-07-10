@@ -77,6 +77,15 @@
       }
     },
     {
+      "name": "parameters",
+      "label": "Extra parameters",
+      "info": "Define extra parameters that will be passed to the LLM, for example if you want to use azure openai",
+      "advanced": true,
+      "meta": {
+        "type": "Map"
+      }
+    },
+    {
       "info": "The result produced by the classifier",
       "name": "result",
       "label": "Result",
