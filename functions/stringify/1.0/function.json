@@ -6,24 +6,32 @@
     "name": "TextIcon",
     "color": "Purple"
   },
-  "options": [{
-    "meta": {
-      "type": "Value",
-      "allowedKinds": []
+  "options": [
+    {
+      "meta": {
+        "type": "Value",
+        "allowedKinds": [],
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "value",
+      "label": "Value",
+      "advanced": false
     },
-    "name": "value",
-    "label": "Value",
-    "advanced": false
-  },
-  {
-    "meta": {
-      "type": "Output",
-      "output": {
-        "type": "Text"
-      }
-    },
-    "name": "result",
-    "label": "Result"
-  }],
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        },
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "result",
+      "label": "Result"
+    }
+  ],
   "yields": "NONE"
 }
