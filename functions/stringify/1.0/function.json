@@ -1,5 +1,5 @@
 {
-  "description": "Stringify a value",
+  "description": "Stringify any value to json via JSON.stringify",
   "label": "Stringify",
   "category": "Misc",
   "icon": {
