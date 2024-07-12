@@ -1,0 +1,29 @@
+{
+  "description": "Stringify a value",
+  "label": "Stringify",
+  "category": "Misc",
+  "icon": {
+    "name": "TextIcon",
+    "color": "Purple"
+  },
+  "options": [{
+    "meta": {
+      "type": "Value",
+      "allowedKinds": []
+    },
+    "name": "value",
+    "label": "Value",
+    "advanced": false
+  },
+  {
+    "meta": {
+      "type": "Output",
+      "output": {
+        "type": "Text"
+      }
+    },
+    "name": "result",
+    "label": "Result"
+  }],
+  "yields": "NONE"
+}
