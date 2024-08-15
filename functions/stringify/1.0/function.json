@@ -1,0 +1,37 @@
+{
+  "description": "Stringify any value to json via JSON.stringify",
+  "label": "Stringify",
+  "category": "Misc",
+  "icon": {
+    "name": "TextIcon",
+    "color": "Purple"
+  },
+  "options": [
+    {
+      "meta": {
+        "type": "Value",
+        "allowedKinds": [],
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "value",
+      "label": "Value",
+      "advanced": false
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        },
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "result",
+      "label": "Result"
+    }
+  ],
+  "yields": "NONE"
+}
