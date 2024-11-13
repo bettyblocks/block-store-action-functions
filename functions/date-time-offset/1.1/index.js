@@ -3,6 +3,7 @@ import {
   addHours,
   addMinutes,
   addDays,
+  addBusinessDays,
   addWeeks,
   addMonths,
   addYears,
@@ -11,7 +12,12 @@ import {
   isValid,
 } from 'date-fns';
 
-const calculateDateTimeOffset = (startDate, offset, offsetType) => {
+const calculateDateTimeOffset = (
+  startDate,
+  offset,
+  offsetType,
+  businessDays,
+) => {
   switch (offsetType) {
     case 'ss':
       return addSeconds(startDate, offset);
@@ -20,6 +26,7 @@ const calculateDateTimeOffset = (startDate, offset, offsetType) => {
     case 'hh':
       return addHours(startDate, offset);
     case 'DD':
+      if (businessDays) return addBusinessDays(startDate, offset);
       return addDays(startDate, offset);
     case 'WW':
       return addWeeks(startDate, offset);
@@ -48,13 +55,15 @@ const formatDate = (resultType, calculatedOffset) => {
 const dateTimeOffset = async ({
   currentDate,
   customStartDate,
+  businessDays,
   offsetType,
   offset,
   resultType,
   timeZoneOffset,
 }) => {
   const startDate = currentDate
-    ? addMinutes(new Date(), parseInt(timeZoneOffset))
+    ? // eslint-disable-next-line radix
+      addMinutes(new Date(), parseInt(timeZoneOffset))
     : parseISO(customStartDate);
 
   if (!isValid(startDate)) {
@@ -62,7 +71,12 @@ const dateTimeOffset = async ({
       result: 'Invalid Date',
     };
   }
-  const offsetResult = calculateDateTimeOffset(startDate, offset, offsetType);
+  const offsetResult = calculateDateTimeOffset(
+    startDate,
+    offset,
+    offsetType,
+    businessDays,
+  );
   if (!isValid(offsetResult)) {
     return {
       result: offsetResult,
