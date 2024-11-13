@@ -62,8 +62,7 @@ const dateTimeOffset = async ({
   timeZoneOffset,
 }) => {
   const startDate = currentDate
-    ? // eslint-disable-next-line radix
-      addMinutes(new Date(), parseInt(timeZoneOffset))
+    ? addMinutes(new Date(), parseInt(timeZoneOffset))
     : parseISO(customStartDate);
 
   if (!isValid(startDate)) {
