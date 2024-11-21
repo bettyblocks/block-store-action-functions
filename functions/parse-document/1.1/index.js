@@ -5,7 +5,7 @@ const parseDocument = async ({
   document,
   density,
   forceImage,
-  removeSpecialCharacters,
+  decodeHtmlEntities,
 }) => {
   const url = isFileProperty(document) ? document?.url : document;
 
@@ -14,7 +14,7 @@ const parseDocument = async ({
     parserOptions: { density, forceImage },
   });
 
-  if (removeSpecialCharacters && typeof result === 'string') {
+  if (decodeHtmlEntities && typeof result === 'string') {
     return { result: result.replaceAll('&nbsp;', ' ') };
   }
 

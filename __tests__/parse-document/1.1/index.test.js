@@ -32,7 +32,7 @@ describe('Parse document', () => {
       },
       density: 300,
       forceImage: false,
-      removeSpecialCharacters: true,
+      decodeHtmlEntities: true,
     });
 
     expect(result).toEqual('Dummy result with special characters');
@@ -46,7 +46,7 @@ describe('Parse document', () => {
       },
       density: 300,
       forceImage: false,
-      removeSpecialCharacters: false,
+      decodeHtmlEntities: false,
     });
 
     expect(result).toEqual('Dummy&nbsp;result with special&nbsp;characters');

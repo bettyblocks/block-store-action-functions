@@ -47,9 +47,9 @@
         "default": true
       },
       "advanced": true,
-      "name": "removeSpecialCharacters",
-      "label": "Remove Special Characters",
-      "info": "Remove special characters from the output."
+      "name": "decodeHtmlEntities",
+      "label": "Decode html entities",
+      "info": "Decode some html entities to normal characters such as: &nbsp; into ' '"
     },
     {
       "name": "result",
