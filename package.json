@@ -5,8 +5,9 @@
     "prepare": "husky install",
     "lint": "eslint",
     "prettier:base": "prettier --single-quote",
-    "prettier:check": "yarn prettier:base --list-different \"{functions,__tests__,isolate-tests}/**/*.js\"",
-    "prettier:write": "yarn prettier:base --write \"{functions,__tests__,isolate-tests}/**/*.js\"",
+    "prettier:check": "pnpm run prettier:base --list-different \"{functions,__tests__,isolate-tests}/**/*.js\"",
+    "prettier:write": "pnpm run prettier:base --write \"{functions,__tests__,isolate-tests}/**/*.js\"",
+    "fmt": "pnpm run --silent prettier:write",
     "test": "vitest run",
     "test:isolate": "bb functions test isolate-tests/",
     "publish": "bb blocks publish"
