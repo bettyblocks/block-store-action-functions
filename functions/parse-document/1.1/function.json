@@ -49,7 +49,7 @@
       "advanced": true,
       "name": "decodeHtmlEntities",
       "label": "Decode html entities",
-      "info": "Decode some html entities to normal characters such as: &nbsp; into ' '"
+      "info": "Decode html entities to normal characters. Currently only converts &nbsp; into ' '"
     },
     {
       "name": "result",
