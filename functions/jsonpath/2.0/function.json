@@ -1,0 +1,94 @@
+{
+  "description": "Allows to select fields from json/objects using JSONPath: https://www.npmjs.com/package/jsonpath.",
+  "label": "JSONPath",
+  "category": "Data",
+  "icon": {
+    "name": "RightIcon",
+    "color": "Purple"
+  },
+  "options": [
+    {
+      "info": "The data or object.",
+      "name": "data",
+      "label": "Data",
+      "meta": {
+        "type": "Value",
+        "validations": {
+          "required": true
+        },
+        "allowedKinds": ["OBJECT", "JSON", "STRING", "ARRAY"]
+      }
+    },
+    {
+      "info": "The method you want to use to find the correct element(s). The value method returns the value of the first element matching the expression. The query method returns an array of elements matching the expression. See https://www.npmjs.com/package/jsonpath#methods for more information.",
+      "label": "Method",
+      "meta": {
+        "type": "Select",
+        "default": "value",
+        "values": [
+          {
+            "label": "Value",
+            "value": "value"
+          },
+          {
+            "label": "Query",
+            "value": "query"
+          }
+        ]
+      },
+      "name": "method"
+    },
+    {
+      "info": "The jsonpath, see: https://www.npmjs.com/package/jsonpath.",
+      "name": "path",
+      "label": "JSONPath",
+      "configuration": {
+        "placeholder": "$."
+      },
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "info": "The schema model can be utilized to type the output of this step when it is an object or an array of objects.",
+      "meta": {
+        "type": "SchemaModel"
+      },
+      "name": "schemaModel",
+      "label": "Schema Model"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "validations": {
+          "required": true
+        },
+        "output": {
+          "anyOf": [
+            {
+              "type": "Text"
+            },
+            {
+              "type": "Boolean"
+            },
+            {
+              "type": "Number"
+            },
+            { "type": "Object", "schemaModel": "schemaModel" },
+            {
+              "type": "Array",
+              "schemaModel": "schemaModel",
+              "dataType": "SCHEMA"
+            }
+          ]
+        }
+      },
+      "name": "result",
+      "label": "Result"
+    }
+  ],
+  "yields": "NONE"
+}
