@@ -34,7 +34,10 @@
             "label": "Query",
             "value": "query"
           }
-        ]
+        ],
+        "validations": {
+          "required": true
+        }
       },
       "name": "method"
     },
