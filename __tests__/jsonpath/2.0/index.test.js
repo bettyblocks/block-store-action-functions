@@ -170,5 +170,14 @@ describe('Jsonpath query', () => {
         },
       ]);
     });
+
+    test('No results with provided path', async () => {
+      const { result } = await jsonpath({
+        data: TEST_DATA,
+        path: '$..book[?(@.price==0)]',
+        method: 'query',
+      });
+      expect(result).toStrictEqual([]);
+    });
   });
 });
