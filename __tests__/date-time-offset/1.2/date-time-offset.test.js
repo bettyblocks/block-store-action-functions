@@ -172,7 +172,7 @@ describe('Date Time Offset', () => {
     const testData = {
       businessDays: false,
       currentDate: false,
-      customStartDate: '2022-01-01 00:00:00',
+      customStartDate: '2022-01-01T00:00:00Z',
       offsetType: 'ss',
       offset: '1',
       resultType: 'UT',
@@ -180,7 +180,7 @@ describe('Date Time Offset', () => {
     };
 
     const { result } = await dateTimeOffset(testData);
-    expect(result).toMatch('1640991601');
+    expect(result).toMatch('1640995201');
   });
 
   test('return invalid offset type', async () => {
