@@ -37,7 +37,14 @@
     },
     {
       "meta": {
-        "allowedKinds": ["INTEGER", "EMAIL_ADDRESS", "TEXT", "STRING", "DATE"],
+        "allowedKinds": [
+          "INTEGER",
+          "EMAIL_ADDRESS",
+          "TEXT",
+          "STRING",
+          "DATE",
+          "LIST"
+        ],
         "type": "Property",
         "model": "model",
         "validations": {
