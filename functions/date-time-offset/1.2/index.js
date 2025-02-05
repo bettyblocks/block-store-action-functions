@@ -48,7 +48,7 @@ const formatDate = (resultType, calculatedOffset) => {
     case 'T':
       return format(calculatedOffset, 'HH:mm:ss');
     case 'UT':
-      return format(calculatedOffset, 't');
+      return Number(format(calculatedOffset, 't'));
     default:
       return 'Incorrect formatting type';
   }

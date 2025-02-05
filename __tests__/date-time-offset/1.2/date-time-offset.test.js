@@ -180,7 +180,7 @@ describe('Date Time Offset', () => {
     };
 
     const { result } = await dateTimeOffset(testData);
-    expect(result).toMatch('1640995201');
+    expect(result).toBe(1640995201);
   });
 
   test('return invalid offset type', async () => {
