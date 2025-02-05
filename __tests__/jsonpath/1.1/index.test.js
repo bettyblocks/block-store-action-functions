@@ -1,4 +1,4 @@
-import jsonpath from '../../../functions/jsonpath-value/1.0';
+import jsonpath from '../../../functions/jsonpath/1.1';
 
 const TEST_DATA = `
 {
@@ -40,12 +40,11 @@ const TEST_DATA = `
 describe('Jsonpath value', () => {
   describe('with input type string and return type', () => {
     test('object', async () => {
-      const { text } = await jsonpath({
+      const { result } = await jsonpath({
         data: TEST_DATA,
         path: '$..book[(@.length-1)]',
-        outputType: 'text',
       });
-      expect(text).toStrictEqual({
+      expect(result).toStrictEqual({
         author: 'J. R. R. Tolkien',
         category: 'fiction',
         isbn: '0-395-19395-8',
@@ -55,49 +54,44 @@ describe('Jsonpath value', () => {
     });
 
     test('text', async () => {
-      const { text } = await jsonpath({
+      const { result } = await jsonpath({
         data: TEST_DATA,
         path: '$.store.bicycle.color',
-        outputType: 'text',
       });
-      expect(text).toBe('red');
+      expect(result).toBe('red');
     });
 
     test('number', async () => {
-      const { number } = await jsonpath({
+      const { result } = await jsonpath({
         data: TEST_DATA,
         path: '$.store.bicycle.price',
-        outputType: 'number',
       });
-      expect(number).toBe(19.95);
+      expect(result).toBe(19.95);
     });
 
     test('boolean', async () => {
-      const { boolean } = await jsonpath({
+      const { result } = await jsonpath({
         data: TEST_DATA,
         path: '$.store.bicycle.sold',
-        outputType: 'boolean',
       });
-      expect(boolean).toBe(true);
+      expect(result).toBe(true);
     });
 
     test('list returns the first item', async () => {
-      const { text } = await jsonpath({
+      const { result } = await jsonpath({
         data: TEST_DATA,
         path: '$.store.book[*].author',
-        outputType: 'text',
       });
-      expect(text).toStrictEqual('Nigel Rees');
+      expect(result).toStrictEqual('Nigel Rees');
     });
   });
 
   test('with input type object return type text', async () => {
-    const { text } = await jsonpath({
+    const { result } = await jsonpath({
       data: JSON.parse(TEST_DATA),
       path: '$.store.bicycle.color',
-      outputType: 'text',
     });
-    expect(text).toBe('red');
+    expect(result).toBe('red');
   });
 
   test('with input type integer', async () =>
@@ -105,7 +99,6 @@ describe('Jsonpath value', () => {
       jsonpath({
         data: 12345,
         path: '$.store.bicycle.color',
-        outputType: 'text',
       }),
     ).rejects.toThrow(new Error('obj needs to be an object')));
 });
