@@ -4,7 +4,7 @@ const getAll = async (modelName, where, queryBody) => {
   const queryName = `all${modelName}`;
   const getAllQuery = `
     query {
-      ${queryName}(where: ${where}, take: 200) {
+      ${queryName}(where: ${where}, take: 5000) {
         ${queryBody}
       }
     }
@@ -55,7 +55,7 @@ const deleteAll = async ({
   const where = `{ ${templayed(filter || '')(variableMap)} }`;
   try {
     const { totalCount } = await getAll(modelName, where, 'totalCount');
-    const maxRequests = Math.ceil(totalCount / 200);
+    const maxRequests = Math.ceil(totalCount / 5000);
 
     // Loop through batches
     for (let index = 0; index < maxRequests; index += 1) {
