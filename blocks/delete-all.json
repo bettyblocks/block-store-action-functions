@@ -1,5 +1,5 @@
 {
   "dependencies": [],
-  "functions": ["deleteAll 1.1"],
+  "functions": ["deleteAll 1.2"],
   "includes": ["functions/utils"]
 }
