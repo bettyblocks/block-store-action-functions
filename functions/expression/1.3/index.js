@@ -5,7 +5,7 @@ const customExpression = async ({ expression, variables, debugLogging }) => {
   const parsedVars = variableMap(variables);
   const template = templayed(expression)(parsedVars);
   let functionOutput;
-	
+
   try {
     functionOutput = new Function(`return ${template}`)();
   } catch (error) {
