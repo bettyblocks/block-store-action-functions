@@ -1,5 +1,8 @@
 import templayed from '../../utils/templayed';
-import { variableMap } from '../../utils/utilityFuncs';
+
+function variableMap(variables) {
+  return Object.fromEntries(variables.map(({ key, value }) => [key, value]));
+}
 
 const customExpression = async ({ expression, variables, debugLogging }) => {
   const parsedVars = variableMap(variables);
