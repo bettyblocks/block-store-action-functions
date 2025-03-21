@@ -2,7 +2,7 @@
   "name": "blockstore-action-functions",
   "version": "1.0.0",
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "husky",
     "lint": "eslint",
     "prettier:base": "prettier --single-quote",
     "prettier:check": "pnpm run prettier:base --list-different \"{functions,__tests__,isolate-tests}/**/*.js\"",
