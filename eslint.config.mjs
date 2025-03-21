@@ -1,5 +1,5 @@
 import eslint from '@eslint/js';
-import vitest from 'eslint-plugin-vitest';
+import vitest from '@vitest/eslint-plugin';
 import prettierConfig from 'eslint-plugin-prettier/recommended';
 import globals from 'globals';
 
