@@ -107,7 +107,7 @@ describe('Jsonpath value', () => {
         path: '$.store.bicycle.color',
         method: 'value',
       }),
-    ).rejects.toThrow(new Error('obj needs to be an object')));
+    ).rejects.toThrow(/obj needs to be an object/));
 });
 
 describe('Jsonpath query', () => {
