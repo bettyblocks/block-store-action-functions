@@ -67,4 +67,12 @@ describe('LiquidJS', () => {
       'Team: Heroes - Batman - Hulk - Iron Man - Spider-Man - Superman Team: Villains - Joker - Lex Luthor - Mandarin - Sandman - Venom',
     );
   });
+
+  test('Liquid with currencies', async () => {
+    const { as } = await liquid({
+      template: '{{ value | to_currency: "€", "2", ",", "." }}',
+      context: [{ key: 'value', value: 1234.56 }],
+    });
+    expect(as).toEqual('€1.234,56');
+  });
 });
