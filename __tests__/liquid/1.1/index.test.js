@@ -76,4 +76,13 @@ describe('LiquidJS', () => {
     });
     expect(as).toEqual('Hello, Batman!');
   });
+
+  test('It preferes a template variable over template', async () => {
+    const { as } = await liquid({
+      template: 'Not {{name}}!',
+      templateVariable: 'Hello, {{name}}!',
+      context: [{ key: 'name', value: name }],
+    });
+    expect(as).toEqual('Hello, Batman!');
+  });
 });
