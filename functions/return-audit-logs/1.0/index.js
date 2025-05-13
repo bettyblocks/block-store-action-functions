@@ -4,7 +4,9 @@ const returnAuditLogs = async ({ record, property, skip, take }) => {
 
   const startIndex = skip;
   const endIndex = Math.min(startIndex + take, totalCount);
-  const results = collectionItems.slice(startIndex, endIndex).map((item, index) => ({ ...item, id: index }));
+  const results = collectionItems
+    .slice(startIndex, endIndex)
+    .map((item, index) => ({ ...item, id: index }));
 
   return {
     result: {
