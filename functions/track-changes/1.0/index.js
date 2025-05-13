@@ -37,7 +37,7 @@ const trackChanges = async ({ before, after }) => {
 
     // This function creates an object and puts it in an array, which will become a log in the app
     function createObject(key, oldCheckBox = '', newCheckBox = '') {
-      obj = {
+      const obj = {
         id: index,
         label: key,
         oldValue: beforeData[key]
@@ -131,7 +131,7 @@ const trackChanges = async ({ before, after }) => {
             parseAfterData !== '' ? parseAfterData.map((item) => item.id) : '';
 
         if (getIdOld !== getIdNew) {
-          obj = {
+          const obj = {
             id: index,
             label: key,
             oldValue: getIdOld ? getIdOld.toString() : '',
