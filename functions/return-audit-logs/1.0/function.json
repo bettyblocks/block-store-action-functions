@@ -1,0 +1,63 @@
+{
+  "description": "Return audit logs as a JSON array",
+  "label": "Return Audit Logs",
+  "category": "JSON",
+  "icon": {
+    "name": "ActionsIcon",
+    "color": "Orange"
+  },
+  "options": [
+    {
+      "meta": {
+        "type": "Record",
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "record",
+      "label": "Record"
+    },
+    {
+      "name": "property",
+      "label": "Property name",
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      },
+      "info": "The database name of the property that includes a stringified JSON"
+    },
+    {
+      "name": "skip",
+      "label": "Skip",
+      "meta": {
+        "type": "Number",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "take",
+      "label": "Take",
+      "meta": {
+        "type": "Number",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}

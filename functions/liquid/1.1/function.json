@@ -21,9 +21,7 @@
       "info": "Using a variable, for instance from an record object, a config or just a regular variable",
       "meta": {
         "type": "Value",
-        "allowedKinds": [
-          "STRING"
-        ]
+        "allowedKinds": ["STRING"]
       },
       "name": "templateVariable",
       "label": "Or choose a template variable"
