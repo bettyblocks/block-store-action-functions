@@ -39,6 +39,11 @@
     "trailingComma": "all",
     "singleQuote": true
   },
+  "pnpm": {
+    "auditConfig": {
+      "ignoreCves": ["CVE-2024-21538", "CVE-2024-45296", "CVE-2020-15366", "CVE-2022-3517"]
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/bettyblocks/blockstore-action-functions.git"
