@@ -6,7 +6,7 @@
     "lint": "eslint",
     "prettier:base": "prettier --single-quote",
     "prettier:check": "pnpm run prettier:base --list-different \"{functions,__tests__,isolate-tests}/**/*.js\"",
-    "prettier:write": "pnpm run prettier:base --write \"{functions,__tests__,isolate-tests}/**/*.js\"",
+    "prettier:write": "pnpm run prettier:base --write \"{functions,__tests__,isolate-tests}/**/*.{js,json}\"",
     "fmt": "pnpm run --silent prettier:write",
     "test": "vitest run",
     "test:isolate": "bb functions test isolate-tests/",
@@ -34,6 +34,10 @@
     "husky": "^9.1.7",
     "prettier": "^3.5.3",
     "vitest": "^3.0.9"
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true
   },
   "repository": {
     "type": "git",
