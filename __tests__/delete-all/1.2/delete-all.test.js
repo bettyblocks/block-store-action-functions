@@ -1,0 +1,156 @@
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+import deleteAll from '../../../functions/delete-all/1.2';
+
+describe('deleteAll (with global gql)', () => {
+  const modelName = 'Task';
+
+  beforeEach(() => {
+    globalThis.gql = vi.fn();
+  });
+
+  it('throws if gql returns errors during getAll', async () => {
+    globalThis.gql = vi.fn(async () => ({
+      errors: [{ message: 'Something went wrong' }],
+    }));
+
+    await expect(
+      deleteAll({
+        model: { name: 'Task' },
+        filter: '',
+        filterVariables: [],
+      }),
+    ).rejects.toEqual([
+      {
+        message:
+          'Something went wrong while deleting all records from Task: undefined',
+      },
+    ]);
+  });
+
+  it('throws if gql returns errors during deleteMany mutation', async () => {
+    globalThis.gql = vi.fn(async (query) => {
+      if (query.includes('query')) {
+        return {
+          data: {
+            allTask: {
+              results: [{ id: 1 }],
+              totalCount: 1,
+            },
+          },
+        };
+      }
+
+      if (query.includes('mutation')) {
+        return {
+          errors: [{ message: 'Mutation failed' }],
+        };
+      }
+
+      return { data: {} };
+    });
+
+    await expect(
+      deleteAll({
+        model: { name: 'Task' },
+        filter: '',
+        filterVariables: [],
+      }),
+    ).rejects.toEqual([
+      {
+        message:
+          'Something went wrong while deleting all records from Task: undefined',
+      },
+    ]);
+  });
+
+  it('catches unexpected errors inside deleteAll', async () => {
+    globalThis.gql = vi.fn(() => {
+      throw new Error('Unexpected internal error');
+    });
+
+    await expect(
+      deleteAll({
+        model: { name: 'Task' },
+        filter: '',
+        filterVariables: [],
+      }),
+    ).rejects.toEqual([
+      {
+        message:
+          'Something went wrong while deleting all records from Task: Unexpected internal error',
+      },
+    ]);
+  });
+
+  it('deletes all records from a model', async () => {
+    let callCount = 0;
+
+    globalThis.gql.mockImplementation(async (query) => {
+      if (query.includes('query')) {
+        if (callCount++ === 0) {
+          return {
+            data: {
+              [`all${modelName}`]: {
+                totalCount: 2,
+                results: [],
+              },
+            },
+          };
+        } else {
+          return {
+            data: {
+              [`all${modelName}`]: {
+                results: [{ id: 1 }, { id: 2 }],
+                totalCount: 2,
+              },
+            },
+          };
+        }
+      }
+
+      if (query.includes('mutation')) {
+        return {
+          data: {
+            [`deleteMany${modelName}`]: [{ id: 1 }, { id: 2 }],
+          },
+        };
+      }
+
+      return { data: {} };
+    });
+
+    const { result } = await deleteAll({
+      model: { name: modelName },
+      filter: '',
+      filterVariables: [],
+    });
+
+    expect(result).toMatch(`All records from ${modelName} have been deleted`);
+
+    // Assert that one of the calls included deleteMany
+    const deleteCall = globalThis.gql.mock.calls.find(([query]) =>
+      query.includes(`deleteMany${modelName}`),
+    );
+
+    expect(deleteCall).toBeTruthy();
+    expect(deleteCall[1]).toEqual({ input: { ids: [1, 2] } });
+  });
+
+  it('throws an error for invalid models', async () => {
+    expect.assertions(1);
+
+    globalThis.gql.mockImplementation(async () => {
+      throw new Error('Model not found');
+    });
+
+    try {
+      await deleteAll({
+        model: { name: 'InvalidModel' },
+        filter: '',
+        filterVariables: [],
+      });
+    } catch (errors) {
+      expect(errors.length).toEqual(1);
+    }
+  });
+});
