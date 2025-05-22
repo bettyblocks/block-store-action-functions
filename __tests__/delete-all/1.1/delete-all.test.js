@@ -83,7 +83,6 @@ describe('deleteAll (with global gql)', () => {
   });
 
   it('throws error with formatted message if there is an error in getAll or delete mutation', async () => {
-    // Simulate an error during getAll or delete
     globalThis.gql = vi.fn(async () => {
       throw new Error('Simulated error in getAll or mutation');
     });
@@ -142,12 +141,15 @@ describe('deleteAll (with global gql)', () => {
     const { result } = await deleteAll({
       model: { name: modelName },
       filter: '',
-      filterVariables: [],
+      filterVariables: [
+        { key: 'name', value: 'John' },
+        { key: 'age', value: 30 },
+        { key: 'city', value: 'New York' },
+      ],
     });
 
     expect(result).toMatch(`All records from ${modelName} have been deleted`);
 
-    // Assert that one of the calls included deleteMany
     const deleteCall = globalThis.gql.mock.calls.find(([query]) =>
       query.includes(`deleteMany${modelName}`),
     );
@@ -188,7 +190,6 @@ describe('deleteAll (with global gql)', () => {
 
     expect(result).toMatch(`All records from ${modelName} have been deleted`);
 
-    // Check that deleteMany is NOT called
     const deleteCall = globalThis.gql.mock.calls.find(([query]) =>
       query.includes(`deleteMany${modelName}`),
     );
