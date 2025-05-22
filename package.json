@@ -13,6 +13,7 @@
     "publish": "bb blocks publish"
   },
   "dependencies": {
+    "@betty-blocks/cli": "^25.107.0",
     "date-fns": "~2.29.3",
     "lodash.groupby": "^4.6.0",
     "sentence-splitter": "^5.0.0",
