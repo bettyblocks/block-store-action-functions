@@ -1,0 +1,101 @@
+{
+  "description": "Create or update a record for a given model",
+  "label": "Create or Update Record Object",
+  "category": "CRUD",
+  "icon": {
+    "name": "DataJumpUpIcon",
+    "color": "Green"
+  },
+  "options": [
+    {
+      "name": "cuRecord",
+      "label": "Record",
+      "meta": {
+        "type": "Record",
+        "additional": {
+          "model": ["name", { "properties": ["kind"] }]
+        },
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "meta": {
+        "type": "PropertyMap",
+        "model": "cuRecord"
+      },
+      "configuration": {
+        "dependsOn": [
+          {
+            "option": "cuRecord",
+            "action": "CLEAR"
+          }
+        ]
+      },
+      "name": "mapping",
+      "label": "Value Mapping",
+      "info": "Mapping of values to properties for the created or updated record. The properties are based on the model selected."
+    },
+    {
+      "meta": {
+        "type": "PropertyMap",
+        "model": "cuRecord"
+      },
+      "configuration": {
+        "dependsOn": [
+          {
+            "option": "cuRecord",
+            "action": "CLEAR"
+          }
+        ]
+      },
+      "name": "mappingCreate",
+      "label": "Value Mapping Create",
+      "info": "Mapping of values to properties for the created record. The properties are based on the model selected."
+    },
+    {
+      "meta": {
+        "type": "PropertyMap",
+        "model": "cuRecord"
+      },
+      "configuration": {
+        "dependsOn": [
+          {
+            "option": "cuRecord",
+            "action": "CLEAR"
+          }
+        ]
+      },
+      "name": "mappingUpdate",
+      "label": "Value Mapping Update",
+      "info": "Mapping of values to properties for the updated record. The properties are based on the model selected."
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Record",
+          "model": "cuRecord"
+        },
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "as",
+      "label": "As",
+      "info": "The name of the variable you want for the newly created / updated record."
+    },
+    {
+      "meta": {
+        "type": "Boolean",
+        "default": true
+      },
+      "advanced": true,
+      "name": "validates",
+      "label": "Validates",
+      "info": "Apply validations when creating or updating the record."
+    }
+  ],
+  "yields": "NONE"
+}
