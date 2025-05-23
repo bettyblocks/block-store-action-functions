@@ -14,17 +14,17 @@ const input = {
   maxTokens: 100,
   temperature: 50,
   model: 'text-davinci-002',
-  parameters: [],
+  parameters: [{ key: 'priority', value: 'high' }],
 };
 
 const createPaths = (paths) => {
-  const resolvedPaths = paths.map(({ label, description, steps }) => ({
+  const resolvedPaths = paths.map(({ label, description, value, steps }) => ({
     label,
-    value: description,
+    value,
+    description,
     steps: steps ?? vi.fn(),
   }));
 
-  // similar to ActionsCompiler forEach implementation
   Object.defineProperty(resolvedPaths, 'forEach', {
     get() {
       return async (asyncFn) => {
@@ -70,7 +70,8 @@ describe('Classifier function', () => {
         },
         {
           choice: 'Else',
-          description: undefined,
+          description:
+            'If no other choices match, select Else as the default option.',
         },
       ],
       prompt: 'Hello',
@@ -80,7 +81,9 @@ describe('Classifier function', () => {
       variables: {
         question: 'What tool is the best to ask for the current weather?',
       },
-      parameters: {},
+      parameters: {
+        priority: 'high',
+      },
     },
   };
 
@@ -91,7 +94,7 @@ describe('Classifier function', () => {
       { label: 'Wikipedia', steps: wikipediaStep },
       { label: 'Google', steps: googleStep },
       { label: 'Language model' },
-      { label: 'Else' },
+      { label: 'Else', value: true },
     ]);
 
     const { result } = await classifier(input, paths);

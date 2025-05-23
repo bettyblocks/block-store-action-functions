@@ -7,6 +7,7 @@ const validInput = {
   maxTokens: 100,
   temperature: 50,
   model: 'text-davinci-002',
+  parameters: [{ key: 'priority', value: 'high' }],
 };
 
 const invalidInput = {
