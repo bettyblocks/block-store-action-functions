@@ -1,0 +1,86 @@
+{
+  "description": "Description",
+  "label": "Generate Word Document",
+  "category": "Document Generation",
+  "icon": {
+    "color": "Green",
+    "name": "FileIcon"
+  },
+  "options": [
+    {
+      "meta": {
+        "type": "Model",
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "model",
+      "label": "Model",
+      "info": "The model for the result"
+    },
+    {
+      "meta": {
+        "allowedKinds": ["FILE"],
+        "type": "Property",
+        "model": "model",
+        "validations": {
+          "required": true
+        }
+      },
+      "configuration": {
+        "dependsOn": [
+          {
+            "option": "model",
+            "action": "CLEAR"
+          }
+        ]
+      },
+      "name": "property",
+      "label": "Property"
+    },
+    {
+      "meta": {
+        "type": "Value",
+        "allowedKinds": ["FILE"]
+      },
+      "name": "templateUrl",
+      "label": "Template URL"
+    },
+    {
+      "meta": {
+        "type": "Text"
+      },
+      "info": "A public file url for the template",
+      "name": "publicTemplateUrl",
+      "label": "Public Template Url"
+    },
+    {
+      "info": "The resulting file name",
+      "label": "File name",
+      "meta": {
+        "type": "Text"
+      },
+      "name": "fileName"
+    },
+    {
+      "info": "Select all the variables you want to have available in the template with a key",
+      "label": "Template Variables",
+      "meta": {
+        "type": "Map"
+      },
+      "name": "variables"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      },
+      "name": "result",
+      "label": "As",
+      "info": "The resulting file reference."
+    }
+  ],
+  "yields": "NONE"
+}
