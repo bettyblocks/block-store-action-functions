@@ -1,0 +1,36 @@
+{
+  "description": "It tracks the changes if there is a difference between the before and after record. It returns a stringified JSON with the key(s) and value(s) of the properties that has been changed.",
+  "label": "Track Changes",
+  "category": "Debugging",
+  "icon": {
+    "name": "DownUpIcon",
+    "color": "Orange"
+  },
+  "options": [
+    {
+      "name": "before",
+      "label": "Before updating",
+      "meta": {
+        "type": "Record"
+      }
+    },
+    {
+      "name": "after",
+      "label": "After updating",
+      "meta": {
+        "type": "Record"
+      }
+    },
+    {
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      }
+    }
+  ],
+  "yields": "NONE"
+}
