@@ -1,5 +1,4 @@
 const generateWordDocument = async ({
-  templateUrl,
   publicTemplateUrl,
   model,
   property: [{ name: propertyName }],
