@@ -22,10 +22,10 @@
       "meta": {
         "type": "Output",
         "output": {
-          "type": "Text",
-          "validations": {
-            "required": true
-          }
+          "type": "Text"
+        },
+        "validations": {
+          "required": true
         }
       },
       "name": "result",

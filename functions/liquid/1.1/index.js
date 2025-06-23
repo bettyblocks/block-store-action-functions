@@ -7,11 +7,8 @@ const liquid = async ({ template, templateVariable, context = [] }) => {
   engine.registerFilter('group', (collection, key) => groupBy(collection, key));
 
   const as = engine.parseAndRenderSync(
-    templateVariable || template || '',
-    context.reduce((ctx, { key, value }) => {
-      ctx[key] = value;
-      return ctx;
-    }, {}),
+    templateVariable ?? template ?? '',
+    Object.fromEntries(context.map(({ key, value }) => [key, value])),
   );
 
   return {
