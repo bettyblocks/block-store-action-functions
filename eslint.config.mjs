@@ -23,6 +23,7 @@ export default [
         ...vitest.environments.env.globals,
         documentParser: 'readonly',
         fetch: 'readonly',
+        generateDocx: 'readonly',
         generatePDF: 'readonly',
         generativeAI: 'readonly',
         gql: 'readonly',
