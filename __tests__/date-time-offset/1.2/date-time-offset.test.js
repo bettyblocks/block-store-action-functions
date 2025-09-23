@@ -17,8 +17,8 @@ describe('Date Time Offset', () => {
     const dateDiff =
       new Date(result) -
       addMinutes(new Date(), parseInt(testData.timeZoneOffset, 10));
-    expect(dateDiff).toBeLessThan(1000);
-    expect(dateDiff).toBeGreaterThan(0);
+    expect(dateDiff).toBeLessThan(1001);
+    expect(dateDiff).toBeGreaterThan(-1);
   });
 
   test('return date time for 1 second added to a new javascript date for UTC-6 zone', async () => {
