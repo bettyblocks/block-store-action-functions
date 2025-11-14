@@ -1,17 +1,21 @@
 import documentParser from '../document-parser';
 import generatePDF from '../generate-pdf';
+import generateDocx from '../generate-word';
 import gql from '../gql';
 import parseToGqlFragment from '../parse-to-gql-fragment';
 import runAction from '../run-action';
 import parseData from '../parse-data';
 import generativeAI from '../generative-ai';
 import searchCollection from '../search-collection';
+import storeFile from '../store-file';
 
 global.documentParser = documentParser;
 global.generatePDF = generatePDF;
+global.generateDocx = generateDocx;
 global.gql = gql;
 global.parseToGqlFragment = parseToGqlFragment;
 global.runAction = runAction;
 global.parseData = parseData;
 global.generativeAI = generativeAI;
 global.searchCollection = searchCollection;
+global.storeFile = storeFile;

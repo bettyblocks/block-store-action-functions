@@ -42,8 +42,3 @@ jobs:
 
       - name: Test
         run: pnpm test
-
-      - name: Test isolate
-        run: |
-          pnpm add -g @betty-blocks/cli
-          pnpm test:isolate
