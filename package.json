@@ -9,7 +9,6 @@
     "prettier:write": "pnpm run prettier:base --write \"{functions,__tests__,isolate-tests}/**/*.js\"",
     "fmt": "pnpm run --silent prettier:write",
     "test": "vitest run",
-    "test:isolate": "bb functions test isolate-tests/",
     "publish": "bb blocks publish"
   },
   "dependencies": {

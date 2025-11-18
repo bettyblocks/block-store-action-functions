@@ -1,5 +1,0 @@
-{
-  "dependencies": [],
-  "functions": ["jsonpath 2.0"],
-  "includes": ["./functions/utils"]
-}
