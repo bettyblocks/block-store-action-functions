@@ -1,30 +1,28 @@
 import summarizer from '../../../functions/ai-summarizer/1.0';
 
 const validConciseInput = {
-  prompt: 'Hello',
-  variables: [],
+  textToSummarize: 'Hello',
+  style: 'concise',
   apiKey: 'validApiKey',
   maxTokens: 100,
-  temperature: 50,
   model: 'text-davinci-002',
+  parameters: [{ key: 'priority', value: 'high' }],
 };
 
 const validBulletpointInput = {
-  prompt: 'Hello',
+  textToSummarize: 'Hello',
   style: 'bulletpoints',
-  variables: [],
   apiKey: 'validApiKey',
   maxTokens: 100,
-  temperature: 50,
   model: 'text-davinci-002',
 };
 
 const invalidInput = {
-  prompt: 'Hello',
-  variables: [{ key: 'name', value: 'John' }],
+  textToSummarize: 'Hello',
+  style: 'concise',
+  parameters: [],
   apiKey: 'invalidApiKey',
   maxTokens: 100,
-  temperature: 50,
   model: 'text-davinci-002',
 };
 
