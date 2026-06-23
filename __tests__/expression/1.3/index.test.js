@@ -1,5 +1,5 @@
 import { vi } from 'vitest';
-import expression from '../../../functions/expression/1.4';
+import expression from '../../../functions/expression/1.3';
 
 describe('Expression', () => {
   const name = 'John Doe';

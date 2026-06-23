@@ -6,12 +6,13 @@
     "lint": "eslint",
     "prettier:base": "prettier --single-quote",
     "prettier:check": "pnpm run prettier:base --list-different \"{functions,__tests__,isolate-tests}/**/*.js\"",
-    "prettier:write": "pnpm run prettier:base --write \"{functions,__tests__,isolate-tests}/**/*.js\"",
+    "prettier:write": "pnpm run prettier:base --write \"{functions,__tests__,isolate-tests}/**/*.{js,json}\"",
     "fmt": "pnpm run --silent prettier:write",
     "test": "vitest run",
     "publish": "bb blocks publish"
   },
   "dependencies": {
+    "@betty-blocks/cli": "^25.107.0",
     "date-fns": "~2.29.3",
     "lodash.groupby": "^4.6.0",
     "sentence-splitter": "^5.0.0",
@@ -32,6 +33,15 @@
     "husky": "^9.1.7",
     "prettier": "^3.5.3",
     "vitest": "^3.0.9"
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true
+  },
+  "pnpm": {
+    "auditConfig": {
+      "ignoreCves": ["CVE-2024-21538", "CVE-2024-45296", "CVE-2020-15366", "CVE-2022-3517"]
+    }
   },
   "repository": {
     "type": "git",

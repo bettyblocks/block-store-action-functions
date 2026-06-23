@@ -19,8 +19,14 @@ const sortObject = (obj) => {
 const trackChanges = async ({ before, after }) => {
   try {
     if (!before) {
+      before = { data: {} };
+    } else if (!before.data) {
       before.data = {};
-    } else if (!after) {
+    }
+
+    if (!after) {
+      after = { data: {} };
+    } else if (!after.data) {
       after.data = {};
     }
 

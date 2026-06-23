@@ -1,20 +1,18 @@
 import anonymizer from '../../../functions/ai-anonymizer/1.0';
 
 const validInput = {
-  prompt: 'Hello',
-  variables: [{ key: 'name', value: 'John' }],
+  textToAnonymize: 'Hello John',
+  parameters: [{ key: 'name', value: 'John' }],
   apiKey: 'validApiKey',
   maxTokens: 100,
-  temperature: 50,
   model: 'text-davinci-002',
 };
 
 const invalidInput = {
-  prompt: 'Hello',
-  variables: [{ key: 'name', value: 'John' }],
+  textToAnonymize: 'Hello John',
+  parameters: [{ key: 'name', value: 'John' }],
   apiKey: 'invalidApiKey',
   maxTokens: 100,
-  temperature: 50,
   model: 'text-davinci-002',
 };
 

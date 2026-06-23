@@ -288,6 +288,26 @@ describe('Update many', () => {
     expect(result).toMatchObject([{ id: 1 }, { id: 2 }]);
   });
 
+  test('It throws an error when the GraphQL mutation fails', async () => {
+    const gqlMock = vi.fn().mockResolvedValue({
+      errors: [{ message: 'GraphQL mutation failed' }],
+    });
+
+    global.gql = gqlMock;
+
+    try {
+      await updateMany({
+        selectedCollection: {
+          data: [{ id: 1 }, { id: 2 }],
+          model: { name: 'User' },
+        },
+        mapping,
+      });
+    } catch (errors) {
+      expect(errors).toEqual([{ message: 'GraphQL mutation failed' }]);
+    }
+  });
+
   test('It throws an error for missing id', async () => {
     try {
       await updateMany({
