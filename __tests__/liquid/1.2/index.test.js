@@ -88,7 +88,7 @@ describe('LiquidJS', () => {
 
   test('It formats a number as currency with default options', async () => {
     const { as } = await liquid({
-      template: '{{ amount | toCurrency }}',
+      template: '{{ amount | to_currency }}',
       context: [{ key: 'amount', value: 1234567.891 }],
     });
     expect(as).toEqual('$1,234,567.89');
@@ -96,7 +96,7 @@ describe('LiquidJS', () => {
 
   test('It formats a number as currency with custom symbol and separators', async () => {
     const { as } = await liquid({
-      template: "{{ amount | toCurrency: '€', 2, '.', ',' }}",
+      template: "{{ amount | to_currency: '€', 2, '.', ',' }}",
       context: [{ key: 'amount', value: 1234567.891 }],
     });
     expect(as).toEqual('€1.234.567,89');
@@ -104,7 +104,7 @@ describe('LiquidJS', () => {
 
   test('It formats a negative number as currency', async () => {
     const { as } = await liquid({
-      template: '{{ amount | toCurrency }}',
+      template: '{{ amount | to_currency }}',
       context: [{ key: 'amount', value: -1234.5 }],
     });
     expect(as).toEqual('-$1,234.50');
@@ -112,7 +112,7 @@ describe('LiquidJS', () => {
 
   test('It supports zero decimals', async () => {
     const { as } = await liquid({
-      template: "{{ amount | toCurrency: '$', 0 }}",
+      template: "{{ amount | to_currency: '$', 0 }}",
       context: [{ key: 'amount', value: 1234.99 }],
     });
     expect(as).toEqual('$1,235');
@@ -120,7 +120,7 @@ describe('LiquidJS', () => {
 
   test('It returns the original value when input is not numeric', async () => {
     const { as } = await liquid({
-      template: '{{ amount | toCurrency }}',
+      template: '{{ amount | to_currency }}',
       context: [{ key: 'amount', value: 'not-a-number' }],
     });
     expect(as).toEqual('not-a-number');

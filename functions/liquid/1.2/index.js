@@ -30,7 +30,7 @@ const liquid = async ({ template, templateVariable, context = [] }) => {
   const engine = new Liquid();
 
   engine.registerFilter('group', (collection, key) => groupBy(collection, key));
-  engine.registerFilter('toCurrency', toCurrency);
+  engine.registerFilter('to_currency', toCurrency);
 
   const as = engine.parseAndRenderSync(
     templateVariable ?? template ?? '',
